@@ -249,3 +249,5 @@ mToolbar.findViewById(R.id.tv_title).setOnClickListener(new View.OnClickListener
 
 
 
+更加详细的toolbar的例子在：https://blog.csdn.net/da_caoyuan/article/details/79557704
+文中讲的很详细 包括toolbar和CollapsingToolbarLayout、CoordinatorLayout等的使用。
