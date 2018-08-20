@@ -10,7 +10,7 @@ copyright: true
 <blockquote class="blockquote-center">优秀的人，不是不合群，而是他们合群的人里面没有你</blockquote>
 
 
-
+<!-- more -->
 
 
 > ToolBar的出现是为了替换之前的ActionBar的各种不灵活使用方式,相反,ToolBar的使用变得非常灵活,因为它可以让我们自由往里面添加子控件.低版本要使用的话,可以添加support-v7包.

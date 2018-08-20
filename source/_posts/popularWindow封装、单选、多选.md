@@ -1,12 +1,15 @@
 ---
-title: popularWindow
+title: popularWindow封装、单选、多选
 date: 2018-08-13 14:38:35
-tags:
-
+copyright: true
 ---
 
 
+
 <blockquote class="blockquote-center">雄起</blockquote>
+
+
+<!-- more -->
 
 
 
