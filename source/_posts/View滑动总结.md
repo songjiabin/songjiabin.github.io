@@ -291,7 +291,89 @@ log信息：
 
 #### scrollTo与scollBy
 
+> scrollTo（x，y）表示移动到一个具体的坐标点，而scrollBy（dx，dy）则表示移动的增量为dx、dy。其中，scollBy最终也是要调用scollTo的。
 
+> scollTo、scollBy移动的是View的内容，如果在ViewGroup中使用，则是移动其所有的子View。View则是移动的里面的content。
+
+代码
+```Java
+@Override
+    public boolean onTouchEvent(MotionEvent event) {
+        int x = (int) event.getX();
+        int y = (int) event.getY();
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                lastX = x;
+                lastY = y;
+                break;
+            case MotionEvent.ACTION_MOVE:
+                int offsetX = x - lastX;
+                int offsetY = y - lastX;
+                ViewGroup viewGroup = (ViewGroup) ScrollByView.this.getParent();
+
+                viewGroup.scrollBy(-offsetX, -offsetY);
+                break;
+            default:
+                break;
+        }
+
+        return true;
+    }
+```
+
+
+**这样就实现了和layout等一样的拖动效果
+注：至于这里为什么是负数，其实是参照物不一样导致的，scrollby和scrollto滚动的时候其实是类似于窗口里面的View并没有移动，而是手机屏幕在移动，如果我设置为正数，其实类似手机屏幕往右移动了，view保持不动，这样间接的其实类似于View左移了**
+
+
+#### Scroller
+> 我们在用scollTo/scollBy方法进行滑动时，这个过程是瞬间完成的，所以用户体验不大好。这里我们可
+以使用 Scroller 来实现有过渡效果的滑动，这个过程不是瞬间完成的，而是在一定的时间间隔内完成的。
+Scroller本身是不能实现View的滑动的，它需要与View的computeScroll（）方法配合才能实现弹性滑动的效
+果。
+
+- computeScroll()
+
+系统会在绘制View的时候在draw（）方法中调用computeScroll（）方法。在这个方法中，我们调用父类的scrollTo（）方法并通过Scroller来不断获取当前的滚动值，每滑动一小段距离我们就调用invalidate（）方法不断地进行重绘，重绘就会调用computeScroll（）方法，这样我们通过不断地移动一个小的距离并连贯起来就实现了平滑移动的效果。
+
+写个demo我们将view平滑滚动带屏幕坐标（400,500）的位置，具体代码如下
+
+```Java
+  private void initView() {
+        scroller = new Scroller(getContext());
+    }
+
+    @Override
+    public void computeScroll() {
+        super.computeScroll();
+        //判断Scroller是否执行完毕
+        if (scroller.computeScrollOffset()) {
+            ViewGroup viewGroup = (ViewGroup) this.getParent();
+            int x =scroller.getCurrX();
+            int y =scroller.getCurrY();
+            viewGroup.scrollTo(scroller.getCurrX(), scroller.getCurrY());
+            invalidate();
+        }
+    }
+
+    public void smoothScrollTo(int destX, int destY) {
+
+        View viewGroup =  ((View) getParent());
+
+        int scrollX = this.getScrollX();
+        int scrollY = this.getScrollY();
+        //偏移量
+        int deltaX = destX - scrollX;
+        int deltaY = destY - scrollY;
+        scroller.startScroll(scrollX, scrollY, deltaX, deltaY, 2000);
+    }
+```
+
+调用
+```Java
+ removeView_animator.smoothScrollTo(-400, -500);
+```
+![效果](https://upload-images.jianshu.io/upload_images/2922217-9220623cfa02fe66.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
 原文：https://www.jianshu.com/p/61ad263c4a0e  如有侵权可马上删除！
 

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="气不和时少说话，有言必失；心不顺时莫做事，做事必败。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="View滑动总结">
+<meta property="og:url" content="http://yoursite.com/2018/08/13/View滑动总结/index.html">
+<meta property="og:site_name" content="基本密码博客">
+<meta property="og:description" content="气不和时少说话，有言必失；心不顺时莫做事，做事必败。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2953304-a3b5d3855f05adee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2953304-089ae296663d14c7.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2922217-9220623cfa02fe66.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300">
+<meta property="og:updated_time" content="2018-08-21T06:11:45.228Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="View滑动总结">
+<meta name="twitter:description" content="气不和时少说话，有言必失；心不顺时莫做事，做事必败。">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2953304-a3b5d3855f05adee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/13/View滑动总结/"/>
+
+
+
+
+
+  <title>View滑动总结 | 基本密码博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">基本密码博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不能总想着拥有什么，要想着去创造什么</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于作者
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/View滑动总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="基本密码">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="基本密码博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">View滑动总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-13T14:38:35+08:00">
+                2018-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center">气不和时少说话，有言必失；心不顺时莫做事，做事必败。</blockquote>
+
+<a id="more"></a>
+<blockquote>
+<p>View的滑动是Android自定义控件的基础，在开发中我们难免会遇到View的滑动处理。<br>其实不管是哪种滑动方式，基本思想都是差不多的：</p>
+<ul>
+<li>当点击事件传到View时，系统记下触摸点的坐标；</li>
+<li>手指移动时系统记下移动后触摸的坐标并算出偏移量，并通过偏移量来修改View的坐标；</li>
+</ul>
+</blockquote>
+<p>实现View滑动有很多种方法，这里主要讲下以下6种：</p>
+<ul>
+<li>layout()</li>
+<li>offsetLeftAndRight（）与offsetTopAndBottom（）</li>
+<li>LayoutParams</li>
+<li>动画</li>
+<li>scollTo 与 scollBy</li>
+<li>Scroller</li>
+</ul>
+<h4 id="layout-方式"><a href="#layout-方式" class="headerlink" title="layout()方式"></a>layout()方式</h4><p>首先看一下layout()，在View进行绘制时，会调用OnLayout()方法来设置View显示的位置，同时可以修改View的left,top,right,bottom四个属性来控制View的坐标。这个坐标是View坐标系。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2953304-a3b5d3855f05adee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2922217-b01724b799d440fa.png"></p>
+<p>代码如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouchEvent</span><span class="params">(MotionEvent event)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> x = (<span class="keyword">int</span>) event.getX();</span><br><span class="line">    <span class="keyword">int</span> y = (<span class="keyword">int</span>) event.getY();</span><br><span class="line">    <span class="keyword">switch</span> (event.getAction()) &#123;</span><br><span class="line">        <span class="keyword">case</span> MotionEvent.ACTION_DOWN:</span><br><span class="line">            lastX = x;</span><br><span class="line">            lastY = y;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> MotionEvent.ACTION_MOVE:</span><br><span class="line">            <span class="comment">//得到偏移量</span></span><br><span class="line">            <span class="keyword">int</span> offsetX = x - lastX;</span><br><span class="line">            <span class="keyword">int</span> offsetY = y - lastX;</span><br><span class="line">            <span class="comment">//四个参数，left,top,right,bottom</span></span><br><span class="line">            layout(getLeft() + offsetX, getTop() + offsetY, getRight() + offsetX, getBottom() + offsetY);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="offsetLeftAndRight（）与offsetTopAndBottom（）方式"><a href="#offsetLeftAndRight（）与offsetTopAndBottom（）方式" class="headerlink" title="offsetLeftAndRight（）与offsetTopAndBottom（）方式"></a>offsetLeftAndRight（）与offsetTopAndBottom（）方式</h4><blockquote>
+<p>这种方式和layout()的方式基本是一样的,根据名字也知道这两个方法分别是设置左边和右边,上面和下面的偏离值<br>其实吧用法是上面的layout()的用法是一样。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouchEvent</span><span class="params">(MotionEvent event)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> x = (<span class="keyword">int</span>) event.getX();</span><br><span class="line">        <span class="keyword">int</span> y = (<span class="keyword">int</span>) event.getY();</span><br><span class="line">        <span class="keyword">switch</span> (event.getAction()) &#123;</span><br><span class="line">            <span class="keyword">case</span> MotionEvent.ACTION_DOWN:</span><br><span class="line">                lastX = x;</span><br><span class="line">                lastY = y;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> MotionEvent.ACTION_MOVE:</span><br><span class="line">                <span class="comment">//得到偏移量</span></span><br><span class="line">                <span class="keyword">int</span> offsetX = x - lastX;</span><br><span class="line">                <span class="keyword">int</span> offsetY = y - lastX;</span><br><span class="line">                <span class="comment">//四个参数，left,top,right,bottom</span></span><br><span class="line">                <span class="comment">//使用 layout</span></span><br><span class="line"><span class="comment">//                layout(getLeft() + offsetX, getTop() + offsetY, getRight() + offsetX, getBottom() + offsetY);</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                <span class="comment">// 使用 offsetLeftAndRight（）与offsetTopAndBottom（）方式</span></span><br><span class="line">                offsetLeftAndRight(offsetX);</span><br><span class="line">                offsetTopAndBottom(offsetY);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="LayoutParams的方式"><a href="#LayoutParams的方式" class="headerlink" title="LayoutParams的方式"></a>LayoutParams的方式</h4><blockquote>
+<p>LayoutParams主要保存了一个View的布局参数，因此我们可以通过LayoutParams来改变View的布局参数从而达到改变View位置的效果</p>
+<ul>
+<li><strong>注意：这里如果viewgroup是relayoutlayout,如果设置了android:layout_centerInParent=”true”是不起作用的;</strong></li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">  <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouchEvent</span><span class="params">(MotionEvent event)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> x = (<span class="keyword">int</span>) event.getX();</span><br><span class="line">        <span class="keyword">int</span> y = (<span class="keyword">int</span>) event.getY();</span><br><span class="line">        <span class="keyword">switch</span> (event.getAction()) &#123;</span><br><span class="line">            <span class="keyword">case</span> MotionEvent.ACTION_DOWN:</span><br><span class="line">                lastX = x;</span><br><span class="line">                lastY = y;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> MotionEvent.ACTION_MOVE:</span><br><span class="line">                <span class="comment">//得到偏移量</span></span><br><span class="line">                <span class="keyword">int</span> offsetX = x - lastX;</span><br><span class="line">                <span class="keyword">int</span> offsetY = y - lastX;</span><br><span class="line">                <span class="comment">//四个参数，left,top,right,bottom</span></span><br><span class="line">                <span class="comment">//使用 layout</span></span><br><span class="line"><span class="comment">//                layout(getLeft() + offsetX, getTop() + offsetY, getRight() + offsetX, getBottom() + offsetY);</span></span><br><span class="line"></span><br><span class="line">                <span class="comment">// 使用 offsetLeftAndRight（）与offsetTopAndBottom（）方式</span></span><br><span class="line"><span class="comment">//                offsetLeftAndRight(offsetX);</span></span><br><span class="line"><span class="comment">//                offsetTopAndBottom(offsetY);</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                <span class="comment">//使用 LayoutParams 的方式</span></span><br><span class="line">                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) <span class="keyword">this</span>.getLayoutParams();</span><br><span class="line">                layoutParams.leftMargin = getLeft() + offsetX;</span><br><span class="line">                layoutParams.topMargin = getTop() + offsetY;</span><br><span class="line">                layoutParams.rightMargin = getRight() + offsetX;</span><br><span class="line">                layoutParams.bottomMargin = getBottom() + offsetY;</span><br><span class="line">                setLayoutParams(layoutParams);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="动画方式"><a href="#动画方式" class="headerlink" title="动画方式"></a>动画方式</h4><blockquote>
+<p>采用动画的方式来进行View的滑动，主要就涉及到两个动画：属性动画和补间动画<br>补间动画的实现</p>
+</blockquote>
+<h5 id="补间动画"><a href="#补间动画" class="headerlink" title="补间动画"></a>补间动画</h5><ul>
+<li>在res目录新建anim文件夹并创建translate_remove_view.xml</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</span><br><span class="line">&lt;set xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span>  </span><br><span class="line">android:fillAfter=<span class="string">"true"</span></span><br><span class="line">android:duration=<span class="string">"2000"</span>&gt;</span><br><span class="line">    &lt;translate</span><br><span class="line">        android:fromXDelta=<span class="string">"0"</span></span><br><span class="line">        android:toXDelta=<span class="string">"300"</span>/&gt;</span><br><span class="line">&lt;/set&gt;</span><br><span class="line"></span><br><span class="line">在代码中：</span><br><span class="line"><span class="comment">//次动画的移动是 补间动画</span></span><br><span class="line">Animation animation = AnimationUtils.loadAnimation(RemoveViewActivity.thisR.anim.translate_remove_view);</span><br><span class="line">removeView_animator.startAnimation(animation);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>或者直接使用代码</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">TranslateAnimation animator_code = <span class="keyword">new</span> TranslateAnimation(<span class="number">0</span>, <span class="number">300f</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">animator_code.setDuration( <span class="number">2000</span>);<span class="comment">//设置动画持续时间</span></span><br><span class="line">animator_code.setFillAfter(<span class="keyword">true</span>);<span class="comment">//设置是否到指定的位置后不在移动</span></span><br><span class="line">view.setAnimation(animator_code);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>需要注意的是，View动画并不能改变View的位置参数。如果对一个Button进行如上的平移动画操作，<br>当Button平移300像素停留在当前位置时，我们点击这个Button并不会触发点击事件，但在我们点击这个它起始位置的时候会有反应的。这个就是补间动画的和属性动画的区别</strong></p>
+</blockquote>
+<h5 id="属性动画"><a href="#属性动画" class="headerlink" title="属性动画"></a>属性动画</h5><blockquote>
+<p>属性动画是Android3.0之后推出的，就是为了解决补间动画的焦点问题，我们经常使用到的类主要有AnimatorSet和ObjectAnimator；使用 ObjectAnimator 进行更精细化的控制，控制一个对象和一个属性值，而使用多个ObjectAnimator组合到AnimatorSet形成一个动画。属性动画通过调用属性get、set方法来真实地控制一个View的属性值，因此，强大的属性动画框架基本可以实现所有的动画效果。</p>
+</blockquote>
+<ul>
+<li>ObjectAnimator</li>
+</ul>
+<p>ObjectAnimator 是属性动画最重要的类，创建一个 ObjectAnimator 只需通过其静态工厂类直接返还一个<br>ObjectAnimator对象。参数包括一个对象和对象的属性名字，但这个属性必须有get和set方法，其内部会通<br>过Java反射机制来调用set方法修改对象的属性值。下面看看平移动画是如何实现的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ObjectAnimator animation = ObjectAnimator.ofFloat(removeView_animator,<span class="string">"translationX"</span>, <span class="number">300f</span>,<span class="number">100f</span>,<span class="number">900f</span>);</span><br><span class="line">animation.setDuration(<span class="number">2000</span>);</span><br><span class="line">animation.start();</span><br></pre></td></tr></table></figure>
+<p><strong>这和补间动画的加了fillAfter属性后动画效果是一样的，但是不一样的地方就是焦点已经平移到了新的位置。解决了焦点的问题。<br>需要注意的是，在使用ObjectAnimator的时候，要操作的属性必须要有get和set方法，不然<br>ObjectAnimator 就无法生效。如果一个属性没有get、set方法，也可以通过自定义一个属性类或包装类来间<br>接地给这个属性增加get和set方法。</strong></p>
+<p>例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimatorView</span> <span class="keyword">extends</span> <span class="title">View</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//给属性指定set get 方法 。以后的动画要用到的</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> widths;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AnimatorView</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AnimatorView</span><span class="params">(Context context, @Nullable AttributeSet attrs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context, attrs);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AnimatorView</span><span class="params">(Context context, @Nullable AttributeSet attrs, <span class="keyword">int</span> defStyleAttr)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context, attrs, defStyleAttr);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getWidths</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> widths;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setWidths</span><span class="params">(<span class="keyword">int</span> width)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">this</span>.getLayoutParams().width = width;</span><br><span class="line">        <span class="comment">//刷新 控件</span></span><br><span class="line">        <span class="keyword">this</span>.requestLayout();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>调用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用属性动画 并自定义 get set进行动画</span></span><br><span class="line"><span class="comment">// 这里我们设置2秒增加view的宽度300个像素</span></span><br><span class="line"><span class="comment">// widths 此属性要和上面定义的一致才可以   </span></span><br><span class="line">ObjectAnimator objectAnimator = ObjectAnimator.ofInt(animatorView, <span class="string">"widths"</span>, <span class="number">300</span>);</span><br><span class="line">objectAnimator.setDuration(<span class="number">2000</span>);</span><br><span class="line">objectAnimator.start();</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/2953304-089ae296663d14c7.gif?imageMogr2/auto-orient/strip" alt="效果"></p>
+<ul>
+<li>ValueAnimator<blockquote>
+<p>ValueAnimator不提供任何动画效果，它更像一个数值发生器，用来产生有一定规律的数字，从而让调<br>用者控制动画的实现过程。通常情况下，在ValueAnimator的AnimatorUpdateListener中监听数值的变化，从<br>而完成动画的变换，代码如下所示：</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//从 0f 到 100f  产生规律的数字</span></span><br><span class="line"> ValueAnimator valueAnimator = ValueAnimator.ofFloat(<span class="number">0f</span>, <span class="number">100f</span>);</span><br><span class="line">        valueAnimator.setTarget(tv_animator_method);</span><br><span class="line">        valueAnimator.setDuration(<span class="number">2000</span>);</span><br><span class="line">        valueAnimator.start();</span><br><span class="line">        valueAnimator.addUpdateListener(<span class="keyword">new</span> ValueAnimator.AnimatorUpdateListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationUpdate</span><span class="params">(ValueAnimator animation)</span> </span>&#123;</span><br><span class="line">                Log.d(<span class="string">"animation"</span>, animation.getAnimatedValue() + <span class="string">""</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        </span><br><span class="line">log信息：</span><br><span class="line"> <span class="number">0.0</span></span><br><span class="line"> <span class="number">0.01578927</span></span><br><span class="line"> <span class="number">0.15413165</span></span><br><span class="line"> <span class="number">0.26845932</span></span><br><span class="line"> <span class="number">0.42434633</span></span><br><span class="line"> <span class="number">0.61558187</span></span><br><span class="line"> <span class="number">0.82773864</span></span><br><span class="line"> <span class="number">1.0871828</span></span><br><span class="line"> <span class="number">1.3815045</span></span><br><span class="line"> <span class="number">1.6901821</span></span><br><span class="line"> ...</span><br></pre></td></tr></table></figure>
+<p>以后就是自定义进度条的思路之一。</p>
+<h4 id="scrollTo与scollBy"><a href="#scrollTo与scollBy" class="headerlink" title="scrollTo与scollBy"></a>scrollTo与scollBy</h4><blockquote>
+<p>scrollTo（x，y）表示移动到一个具体的坐标点，而scrollBy（dx，dy）则表示移动的增量为dx、dy。其中，scollBy最终也是要调用scollTo的。</p>
+</blockquote>
+<blockquote>
+<p>scollTo、scollBy移动的是View的内容，如果在ViewGroup中使用，则是移动其所有的子View。View则是移动的里面的content。</p>
+</blockquote>
+<p>代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouchEvent</span><span class="params">(MotionEvent event)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = (<span class="keyword">int</span>) event.getX();</span><br><span class="line">        <span class="keyword">int</span> y = (<span class="keyword">int</span>) event.getY();</span><br><span class="line">        <span class="keyword">switch</span> (event.getAction()) &#123;</span><br><span class="line">            <span class="keyword">case</span> MotionEvent.ACTION_DOWN:</span><br><span class="line">                lastX = x;</span><br><span class="line">                lastY = y;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> MotionEvent.ACTION_MOVE:</span><br><span class="line">                <span class="keyword">int</span> offsetX = x - lastX;</span><br><span class="line">                <span class="keyword">int</span> offsetY = y - lastX;</span><br><span class="line">                ViewGroup viewGroup = (ViewGroup) ScrollByView.<span class="keyword">this</span>.getParent();</span><br><span class="line"></span><br><span class="line">                viewGroup.scrollBy(-offsetX, -offsetY);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>这样就实现了和layout等一样的拖动效果<br>注：至于这里为什么是负数，其实是参照物不一样导致的，scrollby和scrollto滚动的时候其实是类似于窗口里面的View并没有移动，而是手机屏幕在移动，如果我设置为正数，其实类似手机屏幕往右移动了，view保持不动，这样间接的其实类似于View左移了</strong></p>
+<h4 id="Scroller"><a href="#Scroller" class="headerlink" title="Scroller"></a>Scroller</h4><blockquote>
+<p>我们在用scollTo/scollBy方法进行滑动时，这个过程是瞬间完成的，所以用户体验不大好。这里我们可<br>以使用 Scroller 来实现有过渡效果的滑动，这个过程不是瞬间完成的，而是在一定的时间间隔内完成的。<br>Scroller本身是不能实现View的滑动的，它需要与View的computeScroll（）方法配合才能实现弹性滑动的效<br>果。</p>
+</blockquote>
+<ul>
+<li>computeScroll()</li>
+</ul>
+<p>系统会在绘制View的时候在draw（）方法中调用computeScroll（）方法。在这个方法中，我们调用父类的scrollTo（）方法并通过Scroller来不断获取当前的滚动值，每滑动一小段距离我们就调用invalidate（）方法不断地进行重绘，重绘就会调用computeScroll（）方法，这样我们通过不断地移动一个小的距离并连贯起来就实现了平滑移动的效果。</p>
+<p>写个demo我们将view平滑滚动带屏幕坐标（400,500）的位置，具体代码如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initView</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      scroller = <span class="keyword">new</span> Scroller(getContext());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">computeScroll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">super</span>.computeScroll();</span><br><span class="line">      <span class="comment">//判断Scroller是否执行完毕</span></span><br><span class="line">      <span class="keyword">if</span> (scroller.computeScrollOffset()) &#123;</span><br><span class="line">          ViewGroup viewGroup = (ViewGroup) <span class="keyword">this</span>.getParent();</span><br><span class="line">          <span class="keyword">int</span> x =scroller.getCurrX();</span><br><span class="line">          <span class="keyword">int</span> y =scroller.getCurrY();</span><br><span class="line">          viewGroup.scrollTo(scroller.getCurrX(), scroller.getCurrY());</span><br><span class="line">          invalidate();</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">smoothScrollTo</span><span class="params">(<span class="keyword">int</span> destX, <span class="keyword">int</span> destY)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">      View viewGroup =  ((View) getParent());</span><br><span class="line"></span><br><span class="line">      <span class="keyword">int</span> scrollX = <span class="keyword">this</span>.getScrollX();</span><br><span class="line">      <span class="keyword">int</span> scrollY = <span class="keyword">this</span>.getScrollY();</span><br><span class="line">      <span class="comment">//偏移量</span></span><br><span class="line">      <span class="keyword">int</span> deltaX = destX - scrollX;</span><br><span class="line">      <span class="keyword">int</span> deltaY = destY - scrollY;</span><br><span class="line">      scroller.startScroll(scrollX, scrollY, deltaX, deltaY, <span class="number">2000</span>);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>调用<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">removeView_animator.smoothScrollTo(-<span class="number">400</span>, -<span class="number">500</span>);</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2922217-9220623cfa02fe66.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300" alt="效果"></p>
+<p>原文：<a href="https://www.jianshu.com/p/61ad263c4a0e" target="_blank" rel="noopener">https://www.jianshu.com/p/61ad263c4a0e</a>  如有侵权可马上删除！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+			
+
+	<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+  <p><span>本文标题:</span><a href="/2018/08/13/View滑动总结/">View滑动总结</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 基本密码 的个人博客">基本密码</a></p>
+  <p><span>发布时间:</span>2018年08月13日 - 14:08</p>
+  <p><span>最后更新:</span>2018年08月21日 - 14:08</p>
+  <p><span>原始链接:</span><a href="/2018/08/13/View滑动总结/" title="View滑动总结">http://yoursite.com/2018/08/13/View滑动总结/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/08/13/View滑动总结/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      
+	</div>				
+			
+			
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/13/仿照微博折叠效果/" rel="next" title="仿照微博折叠效果">
+                <i class="fa fa-chevron-left"></i> 仿照微博折叠效果
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">基本密码</p>
+              <p class="site-description motion-element" itemprop="description">一路前行</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+				
+		   
+				
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#layout-方式"><span class="nav-number">1.</span> <span class="nav-text">layout()方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#offsetLeftAndRight（）与offsetTopAndBottom（）方式"><span class="nav-number">2.</span> <span class="nav-text">offsetLeftAndRight（）与offsetTopAndBottom（）方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LayoutParams的方式"><span class="nav-number">3.</span> <span class="nav-text">LayoutParams的方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动画方式"><span class="nav-number">4.</span> <span class="nav-text">动画方式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#补间动画"><span class="nav-number">4.1.</span> <span class="nav-text">补间动画</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#属性动画"><span class="nav-number">4.2.</span> <span class="nav-text">属性动画</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#scrollTo与scollBy"><span class="nav-number">5.</span> <span class="nav-text">scrollTo与scollBy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Scroller"><span class="nav-number">6.</span> <span class="nav-text">Scroller</span></a></li></ol></div>
+            
+
+          </div>
+		  
+		  
+		  
+		  
+		  
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">基本密码</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
