@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -101,11 +101,12 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="scrollTo 以及  scrollBy">
 <meta property="og:url" content="http://yoursite.com/2018/08/13/scrollTo 以及  scrollBy/index.html">
-<meta property="og:site_name" content="基本密码博客">
+<meta property="og:site_name" content="基本密码">
 <meta property="og:description" content="不要给自己颓废的机会">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2953304-78fe3fc40eb2dd33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-08-22T09:32:21.088Z">
+<meta property="og:image" content="http://hi.csdn.net/attachment/201202/9/0_1328802540JzD6.gif">
+<meta property="og:updated_time" content="2018-08-23T05:36:47.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="scrollTo 以及  scrollBy">
 <meta name="twitter:description" content="不要给自己颓废的机会">
@@ -117,9 +118,9 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -145,7 +146,7 @@
 
 
 
-  <title>scrollTo 以及  scrollBy | 基本密码博客</title>
+  <title>scrollTo 以及  scrollBy | 基本密码</title>
   
 
 
@@ -175,7 +176,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">基本密码博客</span>
+        <span class="site-title">基本密码</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -216,6 +217,26 @@
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于作者
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -267,11 +288,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="基本密码">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/head_icon.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="基本密码博客">
+      <meta itemprop="name" content="基本密码">
     </span>
 
     
@@ -302,6 +323,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -312,6 +355,25 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,402
+                </span>
+              
+
+              
+
+              
+            </div>
           
 
           
@@ -353,13 +415,38 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Set the scrolled position of your view. This will cause a call to</span></span><br><span class="line"><span class="comment"> * &#123;<span class="doctag">@link</span> #onScrollChanged(int, int, int, int)&#125; and the view will be</span></span><br><span class="line"><span class="comment"> * invalidated.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> x the x position to scroll to</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> y the y position to scroll to</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">scrollTo</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//偏移位置发生了改变</span></span><br><span class="line">    <span class="keyword">if</span> (mScrollX != x || mScrollY != y) &#123;</span><br><span class="line">        <span class="keyword">int</span> oldX = mScrollX;</span><br><span class="line">        <span class="keyword">int</span> oldY = mScrollY;</span><br><span class="line">        mScrollX = x;  <span class="comment">//赋新值，保存当前便宜量</span></span><br><span class="line">        mScrollY = y;</span><br><span class="line">        <span class="comment">//回调onScrollChanged方法</span></span><br><span class="line">        onScrollChanged(mScrollX, mScrollY, oldX, oldY);</span><br><span class="line">        <span class="keyword">if</span> (!awakenScrollBars()) &#123;</span><br><span class="line">            invalidate();  <span class="comment">//一般都引起重绘</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>方法 <code>public void scrollBy(int x, int y)</code> 在当前视图内容继续偏移(x , y)个单位，显示(可视)区域也跟着偏移(x,y)个单位。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">   * Move the scrolled position of your view. This will cause a call to</span></span><br><span class="line"><span class="comment">   * &#123;<span class="doctag">@link</span> #onScrollChanged(int, int, int, int)&#125; and the view will be</span></span><br><span class="line"><span class="comment">   * invalidated.</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> x the amount of pixels to scroll by horizontally</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> y the amount of pixels to scroll by vertically</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="comment">// 看出原因了吧 。。 mScrollX 与 mScrollY 代表我们当前偏移的位置 ， 在当前位置继续偏移(x ,y)个单位</span></span><br><span class="line">  <span class="comment">//其实就是在以前偏移的基础上继续偏移多少个单位 </span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">scrollBy</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">      scrollTo(mScrollX + x, mScrollY + y);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>看例子:</p>
+<p><img src="http://hi.csdn.net/attachment/201202/9/0_1328802540JzD6.gif" alt="栗子"></p>
+<blockquote>
+<p>自定义一个ViewGroup 其中包含三个LinearLayout。每个LinearLayout都占一屏。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// measure过程</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Log.i(TAG, <span class="string">"--- start onMeasure --"</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 设置该ViewGroup的大小</span></span><br><span class="line">		<span class="keyword">int</span> width = MeasureSpec.getSize(widthMeasureSpec);</span><br><span class="line">		<span class="keyword">int</span> height = MeasureSpec.getSize(heightMeasureSpec);</span><br><span class="line">		setMeasuredDimension(width, height);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> childCount = getChildCount();</span><br><span class="line">		Log.i(TAG, <span class="string">"--- onMeasure childCount is --&gt;"</span> + childCount);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; childCount; i++) &#123;</span><br><span class="line">			View child = getChildAt(i);</span><br><span class="line">			<span class="comment">// 设置每个子视图的大小 ， 即全屏</span></span><br><span class="line">			child.measure(MultiScreenActivity.screenWidth, MultiScreenActivity.scrrenHeight);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>设置三个LinearLayout的位置。从左到右排列。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// layout过程</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onLayout</span><span class="params">(<span class="keyword">boolean</span> changed, <span class="keyword">int</span> l, <span class="keyword">int</span> t, <span class="keyword">int</span> r, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Log.i(TAG, <span class="string">"--- start onLayout --"</span>);</span><br><span class="line">		<span class="keyword">int</span> startLeft = <span class="number">0</span>; <span class="comment">// 每个子视图的起始布局坐标</span></span><br><span class="line">		<span class="keyword">int</span> startTop = <span class="number">10</span>; <span class="comment">// 间距设置为10px 相当于 android：marginTop= "10px"</span></span><br><span class="line">		<span class="keyword">int</span> childCount = getChildCount();</span><br><span class="line">		Log.i(TAG, <span class="string">"--- onLayout childCount is --&gt;"</span> + childCount);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; childCount; i++) &#123;</span><br><span class="line">			View child = getChildAt(i);</span><br><span class="line">			child.layout(startLeft, startTop,</span><br><span class="line">					startLeft + MultiScreenActivity.screenWidth,</span><br><span class="line">					startTop + MultiScreenActivity.scrrenHeight);</span><br><span class="line">			startLeft = startLeft + MultiScreenActivity.screenWidth ; <span class="comment">//校准每个子View的起始布局位置</span></span><br><span class="line">			<span class="comment">//三个子视图的在屏幕中的分布如下 [0 , 320] / [320,640] / [640,960]</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用scrollBy scrollBo 将视图能移动到布局坐标中去。从而可以显示出来</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">switch</span> (v.getId()) &#123;</span><br><span class="line">            <span class="keyword">case</span> R.id.bt_scrollLeft:</span><br><span class="line">                <span class="keyword">if</span> (curscreen &gt; <span class="number">0</span>) &#123;  <span class="comment">//防止屏幕越界</span></span><br><span class="line">                    curscreen--;</span><br><span class="line">                    Toast.makeText(MultiScreenActivity.<span class="keyword">this</span>, <span class="string">"第"</span> + (curscreen + <span class="number">1</span>) + <span class="string">"屏"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">                &#125; <span class="keyword">else</span></span><br><span class="line">                    Toast.makeText(MultiScreenActivity.<span class="keyword">this</span>, <span class="string">"当前已是第一屏"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">                mulTiViewGroup.scrollTo(curscreen * screenWidth, <span class="number">0</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> R.id.bt_scrollRight:</span><br><span class="line">                <span class="keyword">if</span> (curscreen &lt; <span class="number">2</span>) &#123; <span class="comment">//防止屏幕越界</span></span><br><span class="line">                    curscreen++;</span><br><span class="line">                    Toast.makeText(MultiScreenActivity.<span class="keyword">this</span>, <span class="string">"第"</span> + (curscreen + <span class="number">1</span>) + <span class="string">"屏"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">                &#125; <span class="keyword">else</span></span><br><span class="line">                    Toast.makeText(MultiScreenActivity.<span class="keyword">this</span>, <span class="string">"当前已是最后一屏"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">                mulTiViewGroup.scrollTo(curscreen * screenWidth, <span class="number">0</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>其中偏移量都是反着来的。相当于View是个恨到的白纸。中间有个洞，使我们的布局坐标。当我们向左移动纸的时候，视图相对于纸是向右移动的。</strong></p>
 
       
     </div>
     
     
     
+		
+	
+      <div>
+        
+    <div style="text-align:center;color: #ccc;font-size:14px;">
+        ------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
 
+      </div>
+    	
+		
+		
     
 
     
@@ -382,7 +469,7 @@
   <p><span>本文标题:</span><a href="/2018/08/13/scrollTo 以及  scrollBy/">scrollTo 以及  scrollBy</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 基本密码 的个人博客">基本密码</a></p>
   <p><span>发布时间:</span>2018年08月13日 - 14:08</p>
-  <p><span>最后更新:</span>2018年08月22日 - 17:08</p>
+  <p><span>最后更新:</span>2018年08月23日 - 13:08</p>
   <p><span>原始链接:</span><a href="/2018/08/13/scrollTo 以及  scrollBy/" title="scrollTo 以及  scrollBy">http://yoursite.com/2018/08/13/scrollTo 以及  scrollBy/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/08/13/scrollTo 以及  scrollBy/"  aria-label="复制成功！"></i></span>
   </p>
@@ -415,8 +502,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/13/熟悉使用ToolBar/" rel="next" title="熟悉使用ToolBar">
-                <i class="fa fa-chevron-left"></i> 熟悉使用ToolBar
+              <a href="/2018/08/13/Demo测试/" rel="next" title="Demo测试">
+                <i class="fa fa-chevron-left"></i> Demo测试
               </a>
             
           </div>
@@ -510,6 +597,10 @@ var jiathis_config={
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/images/head_icon.jpg"
+                alt="基本密码" />
+            
               <p class="site-author-name" itemprop="name">基本密码</p>
               <p class="site-description motion-element" itemprop="description">一路前行</p>
           </div>
@@ -521,12 +612,21 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
 
             
@@ -535,6 +635,22 @@ var jiathis_config={
 
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/songjiabin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://jjmima.top/" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -582,7 +698,7 @@ var jiathis_config={
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -602,6 +718,8 @@ var jiathis_config={
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
@@ -688,13 +806,6 @@ var jiathis_config={
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

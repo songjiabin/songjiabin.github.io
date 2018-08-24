@@ -2,6 +2,7 @@
 title: popularWindow封装、单选、多选
 date: 2018-08-13 14:38:35
 copyright: true
+categories: android
 ---
 
 

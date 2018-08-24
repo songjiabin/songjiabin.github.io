@@ -3,7 +3,7 @@ title: View滑动总结
 date: 2018-08-13 14:38:35
 tags:
 copyright: true
-
+categories: android
 ---
 
 
