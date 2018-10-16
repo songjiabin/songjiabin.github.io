@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,mysql," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="骐骥一跃，不能十步；驽马十驾，功在不舍；锲而舍之，朽木不折；锲而不舍，金石可镂。">
+<meta name="keywords" content="python,mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django 1 部署、基本操作">
+<meta property="og:url" content="http://yoursite.com/2018/07/13/django/index.html">
+<meta property="og:site_name" content="基本密码">
+<meta property="og:description" content="骐骥一跃，不能十步；驽马十驾，功在不舍；锲而舍之，朽木不折；锲而不舍，金石可镂。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2953304-e6b74054e659434f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2953304-1350ebf4142a01f7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-09-12T01:47:55.649Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Django 1 部署、基本操作">
+<meta name="twitter:description" content="骐骥一跃，不能十步；驽马十驾，功在不舍；锲而舍之，朽木不折；锲而不舍，金石可镂。">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2953304-e6b74054e659434f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/13/django/"/>
+
+
+
+
+
+  <title>Django 1 部署、基本操作 | 基本密码</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">基本密码</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不能总想着拥有什么，要想着去创造什么</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于作者
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/13/django/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="基本密码">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="基本密码">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Django 1 部署、基本操作</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-13T00:00:00+08:00">
+                2018-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,141
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"> 骐骥一跃，不能十步；驽马十驾，功在不舍；锲而舍之，朽木不折；锲而不舍，金石可镂。</blockquote>
+
+
+<a id="more"></a>
+<h4 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h4><h5 id="创建一个目录定位到下面。"><a href="#创建一个目录定位到下面。" class="headerlink" title="创建一个目录定位到下面。"></a>创建一个目录定位到下面。</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">django-admin startproject djangoProject</span><br></pre></td></tr></table></figure>
+<h5 id="查看目录下的结构"><a href="#查看目录下的结构" class="headerlink" title="查看目录下的结构"></a>查看目录下的结构</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree . /f</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/2953304-e6b74054e659434f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="结构目录"></p>
+<h5 id="配置数据库"><a href="#配置数据库" class="headerlink" title="配置数据库"></a>配置数据库</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">../../..setting.py </span><br><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,</span><br><span class="line">        <span class="string">'NAME'</span>: os.path.join(BASE_DIR, <span class="string">'db.sqlite3'</span>),</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于setting.py文件中默认配置的数据库是sqlite3。所有要进行修改配置的数据库。</p>
+<h5 id="配置mysql"><a href="#配置mysql" class="headerlink" title="配置mysql"></a>配置mysql</h5><h6 id="在init文件中写入"><a href="#在init文件中写入" class="headerlink" title="在init文件中写入"></a>在<strong>init</strong>文件中写入</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line">pymysql.install_as_MySQLdb()</span><br></pre></td></tr></table></figure>
+<h6 id="修改setting-py"><a href="#修改setting-py" class="headerlink" title="修改setting.py"></a>修改setting.py</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">../../..setting.py </span><br><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,</span><br><span class="line">        'NAME': 'songjiab',  # songjiab 数据库的名字</span><br><span class="line">        'USER': 'root',  # 数据库的用户名</span><br><span class="line">        'PASSWORD': '',  # 密码</span><br><span class="line">        'HOST': 'localhost',  # 主机</span><br><span class="line">        'PORT': '3306'  # 端口号</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h5><blockquote>
+<p>每个项目可以创建多个应用，每个应用进行一种业务处理。</p>
+</blockquote>
+<h6 id="进入刚才创建的project目录下。"><a href="#进入刚才创建的project目录下。" class="headerlink" title="进入刚才创建的project目录下。"></a>进入刚才创建的project目录下。</h6><h6 id="开启命令"><a href="#开启命令" class="headerlink" title="开启命令"></a>开启命令</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 创建应用 第一个应用 名字是myFristApp </span><br><span class="line">python manage.py startapp myFristApp</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/2953304-1350ebf4142a01f7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建的应用目录结构"></p>
+<h6 id="将此应用激活"><a href="#将此应用激活" class="headerlink" title="将此应用激活"></a>将此应用激活</h6><p>将此应用加入到../../setting中的 INSTALLED_APPS 中去。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    <span class="string">'django.contrib.admin'</span>,</span><br><span class="line">    <span class="string">'django.contrib.auth'</span>,</span><br><span class="line">    <span class="string">'django.contrib.contenttypes'</span>,</span><br><span class="line">    <span class="string">'django.contrib.sessions'</span>,</span><br><span class="line">    <span class="string">'django.contrib.messages'</span>,</span><br><span class="line">    <span class="string">'django.contrib.staticfiles'</span>,</span><br><span class="line">    'myFirstApp'# 加入的应用  </span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<h6 id="定义模型"><a href="#定义模型" class="headerlink" title="定义模型"></a>定义模型</h6><p>数据库中的一张表对应其中的一个模型</p>
+<p>其实模型就是一个类。类里面的属性对应数据库中的字段</p>
+<p>在新建的应用下面找到models.py 并操作如下</p>
+<p><strong>注意：模型不需要生成主键。会自动生成，并且是递增的</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">from django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># Create your models here.</span><br><span class="line"></span><br><span class="line"># 班级的模型 对应数据库中的 grades 表</span><br><span class="line">class Grades(models.Model):</span><br><span class="line">    # 定义字段 gname 班级名称</span><br><span class="line">    # CharField 字符串类型的</span><br><span class="line">    # max_length 最大长度是20</span><br><span class="line">    gname = models.CharField(max_length=<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">    # 班级成立时间</span><br><span class="line">    # DateTimeField 时间类型</span><br><span class="line">    gdate = models.DateTimeField()</span><br><span class="line"></span><br><span class="line">    # 班级的女生数量</span><br><span class="line">    # IntegerField数字类型</span><br><span class="line">    ggirlnum = models.IntegerField()</span><br><span class="line"></span><br><span class="line">    # 班级的男生数量</span><br><span class="line">    # IntegerField数字类型</span><br><span class="line">    gboynum = models.IntegerField()</span><br><span class="line"></span><br><span class="line">    # 是否删除</span><br><span class="line">    isDelete = models.BooleanField()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 学生的模型 对应数据库中的student</span><br><span class="line">class Student(models.Model):</span><br><span class="line">    # 学生的姓名</span><br><span class="line">    sname = models.CharField(max_length=<span class="number">20</span>)</span><br><span class="line">    # 学生的性别</span><br><span class="line">    sgender = models.BooleanField()</span><br><span class="line">    # 学生的年龄</span><br><span class="line">    sage = models.IntegerField()</span><br><span class="line">    # 学生的简介</span><br><span class="line">    scontent = models.CharField(max_length=<span class="number">20</span>)</span><br><span class="line">    # 学生属于哪个班级  用外键关联</span><br><span class="line">    sGrades = models.ForeignKey(<span class="string">"Grades"</span>)</span><br><span class="line">    # 是否删除</span><br><span class="line">    isDelete = models.BooleanField(<span class="keyword">default</span>=False)</span><br><span class="line"></span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
+<h6 id="在数据库中生产数据表"><a href="#在数据库中生产数据表" class="headerlink" title="在数据库中生产数据表"></a>在数据库中生产数据表</h6><ul>
+<li>生成迁移文件</li>
+</ul>
+<p>定位到刚开始的目录下。开启终端</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py  makemigrations</span><br></pre></td></tr></table></figure>
+<p>执行完后会在你新建的应用下面的migrations文件夹中生成0001_initial.py 文件。<br>其实就是创建数据库的文件。但是数据库中还没有数据表。需要进行执行迁移文件。</p>
+<ul>
+<li>执行迁移 </li>
+</ul>
+<p>在刚刚执行目录下面</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
+<p>这样你再查看数据下面的目录。就可以看到生成了很多的表。</p>
+<h5 id="测试数据操作"><a href="#测试数据操作" class="headerlink" title="测试数据操作"></a>测试数据操作</h5><h6 id="查看所有数据"><a href="#查看所有数据" class="headerlink" title="查看所有数据"></a>查看所有数据</h6><ul>
+<li>进入到 python shell</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py shell</span><br></pre></td></tr></table></figure>
+<ul>
+<li>进入终端中进行执行<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from myFristApp.models <span class="keyword">import</span> Grades,Student </span><br><span class="line">from django.utils <span class="keyword">import</span> timezone </span><br><span class="line">from datetime <span class="keyword">import</span> * </span><br><span class="line"></span><br><span class="line"># 查看 Grades 中所有的数据</span><br><span class="line">Grades.objects.all()   </span><br><span class="line"># 查看 Student 中所有数据</span><br><span class="line">Student.objects.all()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="添加数据"><a href="#添加数据" class="headerlink" title="添加数据"></a>添加数据</h6><blockquote>
+<p>添加数据其实就是添加模型的实力</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">grades1 = Grades()</span><br><span class="line"># 班级名</span><br><span class="line">grades1.gname = <span class="string">'班级1'</span></span><br><span class="line"># 创建班级的日期</span><br><span class="line">grades1.gdate = datetime(year=<span class="number">2017</span>,month=<span class="number">1</span>,day=<span class="number">17</span>)</span><br><span class="line"># 女生的个数</span><br><span class="line">grades1.ggirlnum= <span class="number">10</span></span><br><span class="line"># 男生个数</span><br><span class="line">grades1.gboynum=<span class="number">39</span></span><br><span class="line"># 是否删除</span><br><span class="line">grades1.isDelete=False</span><br><span class="line"># 存到数据库中</span><br><span class="line">grades1.save()</span><br></pre></td></tr></table></figure>
+<p>这样数据库中就有了这条数据  </p>
+<p>添加就有外键的数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">student1 = Student()</span><br><span class="line">student1.sname = <span class="string">'鸣人'</span></span><br><span class="line">student1.sgender = True</span><br><span class="line">student1.sage = <span class="number">19</span></span><br><span class="line">student1.scontent = <span class="string">'我是一个好学生。我的理想是当火影！'</span></span><br><span class="line"># 表示这么学生的班级是 grades1 外键！</span><br><span class="line">student1.sGrades = grades1</span><br><span class="line">student1.save()</span><br></pre></td></tr></table></figure>
+<h6 id="查询某个数据"><a href="#查询某个数据" class="headerlink" title="查询某个数据"></a>查询某个数据</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 查询id 是 1 的数据 </span><br><span class="line">Grades.objects.get(pk=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h6 id="修改某个数据"><a href="#修改某个数据" class="headerlink" title="修改某个数据"></a>修改某个数据</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grades1.gname=<span class="string">'基本密码'</span></span><br><span class="line">grades1.save()</span><br></pre></td></tr></table></figure>
+<h6 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h6><ul>
+<li>物理删除<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grades1.delete()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="一对多-当一个班级中对应多个学生"><a href="#一对多-当一个班级中对应多个学生" class="headerlink" title="一对多  当一个班级中对应多个学生"></a>一对多  当一个班级中对应多个学生</h6><p>对象名.关联的列名小写_set.all()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 查询grades班级中有多少个学生  student（要小写的）</span><br><span class="line">grades.student_set.all()</span><br></pre></td></tr></table></figure></p>
+<h6 id="在grades1的班级下，创建一个名字佐助的学生。"><a href="#在grades1的班级下，创建一个名字佐助的学生。" class="headerlink" title="在grades1的班级下，创建一个名字佐助的学生。"></a>在grades1的班级下，创建一个名字佐助的学生。</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> 不用.save()即可保存  </span><br><span class="line">student2 = grades1.student_set.create(sname=u<span class="string">"佐助"</span>,sgender=True,sage=<span class="number">18</span>,scontent=u<span class="string">'我是佐助，你们好'</span>)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+		
+	
+      <div>
+        
+    <div style="text-align:center;color: #ccc;font-size:14px;">
+        ------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+
+      </div>
+    	
+		
+		
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
+          
+        </div>
+      
+			
+
+	<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+  <p><span>本文标题:</span><a href="/2018/07/13/django/">Django 1 部署、基本操作</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 基本密码 的个人博客">基本密码</a></p>
+  <p><span>发布时间:</span>2018年07月13日 - 00:07</p>
+  <p><span>最后更新:</span>2018年09月12日 - 09:09</p>
+  <p><span>原始链接:</span><a href="/2018/07/13/django/" title="Django 1 部署、基本操作">http://yoursite.com/2018/07/13/django/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/07/13/django/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      
+	</div>				
+			
+			
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/13/View top、left、x、y、translationX、translationY 理解/" rel="next" title="View top、left、x、y、translationX、translationY 理解">
+                <i class="fa fa-chevron-left"></i> View top、left、x、y、translationX、translationY 理解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/15/Django 3-1 视图操作（创建和查询）/" rel="prev" title="Django 3-1 视图操作（创建和查询）">
+                Django 3-1 视图操作（创建和查询） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/head_icon.jpg"
+                alt="基本密码" />
+            
+              <p class="site-author-name" itemprop="name">基本密码</p>
+              <p class="site-description motion-element" itemprop="description">一路前行</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index-1.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/songjiabin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://jjmima.top/" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+				
+		   
+				
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#流程"><span class="nav-number">1.</span> <span class="nav-text">流程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建一个目录定位到下面。"><span class="nav-number">1.1.</span> <span class="nav-text">创建一个目录定位到下面。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看目录下的结构"><span class="nav-number">1.2.</span> <span class="nav-text">查看目录下的结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置数据库"><span class="nav-number">1.3.</span> <span class="nav-text">配置数据库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置mysql"><span class="nav-number">1.4.</span> <span class="nav-text">配置mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#在init文件中写入"><span class="nav-number">1.4.1.</span> <span class="nav-text">在init文件中写入</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#修改setting-py"><span class="nav-number">1.4.2.</span> <span class="nav-text">修改setting.py</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建应用"><span class="nav-number">1.5.</span> <span class="nav-text">创建应用</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#进入刚才创建的project目录下。"><span class="nav-number">1.5.1.</span> <span class="nav-text">进入刚才创建的project目录下。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#开启命令"><span class="nav-number">1.5.2.</span> <span class="nav-text">开启命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#将此应用激活"><span class="nav-number">1.5.3.</span> <span class="nav-text">将此应用激活</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#定义模型"><span class="nav-number">1.5.4.</span> <span class="nav-text">定义模型</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#在数据库中生产数据表"><span class="nav-number">1.5.5.</span> <span class="nav-text">在数据库中生产数据表</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#测试数据操作"><span class="nav-number">1.6.</span> <span class="nav-text">测试数据操作</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#查看所有数据"><span class="nav-number">1.6.1.</span> <span class="nav-text">查看所有数据</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#添加数据"><span class="nav-number">1.6.2.</span> <span class="nav-text">添加数据</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#查询某个数据"><span class="nav-number">1.6.3.</span> <span class="nav-text">查询某个数据</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#修改某个数据"><span class="nav-number">1.6.4.</span> <span class="nav-text">修改某个数据</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#删除数据"><span class="nav-number">1.6.5.</span> <span class="nav-text">删除数据</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#一对多-当一个班级中对应多个学生"><span class="nav-number">1.6.6.</span> <span class="nav-text">一对多  当一个班级中对应多个学生</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#在grades1的班级下，创建一个名字佐助的学生。"><span class="nav-number">1.6.7.</span> <span class="nav-text">在grades1的班级下，创建一个名字佐助的学生。</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+		  
+		  
+		  
+		  
+		  
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">基本密码</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

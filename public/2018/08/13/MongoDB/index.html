@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,MongoDB," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="不要给自己颓废的机会">
+<meta name="keywords" content="python,MongoDB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MongoDB">
+<meta property="og:url" content="http://yoursite.com/2018/08/13/MongoDB/index.html">
+<meta property="og:site_name" content="基本密码">
+<meta property="og:description" content="不要给自己颓废的机会">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-10T09:50:12.487Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MongoDB">
+<meta name="twitter:description" content="不要给自己颓废的机会">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/13/MongoDB/"/>
+
+
+
+
+
+  <title>MongoDB | 基本密码</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">基本密码</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不能总想着拥有什么，要想着去创造什么</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于作者
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/MongoDB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="基本密码">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="基本密码">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MongoDB</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-13T14:38:35+08:00">
+                2018-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,150
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><blockquote class="blockquote-center">不要给自己颓废的机会</blockquote><br><a id="more"></a></p>
+<h4 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h4><ul>
+<li>打开终端  定位到 MongoDB的安装目录下的bin文件夹中</li>
+<li>找到你自己建立的…/data 目录</li>
+<li>在终端执行：mongod.exe  –dbpth=data/bin(你自己创建的目录)。这样就启动了一个 mongoDB的服务  也就是创建了一个数据库  数据库的地址在 你的 data 目录下。</li>
+<li>连接刚才创建的数据库  - 新开启一个终端 定位到 MongoDB的安装目录下的bin文件夹中。执行  mongo.exe  开启数据操作。会产生MongoDB的交互界面。</li>
+</ul>
+<h4 id="操作数据库"><a href="#操作数据库" class="headerlink" title="操作数据库"></a>操作数据库</h4><h5 id="查看所有的数据库"><a href="#查看所有的数据库" class="headerlink" title="查看所有的数据库"></a>查看所有的数据库</h5><ul>
+<li>show dbs </li>
+</ul>
+<h5 id="创建或者使用数据库"><a href="#创建或者使用数据库" class="headerlink" title="创建或者使用数据库"></a>创建或者使用数据库</h5><ul>
+<li>use myDB 创建数据库如果没有则创建否则切换到新的数据库中去(<strong>*刚刚创建的数据库查看的话，并没有，需要向里面插入数据才可以。</strong>)</li>
+</ul>
+<h5 id="删除当前的数据库（首先必须要是正在操作的数据库）"><a href="#删除当前的数据库（首先必须要是正在操作的数据库）" class="headerlink" title="删除当前的数据库（首先必须要是正在操作的数据库）"></a>删除当前的数据库（<strong>首先必须要是正在操作的数据库</strong>）</h5><ul>
+<li>db.dropDatabase()</li>
+</ul>
+<h5 id="查看当前数据库"><a href="#查看当前数据库" class="headerlink" title="查看当前数据库"></a>查看当前数据库</h5><ul>
+<li>db或者db.getName() 查看当前操作的数据库</li>
+</ul>
+<h5 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h5><ul>
+<li>db.student.insert({name:”tom”,age:18,gender:1,address:”河北衡水”,isDelete:0})   操作当前的数据库，并创建一个student的集合，并向里面加入一条数据。</li>
+</ul>
+<h5 id="断开连接"><a href="#断开连接" class="headerlink" title="断开连接"></a>断开连接</h5><ul>
+<li>exit </li>
+</ul>
+<h4 id="集合操作"><a href="#集合操作" class="headerlink" title="集合操作"></a>集合操作</h4><h5 id="查看当前数据下所有的集合-就是当前数据库下有几个表"><a href="#查看当前数据下所有的集合-就是当前数据库下有几个表" class="headerlink" title="查看当前数据下所有的集合(就是当前数据库下有几个表)"></a>查看当前数据下所有的集合(就是当前数据库下有几个表)</h5><ul>
+<li>show collections</li>
+</ul>
+<h5 id="创建集合-创建表"><a href="#创建集合-创建表" class="headerlink" title="创建集合(创建表)"></a>创建集合(创建表)</h5><ul>
+<li>db.createCollection(“class”)</li>
+<li>db.class.insert(“文档”) 如果集合不存在则创建，并插入文档</li>
+</ul>
+<h5 id="删除集合（删除表）"><a href="#删除集合（删除表）" class="headerlink" title="删除集合（删除表）"></a>删除集合（删除表）</h5><ul>
+<li>db.class.drop() 删除名字为class的集合</li>
+</ul>
+<h4 id="文档操作"><a href="#文档操作" class="headerlink" title="文档操作"></a>文档操作</h4><h5 id="使用insert方式"><a href="#使用insert方式" class="headerlink" title="使用insert方式"></a>使用insert方式</h5><ul>
+<li>db.集合名.insert(文档) db.class.insert(文档) </li>
+<li>db.student.insert([{name:”基本密码”,age:19,address:”北京土著”,gender:1},{name:”鸣人”,age:20,address:”忍者村”,gender:1}])</li>
+</ul>
+<h5 id="使用save方式"><a href="#使用save方式" class="headerlink" title="使用save方式"></a>使用save方式</h5><p><strong>如果不指定_id字段，那么save和insert是一样的。如果指明了_id字段，那么会更新指定_id的数据。</strong></p>
+<ul>
+<li>db.student.save({name:”Daily”,age:22,gender:0,address:”加拿大”,isDelete:0}) </li>
+<li>db.student.save({_id:ObjectId(“5b8b8b09fdabd6efbf9b7aa2”),name:”是不是加拿大”,age:88,gender:0,address:”美国”,isDelete:0})</li>
+</ul>
+<h4 id="文档的更新"><a href="#文档的更新" class="headerlink" title="文档的更新"></a>文档的更新</h4><ul>
+<li>将名字是 鸣人 数据 age变为44</li>
+</ul>
+<p>$set 将以前变为新的</p>
+<p>db.student.update({name:”鸣人”},{$set:{“age”:44}})</p>
+<p>$inc 在之前的基础上累加更新</p>
+<p>db.student.update({name:”鸣人”},{$inc:{“age”:44}})</p>
+<p>{multi:true} 表示为全改   </p>
+<p>db.student.update({name:”鸣人”},{$set:{“age”:44}},{multi:true})</p>
+<h4 id="文档的删除"><a href="#文档的删除" class="headerlink" title="文档的删除"></a>文档的删除</h4><p>在执行remove之前。先执行find()命令来判断执行条件是否存在。<br>删除名字为tom的字段</p>
+<ul>
+<li>db.student.remove({name:”tom”})<br>删除名字为tom的数据  justOne 如果有多个只删除查到的第一个</li>
+<li>db.student.remove({name:”tom”},{justOne:true})</li>
+</ul>
+<h4 id="文档的查询"><a href="#文档的查询" class="headerlink" title="文档的查询"></a>文档的查询</h4><ul>
+<li><p>db.student.find() 查询student表中的所有数据  </p>
+</li>
+<li><p>db.student.find({name:”基本密码”}) 查询name为基本密码的数据</p>
+</li>
+</ul>
+<ul>
+<li><p>db.student.find({gender:0},{age:1,name:1})  想查看gender为0的数据。并且还要数据中的age和name字段。</p>
+</li>
+<li><p>db.student.find({},{age:1,name:1}) 查询所有数据。里面只包含age和name两个字段   </p>
+</li>
+<li><p>db.student.findOne({gender:1})<br>查询所有数据中的第一条数据 </p>
+</li>
+</ul>
+<h5 id="pretty-格式化数据显示方式-显示的是json格式"><a href="#pretty-格式化数据显示方式-显示的是json格式" class="headerlink" title="pretty 格式化数据显示方式  显示的是json格式"></a>pretty 格式化数据显示方式  显示的是json格式</h5><p>db.student.find({},{age:1,name:1}).pretty()</p>
+<h4 id="条件操作符号"><a href="#条件操作符号" class="headerlink" title="条件操作符号"></a>条件操作符号</h4><h5 id="大于-gt"><a href="#大于-gt" class="headerlink" title="大于          $gt"></a>大于          $gt</h5><p>年龄大于20的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.student.find(&#123;age:&#123;$gt:20&#125;&#125;).pretty()</span><br></pre></td></tr></table></figure>
+<h5 id="大于等于-gte"><a href="#大于等于-gte" class="headerlink" title="大于等于    $gte"></a>大于等于    $gte</h5><p>年龄大于等于20的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.student.find(&#123;age:&#123;$gte:20&#125;&#125;).pretty()</span><br></pre></td></tr></table></figure></p>
+<h5 id="小于-lt"><a href="#小于-lt" class="headerlink" title="小于          $lt"></a>小于          $lt</h5><p>年龄小于20的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.student.find(&#123;age:&#123;$lt:20&#125;&#125;).pretty()</span><br></pre></td></tr></table></figure></p>
+<h5 id="小于等于-lte"><a href="#小于等于-lte" class="headerlink" title="小于等于      $lte"></a>小于等于      $lte</h5><p>年龄小于等于20的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.student.find(&#123;age:&#123;$lte:20&#125;&#125;).pretty()</span><br></pre></td></tr></table></figure></p>
+<h5 id="大于等于…小于等于…"><a href="#大于等于…小于等于…" class="headerlink" title="大于等于…小于等于…."></a>大于等于…小于等于….</h5><p>年龄大于等于19 小于等于80<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.student.find(&#123;age:&#123;$gte:19,$lte:80&#125;&#125;).pretty()</span><br></pre></td></tr></table></figure></p>
+<h5 id="等于"><a href="#等于" class="headerlink" title="等于          $:"></a>等于          $:</h5><p>年龄等于20<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.student.find(&#123;age:20&#125;).pretty()</span><br></pre></td></tr></table></figure></p>
+<h5 id="使用-id进行查询"><a href="#使用-id进行查询" class="headerlink" title="使用_id进行查询"></a>使用_id进行查询</h5><p>查询 _id是具体的某个值 的数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.student.find(&#123;_id:ObjectId(&quot;5b8b8a2cfdabd6efbf9b7aa0&quot;)&#125;).pretty()</span><br></pre></td></tr></table></figure></p>
+<h5 id="查询某个结果集的数据的条数"><a href="#查询某个结果集的数据的条数" class="headerlink" title="查询某个结果集的数据的条数"></a>查询某个结果集的数据的条数</h5><p>得到最后的条数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.student.find().count()</span><br></pre></td></tr></table></figure>
+<h5 id="查询某个字段的值当中是否包含另一个值"><a href="#查询某个字段的值当中是否包含另一个值" class="headerlink" title="查询某个字段的值当中是否包含另一个值"></a>查询某个字段的值当中是否包含另一个值</h5><p>查找name中包含 ‘密码’ 字段的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.student.find(&#123;name:/密码/&#125;).pretty()</span><br></pre></td></tr></table></figure></p>
+<h5 id="查询某个字段的值是否以另一个值开头"><a href="#查询某个字段的值是否以另一个值开头" class="headerlink" title="查询某个字段的值是否以另一个值开头"></a>查询某个字段的值是否以另一个值开头</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.student.find(&#123;name:/^基/&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="ADN"><a href="#ADN" class="headerlink" title="ADN"></a>ADN</h5><p>查找gender为1 并且 age &gt; 10 的数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.student.find(&#123;gender:1,age:&#123;$gt:10&#125;&#125;).pretty()</span><br></pre></td></tr></table></figure></p>
+<h5 id="OR"><a href="#OR" class="headerlink" title="OR"></a>OR</h5><p>查询age等于44 或者 age&lt;20  的数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.student.find(&#123;$or:[&#123;age:44&#125;,&#123;age:&#123;$lt:20&#125;&#125;]&#125;).pretty()</span><br></pre></td></tr></table></figure></p>
+<h5 id="limit-skip"><a href="#limit-skip" class="headerlink" title="limit skip"></a>limit skip</h5><p>得到前面的两条数据 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.student.find().limit(2).pretty()</span><br></pre></td></tr></table></figure>
+<p>跳过两条再拿数据    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.student.find().skip(2).pretty()</span><br></pre></td></tr></table></figure>
+<p>一般分页的话 limit 和 skip 结合使用  </p>
+<h5 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h5><p>1 升序<br>2 降序 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.student.find().sort(&#123;age:1&#125;)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+		
+	
+      <div>
+        
+    <div style="text-align:center;color: #ccc;font-size:14px;">
+        ------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+
+      </div>
+    	
+		
+		
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/MongoDB/" rel="tag"># MongoDB</a>
+          
+        </div>
+      
+			
+
+	<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+  <p><span>本文标题:</span><a href="/2018/08/13/MongoDB/">MongoDB</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 基本密码 的个人博客">基本密码</a></p>
+  <p><span>发布时间:</span>2018年08月13日 - 14:08</p>
+  <p><span>最后更新:</span>2018年09月10日 - 17:09</p>
+  <p><span>原始链接:</span><a href="/2018/08/13/MongoDB/" title="MongoDB">http://yoursite.com/2018/08/13/MongoDB/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/08/13/MongoDB/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      
+	</div>				
+			
+			
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/13/View滑动总结/" rel="next" title="View滑动总结">
+                <i class="fa fa-chevron-left"></i> View滑动总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/16/滑动冲突/" rel="prev" title="滑动冲突">
+                滑动冲突 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/head_icon.jpg"
+                alt="基本密码" />
+            
+              <p class="site-author-name" itemprop="name">基本密码</p>
+              <p class="site-description motion-element" itemprop="description">一路前行</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index-1.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/songjiabin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://jjmima.top/" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+				
+		   
+				
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#流程"><span class="nav-number">1.</span> <span class="nav-text">流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作数据库"><span class="nav-number">2.</span> <span class="nav-text">操作数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#查看所有的数据库"><span class="nav-number">2.1.</span> <span class="nav-text">查看所有的数据库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建或者使用数据库"><span class="nav-number">2.2.</span> <span class="nav-text">创建或者使用数据库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#删除当前的数据库（首先必须要是正在操作的数据库）"><span class="nav-number">2.3.</span> <span class="nav-text">删除当前的数据库（首先必须要是正在操作的数据库）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看当前数据库"><span class="nav-number">2.4.</span> <span class="nav-text">查看当前数据库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#插入数据"><span class="nav-number">2.5.</span> <span class="nav-text">插入数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#断开连接"><span class="nav-number">2.6.</span> <span class="nav-text">断开连接</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集合操作"><span class="nav-number">3.</span> <span class="nav-text">集合操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#查看当前数据下所有的集合-就是当前数据库下有几个表"><span class="nav-number">3.1.</span> <span class="nav-text">查看当前数据下所有的集合(就是当前数据库下有几个表)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建集合-创建表"><span class="nav-number">3.2.</span> <span class="nav-text">创建集合(创建表)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#删除集合（删除表）"><span class="nav-number">3.3.</span> <span class="nav-text">删除集合（删除表）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文档操作"><span class="nav-number">4.</span> <span class="nav-text">文档操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用insert方式"><span class="nav-number">4.1.</span> <span class="nav-text">使用insert方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用save方式"><span class="nav-number">4.2.</span> <span class="nav-text">使用save方式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文档的更新"><span class="nav-number">5.</span> <span class="nav-text">文档的更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文档的删除"><span class="nav-number">6.</span> <span class="nav-text">文档的删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文档的查询"><span class="nav-number">7.</span> <span class="nav-text">文档的查询</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#pretty-格式化数据显示方式-显示的是json格式"><span class="nav-number">7.1.</span> <span class="nav-text">pretty 格式化数据显示方式  显示的是json格式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件操作符号"><span class="nav-number">8.</span> <span class="nav-text">条件操作符号</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#大于-gt"><span class="nav-number">8.1.</span> <span class="nav-text">大于          $gt</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#大于等于-gte"><span class="nav-number">8.2.</span> <span class="nav-text">大于等于    $gte</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#小于-lt"><span class="nav-number">8.3.</span> <span class="nav-text">小于          $lt</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#小于等于-lte"><span class="nav-number">8.4.</span> <span class="nav-text">小于等于      $lte</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#大于等于…小于等于…"><span class="nav-number">8.5.</span> <span class="nav-text">大于等于…小于等于….</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#等于"><span class="nav-number">8.6.</span> <span class="nav-text">等于          $:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用-id进行查询"><span class="nav-number">8.7.</span> <span class="nav-text">使用_id进行查询</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查询某个结果集的数据的条数"><span class="nav-number">8.8.</span> <span class="nav-text">查询某个结果集的数据的条数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查询某个字段的值当中是否包含另一个值"><span class="nav-number">8.9.</span> <span class="nav-text">查询某个字段的值当中是否包含另一个值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查询某个字段的值是否以另一个值开头"><span class="nav-number">8.10.</span> <span class="nav-text">查询某个字段的值是否以另一个值开头</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ADN"><span class="nav-number">8.11.</span> <span class="nav-text">ADN</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#OR"><span class="nav-number">8.12.</span> <span class="nav-text">OR</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#limit-skip"><span class="nav-number">8.13.</span> <span class="nav-text">limit skip</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#排序"><span class="nav-number">8.14.</span> <span class="nav-text">排序</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+		  
+		  
+		  
+		  
+		  
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">基本密码</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

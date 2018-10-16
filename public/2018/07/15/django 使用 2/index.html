@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,mysql," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一个不注意小事情的人，永远不会成功大事业。">
+<meta name="keywords" content="python,mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django 2 创建视图、url定向操作">
+<meta property="og:url" content="http://yoursite.com/2018/07/15/django 使用 2/index.html">
+<meta property="og:site_name" content="基本密码">
+<meta property="og:description" content="一个不注意小事情的人，永远不会成功大事业。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://cdn.pixabay.com/photo/2018/08/26/14/04/aster-3632294__340.jpg">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2953304-a454cb78a53ed85c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2953304-65a71b3449a51eb8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2953304-eeb126b19e6d1e55.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2953304-eb51d91ba59abb9b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2953304-0aafa11ca9781ad6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-09-12T01:47:55.607Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Django 2 创建视图、url定向操作">
+<meta name="twitter:description" content="一个不注意小事情的人，永远不会成功大事业。">
+<meta name="twitter:image" content="https://cdn.pixabay.com/photo/2018/08/26/14/04/aster-3632294__340.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/15/django 使用 2/"/>
+
+
+
+
+
+  <title>Django 2 创建视图、url定向操作 | 基本密码</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">基本密码</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不能总想着拥有什么，要想着去创造什么</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于作者
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/15/django 使用 2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="基本密码">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="基本密码">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Django 2 创建视图、url定向操作</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-15T00:00:00+08:00">
+                2018-07-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,890
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"> 一个不注意小事情的人，永远不会成功大事业。<br></blockquote>
+
+<a id="more"></a>
+<p><img src="https://cdn.pixabay.com/photo/2018/08/26/14/04/aster-3632294__340.jpg" alt=""></p>
+<h4 id="站点管理"><a href="#站点管理" class="headerlink" title="站点管理"></a>站点管理</h4><h5 id="启动服务器"><a href="#启动服务器" class="headerlink" title="启动服务器"></a>启动服务器</h5><blockquote>
+<p>这个服务器是python写的轻量级的服务器。仅仅在开发中使用  </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">python manage.py  runserver</span><br></pre></td></tr></table></figure>
+<p>这样 <a href="http://127.0.0.1:8000/" target="_blank" rel="noopener">http://127.0.0.1:8000/</a> 就可以访问了</p>
+<blockquote>
+<p>负责添加，修改，删除内容</p>
+</blockquote>
+<h5 id="配置Admin-应用"><a href="#配置Admin-应用" class="headerlink" title="配置Admin 应用"></a>配置Admin 应用</h5><p>在../../setting.py中的 INSTALLED_APPS 加入 ‘django.contrib.admin’ (默认是有的)</p>
+<p>在开启服务器的情况下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#创建超级用户 </span><br><span class="line">python manage.py createsuperuser</span><br><span class="line"></span><br><span class="line">在终端中依次输入  用户名 、 邮箱（随意填）、 密码(数字和英文的结合)</span><br></pre></td></tr></table></figure>
+<p>这样就创建了你的账户和密码了。<br>现在就可以登录你的服务器</p>
+<p><a href="http://127.0.0.1:8000/admin" target="_blank" rel="noopener">http://127.0.0.1:8000/admin</a>  登录 使用你刚才创建的账户密码</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2953304-a454cb78a53ed85c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="360截图20180902194525718.jpg"></p>
+<p>感觉都是英文。ok,进行汉化。</p>
+<p>在../../setting.py中找到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LANGUAGE_CODE = &apos;en-us&apos;</span><br><span class="line">TIME_ZONE = &apos;UTC&apos;</span><br></pre></td></tr></table></figure></p>
+<p>修改为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LANGUAGE_CODE = &apos;zh-Hans&apos;</span><br><span class="line">TIME_ZONE = &apos;Asia/Shanghai&apos;</span><br></pre></td></tr></table></figure>
+<p>ok 重写启动服务器 就汉化了。</p>
+<h5 id="管理数据表"><a href="#管理数据表" class="headerlink" title="管理数据表"></a>管理数据表</h5><p>其实主要的就是修改 应用/admin.py   </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">from django.contrib <span class="keyword">import</span> admin</span><br><span class="line"></span><br><span class="line"># Register your models here.</span><br><span class="line"></span><br><span class="line"># 引入建立的 魔板 也就是 表</span><br><span class="line">from .models <span class="keyword">import</span> Grades, Student</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 创建班级的时候默认加两个学生</span><br><span class="line">class StudentInfo(admin.TabularInline):</span><br><span class="line">    model = Student</span><br><span class="line">    extra = <span class="number">2</span></span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 自定义 网页显示的样式</span><br><span class="line"><span class="meta">@admin</span>.register(Grades)</span><br><span class="line">class GradesAdmin(admin.ModelAdmin):</span><br><span class="line">    #  创建班级的时候默认加两个学生</span><br><span class="line">    inlines = [StudentInfo]</span><br><span class="line"></span><br><span class="line">    # 列表页属性</span><br><span class="line">    # 显示字段 列表中的字段 想显示啥 写啥</span><br><span class="line">    list_display = [<span class="string">'pk'</span>, <span class="string">'gname'</span>, <span class="string">'gdate'</span>, <span class="string">'ggirlnum'</span>, <span class="string">'gboynum'</span>, <span class="string">'isDelete'</span>]</span><br><span class="line">    # 过滤器 过滤的字段</span><br><span class="line">    list_filter = [<span class="string">'gname'</span>]</span><br><span class="line">    # 搜索的条件</span><br><span class="line">    search_fields = [<span class="string">'gname'</span>]</span><br><span class="line">    # 添加分页 每5条分一页</span><br><span class="line">    list_per_page = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">    # 添加 修改属性 是 另一个界面</span><br><span class="line">    # 规定属性的先后顺序</span><br><span class="line">    # fields = ['gdate', 'ggirlnum', 'gboynum', 'isDelete', 'gname']</span><br><span class="line"></span><br><span class="line">    # 添加分组   fields和 fieldsets 不能同时使用</span><br><span class="line">    fieldsets = [</span><br><span class="line">        # num 为 一组</span><br><span class="line">        (<span class="string">'num'</span>, &#123;<span class="string">"fields"</span>: [<span class="string">'gdate'</span>, <span class="string">'ggirlnum'</span>, <span class="string">'gname'</span>]&#125;),</span><br><span class="line">        # other 为 一组</span><br><span class="line">        (<span class="string">'other'</span>, &#123;<span class="string">"fields"</span>: [<span class="string">'gboynum'</span>, <span class="string">'isDelete'</span>]&#125;)</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line"><span class="meta">@admin</span>.register(Student)</span><br><span class="line">class StudentAdmain(admin.ModelAdmin):</span><br><span class="line"></span><br><span class="line">    # 修改默认内容</span><br><span class="line">    <span class="function">def <span class="title">gender</span><span class="params">(self)</span>:</span></span><br><span class="line"><span class="function">        <span class="keyword">if</span> self.sgender:</span></span><br><span class="line"><span class="function">            return '男'</span></span><br><span class="line"><span class="function">        <span class="keyword">else</span>:</span></span><br><span class="line"><span class="function">            return '女'</span></span><br><span class="line"><span class="function">        pass</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    # 设置页面列的表名称</span></span><br><span class="line"><span class="function">    gender.short_description </span>= <span class="string">'性别'</span></span><br><span class="line"></span><br><span class="line">    # 列表页属性</span><br><span class="line"></span><br><span class="line">    # 显示字段 列表中的字段 想显示啥 写啥</span><br><span class="line">    list_display = [<span class="string">'pk'</span>, <span class="string">'sname'</span>, gender, <span class="string">'sage'</span>, <span class="string">'scontent'</span>, <span class="string">'sGrades'</span>, <span class="string">'isDelete'</span>]</span><br><span class="line">    # 过滤器 过滤的字段</span><br><span class="line">    list_filter = [<span class="string">'scontent'</span>]</span><br><span class="line">    # 搜索的条件</span><br><span class="line">    search_fields = [<span class="string">'scontent'</span>]</span><br><span class="line">    # 添加分页 每5条分一页</span><br><span class="line">    list_per_page = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">    # 添加 修改属性 是 另一个界面</span><br><span class="line">    # 规定属性的先后顺序</span><br><span class="line">    # fields = ['gdate', 'ggirlnum', 'gboynum', 'isDelete', 'gname']</span><br><span class="line"></span><br><span class="line">    # 添加分组   fields和 fieldsets 不能同时使用</span><br><span class="line">    fieldsets = [</span><br><span class="line">        # num 为 一组</span><br><span class="line">        (<span class="string">'num'</span>, &#123;<span class="string">"fields"</span>: [<span class="string">'sname'</span>, <span class="string">'sGrades'</span>, <span class="string">'sage'</span>, <span class="string">'isDelete'</span>]&#125;),</span><br><span class="line">        # other 为 一组</span><br><span class="line">        (<span class="string">'other'</span>, &#123;<span class="string">"fields"</span>: [<span class="string">'sgender'</span>, <span class="string">'scontent'</span>]&#125;)</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 注册 班级表</span><br><span class="line"># admin.site.register(Grades, GradesAdmin) 可以使用装饰器来进行注册</span><br><span class="line"></span><br><span class="line"># 注册 学生表</span><br><span class="line"># admin.site.register(Student, StudentAdmain) 可以使用装饰器来进行注册</span><br></pre></td></tr></table></figure>
+<p>关于数据库中定义字段的关系关键字关系：</p>
+<ul>
+<li><p>ForeignKey 一对多 定义到多中<br>比如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 学生属于哪个班级  用外键关联 </span><br><span class="line">Grades 是班级表  Grades为班级表的名字 </span><br><span class="line">sGrades = models.ForeignKey(&quot;Grades&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>访问一对多</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">一的对象.模型小写(多的对象)_set</span><br><span class="line">例子：</span><br><span class="line">grade.sutdent.set</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>但是发现数据库中表的名字是当前项目_类名。不是我们想要的。可以再model中进行修改，从而来修改表的名字。修改默认排序</p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/2953304-65a71b3449a51eb8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="360截图20180909010013679.jpg"></p>
+<p>刷新  <a href="http://127.0.0.1:8000/admin" target="_blank" rel="noopener">http://127.0.0.1:8000/admin</a> 添加了表格信息</p>
+<h4 id="视图的基本使用"><a href="#视图的基本使用" class="headerlink" title="视图的基本使用"></a>视图的基本使用</h4><blockquote>
+<p>在 Django中，视图对web请求进行回应。视图就是一个python函数。在views.py中定义。 </p>
+</blockquote>
+<p>在应用下面新建一个urls.py 用于匹配 url路径。web根据路径显示响应的视图</p>
+<p>在项目路径下。找到urls.py将地址指向应用下的urls。具体代码如下。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url, include</span><br><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(<span class="string">r'^admin/'</span>, admin.site.urls),</span><br><span class="line">    <span class="comment"># 当什么也不输入的时候会定位到 myFristApp这个文件下。</span></span><br><span class="line">    url(<span class="string">r'^'</span>, include(<span class="string">'myFristApp.urls'</span>))</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>下面是 应用的urls.py </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url, include</span><br><span class="line"><span class="keyword">from</span> .views <span class="keyword">import</span> index</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 当主页匹配到 什么地址也没有的时候  显示的是 index 界面</span></span><br><span class="line">    url(<span class="string">r'^$'</span>, index)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>定义好具体View。在下面定义好接受和返回的数据。<br>在应用的Views.py下面</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># request 请求体</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">"我是基本密码"</span>)</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<h4 id="视图的基本使用-1"><a href="#视图的基本使用-1" class="headerlink" title="视图的基本使用"></a>视图的基本使用</h4><p>和视图同级的下面创建templates目录。里面存放模板</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2953304-eeb126b19e6d1e55.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="360截图20180907000717765.jpg"></p>
+<p>有了模板的目录后。我们需要将配置模板的url地址。</p>
+<p>找到项目的地址下的setting.py文件。<br>找到一个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))</span><br></pre></td></tr></table></figure></p>
+<p>这个地址代表的就是项目的根目录。<br>继续找到TEMPLATES 下面的DIRS 向里面加入你的模板路径.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">TEMPLATES = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">'BACKEND'</span>: <span class="string">'django.template.backends.django.DjangoTemplates'</span>,</span><br><span class="line">        <span class="comment"># 向下面添加你的模板路径</span></span><br><span class="line">        <span class="string">'DIRS'</span>: [os.path.join(BASE_DIR,<span class="string">"templates"</span>)],</span><br><span class="line">        <span class="string">'APP_DIRS'</span>: <span class="keyword">True</span>,</span><br><span class="line">        <span class="string">'OPTIONS'</span>: &#123;</span><br><span class="line">            <span class="string">'context_processors'</span>: [</span><br><span class="line">                <span class="string">'django.template.context_processors.debug'</span>,</span><br><span class="line">                <span class="string">'django.template.context_processors.request'</span>,</span><br><span class="line">                <span class="string">'django.contrib.auth.context_processors.auth'</span>,</span><br><span class="line">                <span class="string">'django.contrib.messages.context_processors.messages'</span>,</span><br><span class="line">            ],</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h5 id="在新建的-templates-目录下面新建你的应用名称。应用名称下面是你的对应的html文件。"><a href="#在新建的-templates-目录下面新建你的应用名称。应用名称下面是你的对应的html文件。" class="headerlink" title="在新建的 templates 目录下面新建你的应用名称。应用名称下面是你的对应的html文件。"></a>在新建的 templates 目录下面新建你的应用名称。应用名称下面是你的对应的html文件。</h5><p><img src="https://upload-images.jianshu.io/upload_images/2953304-eb51d91ba59abb9b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="360截图20180907210033995.jpg"></p>
+<h5 id="匹配你的url-当你想在浏览器中输入grades的时候，想要访问-Grades-html的时候。匹配你的-Grades-html"><a href="#匹配你的url-当你想在浏览器中输入grades的时候，想要访问-Grades-html的时候。匹配你的-Grades-html" class="headerlink" title="匹配你的url 当你想在浏览器中输入grades的时候，想要访问 Grades.html的时候。匹配你的 Grades.html"></a>匹配你的url 当你想在浏览器中输入grades的时候，想要访问 Grades.html的时候。匹配你的 Grades.html</h5><p>找到你应用下的urls.py文件。<br>如下定义<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配班级的 页面 ../../grades  grades 是视图中</span></span><br><span class="line">   url(<span class="string">r'^grades/$'</span>, view=grades),</span><br></pre></td></tr></table></figure></p>
+<p>ok，其实当你在浏览器输入 ../../grades的时候会通过这个路径找到 views.py下的grades类。</p>
+<h5 id="匹配你的views-视图"><a href="#匹配你的views-视图" class="headerlink" title="匹配你的views 视图"></a>匹配你的views 视图</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 视图： grades 班级的视图</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">grades</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="comment"># 去 models 中 取数据 也就是刚才创建表的那个 models中</span></span><br><span class="line">    <span class="comment"># 得到grades中所有的数据</span></span><br><span class="line">    gradesList = Grades.objects.all()</span><br><span class="line">    <span class="comment"># 将数据传给 模板   模板渲染好后再传给浏览器</span></span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'myFristApp/Grades.html'</span>, &#123;<span class="string">'grades'</span>: gradesList&#125;)</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<h5 id="编辑你的html文件"><a href="#编辑你的html文件" class="headerlink" title="编辑你的html文件"></a>编辑你的html文件</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;班级信息&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h1&gt;班级信息列表&lt;/h1&gt;</span><br><span class="line">     &lt;ul&gt;</span><br><span class="line">         &#123;%<span class="keyword">for</span> grade <span class="keyword">in</span> grades%&#125;</span><br><span class="line">            &lt;li&gt;</span><br><span class="line">             &lt;a href="#"&gt;&#123;&#123;grade.gname&#125;&#125;&lt;/a&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">        &#123;%endfor%&#125;</span><br><span class="line">     &lt;/ul&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="当点击班级表的时候想查看班级表里面的学生信息"><a href="#当点击班级表的时候想查看班级表里面的学生信息" class="headerlink" title="当点击班级表的时候想查看班级表里面的学生信息"></a>当点击班级表的时候想查看班级表里面的学生信息</h5><p>在Grades.html中修改点击传递id<br><img src="https://upload-images.jianshu.io/upload_images/2953304-0aafa11ca9781ad6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="360截图20180907235122617.jpg"></p>
+<p>在 url 中注册地址</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配 ../../grades/1  当点击班级查看班级详情</span></span><br><span class="line">url(<span class="string">r'^grades/(\d+)$'</span>, view=gradesStudent)</span><br></pre></td></tr></table></figure>
+<p>当点击的时候跳转到 graesStudent 的View中去<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 视图 当点开班级 查看班级详情</span></span><br><span class="line"><span class="comment"># num 为班级的id 根据班级的id  取出 班级内的学生信息</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gradesStudent</span><span class="params">(request, num)</span>:</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 从班级表中找到 id=num的班级信息</span></span><br><span class="line">    gradesInfo = Grades.objects.get(pk=num)</span><br><span class="line">    <span class="comment"># 从这个班级中得到下面所有的学生</span></span><br><span class="line">    studentInfo = gradesInfo.student_set.all()</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'myFristApp/GradesStudent.html'</span>, &#123;<span class="string">'studentInfo'</span>: studentInfo&#125;)</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
+<p>浏览器接收到信息后将请求的信息发动html中 如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;班级下的学生信息&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h1&gt;班级下的学生信息&lt;/h1&gt;</span><br><span class="line">        &#123;% <span class="keyword">for</span> i <span class="keyword">in</span> studentInfo%&#125;</span><br><span class="line">            &lt;li&gt;</span><br><span class="line">                &lt;a href="#"&gt;&#123;&#123;i.sname&#125;&#125;&lt;/a&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">        &#123;%endfor%&#125;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>ok 基本的流程就是这样。</p>
+<p>代码：<a href="https://github.com/songjiabin/PyDemo" target="_blank" rel="noopener">https://github.com/songjiabin/PyDemo</a></p>
+
+      
+    </div>
+    
+    
+    
+		
+	
+      <div>
+        
+    <div style="text-align:center;color: #ccc;font-size:14px;">
+        ------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+
+      </div>
+    	
+		
+		
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
+          
+        </div>
+      
+			
+
+	<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+  <p><span>本文标题:</span><a href="/2018/07/15/django 使用 2/">Django 2 创建视图、url定向操作</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 基本密码 的个人博客">基本密码</a></p>
+  <p><span>发布时间:</span>2018年07月15日 - 00:07</p>
+  <p><span>最后更新:</span>2018年09月12日 - 09:09</p>
+  <p><span>原始链接:</span><a href="/2018/07/15/django 使用 2/" title="Django 2 创建视图、url定向操作">http://yoursite.com/2018/07/15/django 使用 2/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/07/15/django 使用 2/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      
+	</div>				
+			
+			
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/15/Django 3-1 视图操作（创建和查询）/" rel="next" title="Django 3-1 视图操作（创建和查询）">
+                <i class="fa fa-chevron-left"></i> Django 3-1 视图操作（创建和查询）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/15/Django 3-2 视图操作（创建和查询）/" rel="prev" title="Django 3-2 视图操作（创建和查询）">
+                Django 3-2 视图操作（创建和查询） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/head_icon.jpg"
+                alt="基本密码" />
+            
+              <p class="site-author-name" itemprop="name">基本密码</p>
+              <p class="site-description motion-element" itemprop="description">一路前行</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index-1.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/songjiabin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://jjmima.top/" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+				
+		   
+				
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#站点管理"><span class="nav-number">1.</span> <span class="nav-text">站点管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#启动服务器"><span class="nav-number">1.1.</span> <span class="nav-text">启动服务器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置Admin-应用"><span class="nav-number">1.2.</span> <span class="nav-text">配置Admin 应用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#管理数据表"><span class="nav-number">1.3.</span> <span class="nav-text">管理数据表</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#视图的基本使用"><span class="nav-number">2.</span> <span class="nav-text">视图的基本使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#视图的基本使用-1"><span class="nav-number">3.</span> <span class="nav-text">视图的基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在新建的-templates-目录下面新建你的应用名称。应用名称下面是你的对应的html文件。"><span class="nav-number">3.1.</span> <span class="nav-text">在新建的 templates 目录下面新建你的应用名称。应用名称下面是你的对应的html文件。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#匹配你的url-当你想在浏览器中输入grades的时候，想要访问-Grades-html的时候。匹配你的-Grades-html"><span class="nav-number">3.2.</span> <span class="nav-text">匹配你的url 当你想在浏览器中输入grades的时候，想要访问 Grades.html的时候。匹配你的 Grades.html</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#匹配你的views-视图"><span class="nav-number">3.3.</span> <span class="nav-text">匹配你的views 视图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#编辑你的html文件"><span class="nav-number">3.4.</span> <span class="nav-text">编辑你的html文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#当点击班级表的时候想查看班级表里面的学生信息"><span class="nav-number">3.5.</span> <span class="nav-text">当点击班级表的时候想查看班级表里面的学生信息</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+		  
+		  
+		  
+		  
+		  
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">基本密码</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
