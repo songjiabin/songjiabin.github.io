@@ -86,7 +86,7 @@
 
 
 
-  <meta name="keywords" content="自定义view,android,源码分析," />
+  <meta name="keywords" content="android,面试," />
 
 
 
@@ -97,18 +97,20 @@
 
 
 
-<meta name="description" content="人若有志，万事可为">
-<meta name="keywords" content="自定义view,android,源码分析">
+<meta name="description" content="长风破浪会有时，直挂云帆济沧海">
+<meta name="keywords" content="android,面试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="滑动冲突">
-<meta property="og:url" content="http://yoursite.com/2018/10/16/滑动冲突/index.html">
+<meta property="og:title" content="Android面试（二）">
+<meta property="og:url" content="http://yoursite.com/2018/10/28/Android面试（二）/index.html">
 <meta property="og:site_name" content="基本密码">
-<meta property="og:description" content="人若有志，万事可为">
+<meta property="og:description" content="长风破浪会有时，直挂云帆济沧海">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-22T09:43:00.449Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2953304-b35eeec404c8ac14.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-10-28T09:48:02.695Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="滑动冲突">
-<meta name="twitter:description" content="人若有志，万事可为">
+<meta name="twitter:title" content="Android面试（二）">
+<meta name="twitter:description" content="长风破浪会有时，直挂云帆济沧海">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2953304-b35eeec404c8ac14.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -138,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/16/滑动冲突/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/28/Android面试（二）/"/>
 
 
 
 
 
-  <title>滑动冲突 | 基本密码</title>
+  <title>Android面试（二） | 基本密码</title>
   
 
 
@@ -281,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/16/滑动冲突/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/28/Android面试（二）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="基本密码">
@@ -298,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">滑动冲突</h1>
+          <h1 class="post-title" itemprop="name headline">Android面试（二）</h1>
         
 
         <div class="post-meta">
@@ -310,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-16T17:54:31+08:00">
-                2018-10-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-28T17:42:01+08:00">
+                2018-10-28
               </time>
             
 
@@ -364,7 +366,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  788
+                  700
                 </span>
               
 
@@ -389,40 +391,32 @@
       
 
       
-        <blockquote class="blockquote-center">人若有志，万事可为</blockquote>
+        <blockquote class="blockquote-center">长风破浪会有时，直挂云帆济沧海</blockquote>
 
 <a id="more"></a>
-<h4 id="滑动冲突的解决方案："><a href="#滑动冲突的解决方案：" class="headerlink" title="滑动冲突的解决方案："></a>滑动冲突的解决方案：</h4><h5 id="外部拦截方法"><a href="#外部拦截方法" class="headerlink" title="外部拦截方法"></a>外部拦截方法</h5><blockquote>
-<p>即父View根据需要对事件进行拦截。逻辑处理放在父View的onInterceptTouchEvent方法中。我们只需要重写父View的onInterceptTouchEvent方法，并根据逻辑需要做相应的拦截即可。重写onInterceptTouchEvent()方法。再move中根据需求进行拦截。</p>
+<h6 id="Handler"><a href="#Handler" class="headerlink" title="Handler"></a>Handler</h6><p><img src="https://upload-images.jianshu.io/upload_images/2953304-b35eeec404c8ac14.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="360截图20181025233045532.jpg"></p>
+<blockquote>
+<p>当创建Handler的时候会关联当前线程的looper。（每个线程都有一个looper进行循环处理消息队列中的信息）。通looper获取消息队列。Handler发送消息到消息队列中。looper循环去取出消息进行处理。再交给Handler来处理。</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onInterceptTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">boolean</span> intercepted = <span class="keyword">false</span>;</span><br><span class="line">      <span class="keyword">int</span> x = (<span class="keyword">int</span>) ev.getX();</span><br><span class="line">      <span class="keyword">int</span> y = (<span class="keyword">int</span>) ev.getY();</span><br><span class="line">      <span class="keyword">final</span> <span class="keyword">int</span> action = ev.getAction() &amp; MotionEvent.ACTION_MASK;</span><br><span class="line">      <span class="keyword">switch</span> (action) &#123;</span><br><span class="line">      <span class="comment">// DOWN 中</span></span><br><span class="line">          <span class="keyword">case</span> MotionEvent.ACTION_DOWN:</span><br><span class="line">              intercepted = <span class="keyword">false</span>;</span><br><span class="line">              <span class="comment">//调用ViewPager的onInterceptTouchEvent方法初始化mActivePointerId</span></span><br><span class="line">              <span class="keyword">super</span>.onInterceptTouchEvent(ev);</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> MotionEvent.ACTION_MOVE:</span><br><span class="line">              <span class="comment">//横坐标位移增量</span></span><br><span class="line">              <span class="keyword">int</span> deltaX = x - mLastXIntercept;</span><br><span class="line">              <span class="comment">//纵坐标位移增量</span></span><br><span class="line">              <span class="keyword">int</span> deltaY = y - mLastYIntercept;</span><br><span class="line">              <span class="keyword">if</span> (Math.abs(deltaX) &gt; Math.abs(deltaY)) &#123;</span><br><span class="line">                  intercepted = <span class="keyword">true</span>;</span><br><span class="line">              &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                  intercepted = <span class="keyword">false</span>;</span><br><span class="line">              &#125;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> MotionEvent.ACTION_UP:</span><br><span class="line">              intercepted = <span class="keyword">false</span>;</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">default</span>:</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
-<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><ul>
-<li><blockquote>
-<p><strong>根据业务逻辑需要，在ACTION_MOVE方法中进行判断，如果需要父View处理则返回true，否则返回false，事件分发给子View去处理。</strong></p>
-</blockquote>
-</li>
-</ul>
+<p>从源码分析<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Handler</span><span class="params">(Callback callback, <span class="keyword">boolean</span> async)</span> </span>&#123;</span><br><span class="line">       ...</span><br><span class="line">       <span class="comment">//创建looper对象。</span></span><br><span class="line">       mLooper = Looper.myLooper();</span><br><span class="line">       <span class="comment">//如果looper为空的话报错，因为你没有执行Looper.prepare()方法。</span></span><br><span class="line">       <span class="comment">//看looper源码可以看出Looper.prepare()中是得到唯一的一个Looper对象。（一个线程中只能对应一个looper）</span></span><br><span class="line">       <span class="keyword">if</span> (mLooper == <span class="keyword">null</span>) &#123;</span><br><span class="line">           <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(</span><br><span class="line">               <span class="string">"Can't create handler inside thread that has not called Looper.prepare()"</span>);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//得到Looper关联的队列。(looper循环队列，从里面得到消息数据。)</span></span><br><span class="line">       mQueue = mLooper.mQueue;</span><br><span class="line">       mCallback = callback;</span><br><span class="line">       mAsynchronous = async;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面可以看到在初始化Handler的时候，初始化了looper对象。looper对象中对象又赋值给了Handler。所以handler是关联了looper又关联了队列。它和looper公共一个消息队列。</p>
+<p>Handler的作用是</p>
 <ul>
-<li><blockquote>
-<p><strong>ACTION_DOWN 一定返回false，不要拦截它，否则根据View事件分发机制，后续ACTION_MOVE 与 ACTION_UP事件都将默认交给父View去处理！(否则子View接受不到事件)</strong></p>
-</blockquote>
-</li>
+<li>发送消息</li>
 </ul>
+<p>在handler的所有发送消息后都会走到这个方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">enqueueMessage</span><span class="params">(MessageQueue queue, Message msg, <span class="keyword">long</span> uptimeMillis)</span> </span>&#123;</span><br><span class="line"><span class="comment">//handler自己发送消息。message将自己内部的一个属性赋值给target属性。</span></span><br><span class="line">       msg.target = <span class="keyword">this</span>;</span><br><span class="line">       <span class="keyword">if</span> (mAsynchronous) &#123;</span><br><span class="line">           msg.setAsynchronous(<span class="keyword">true</span>);</span><br><span class="line">       &#125;</span><br><span class="line">   <span class="comment">//将消息发送到消息队列中</span></span><br><span class="line">       <span class="keyword">return</span> queue.enqueueMessage(msg, uptimeMillis);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li><blockquote>
-<p><strong>原则上ACTION_UP也需要返回false，如果返回true，并且滑动事件交给子View处理，那么子View将接收不到ACTION_UP事件，子View的onClick事件也无法触发。而父View不一样，如果父View在ACTION_MOVE中开始拦截事件，那么后续ACTION_UP也将默认交给父View处理！</strong></p>
-</blockquote>
+<li>处理消息<br>在looper.looper()方法中<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//死循环迭代消息</span></span><br><span class="line">.... </span><br><span class="line"><span class="keyword">for</span> (;;) &#123;</span><br><span class="line"><span class="comment">//从消息容器里面取出消息</span></span><br><span class="line">            Message msg = queue.next(); <span class="comment">// might block</span></span><br><span class="line">            <span class="keyword">if</span> (msg == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="comment">// No message indicates that the message queue is quitting.</span></span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//msg.target 就是刚才赋值的handler</span></span><br><span class="line">        <span class="comment">//调用hander的dispatchMessage()方法</span></span><br><span class="line">            msg.target.dispatchMessage(msg);</span><br><span class="line">            &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (traceTag != <span class="number">0</span>) &#123;</span><br><span class="line">                    Trace.traceEnd(traceTag);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h5 id="内部拦截方法"><a href="#内部拦截方法" class="headerlink" title="内部拦截方法"></a>内部拦截方法</h5><blockquote>
-<p>即父View不拦截任何事件，所有事件都传递给子View，子View根据需要决定是自己消费事件还是给父View处理。这需要子View使用requestDisallowInterceptTouchEvent方法才能正常工作。</p>
-</blockquote>
-<p><strong>getParent().requestDisallowInterceptTouchEvent(true);true代表进行不拦截。false代表拦截</strong></p>
-<p>首先要对外部的进行处理</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onInterceptTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">final</span> <span class="keyword">int</span> action = ev.getAction() &amp; MotionEvent.ACTION_MASK;</span><br><span class="line">      <span class="comment">//当时down的时候不能拦截</span></span><br><span class="line">      <span class="keyword">if</span> (action == MotionEvent.ACTION_DOWN) &#123;</span><br><span class="line">          <span class="keyword">super</span>.onInterceptTouchEvent(ev);</span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//如果是除了down以外的事件的话。都返回true。子View可以通过requestDisallowInterceptTouchEvent方法干预父View的事件分发过程（ACTION_DOWN事件除外）</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>然后对内进行处理。剩下的全是里面的了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">dispatchTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = (<span class="keyword">int</span>) ev.getX();</span><br><span class="line">        <span class="keyword">int</span> y = (<span class="keyword">int</span>) ev.getY();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> action = ev.getAction() &amp; MotionEvent.ACTION_MASK;</span><br><span class="line">        <span class="keyword">switch</span> (action) &#123;</span><br><span class="line">            <span class="keyword">case</span> MotionEvent.ACTION_DOWN:</span><br><span class="line">                <span class="comment">//干预父View的拦截。让其在down事件自己处理。不用拦截</span></span><br><span class="line">                getParent().requestDisallowInterceptTouchEvent(<span class="keyword">true</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> MotionEvent.ACTION_MOVE:</span><br><span class="line">                <span class="comment">//水平移动的增量</span></span><br><span class="line">                <span class="keyword">int</span> deltaX = x - mLastX;</span><br><span class="line">                <span class="comment">//竖直移动的增量</span></span><br><span class="line">                <span class="keyword">int</span> deltaY = y - mLastY;</span><br><span class="line">                <span class="comment">//当水平增量大于竖直增量时，表示水平滑动，此时需要父View去处理事件</span></span><br><span class="line">                <span class="comment">//干预父View的拦截。让其在特定条件下，处理此事件。进行拦截不要传递到子View啦。</span></span><br><span class="line">                <span class="keyword">if</span> (Math.abs(deltaX) &gt; Math.abs(deltaY))&#123;</span><br><span class="line">                    getParent().requestDisallowInterceptTouchEvent(<span class="keyword">false</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> MotionEvent.ACTION_UP:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        mLastX = x;</span><br><span class="line">        mLastY = y;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.dispatchTouchEvent(ev);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://github.com/songjiabin/androidDemo/tree/master/app/src/main/java/com/example/mydemo/event" target="_blank" rel="noopener">代码地址</a></p>
-<p><a href="https://www.jianshu.com/p/238d1b753e64" target="_blank" rel="noopener">参考地址1</a><br><a href="https://www.jianshu.com/p/982a83271327" target="_blank" rel="noopener">参考地址2</a></p>
+<p>Hadnler中的dispatchMessage()查看</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dispatchMessage</span><span class="params">(Message msg)</span> </span>&#123;</span><br><span class="line">       <span class="comment">// msg.CallBack  就是当Handler.post(run..);</span></span><br><span class="line">       <span class="comment">//就是那个run方法。</span></span><br><span class="line">       <span class="comment">//如果 run方法不为空那么处理run方法。</span></span><br><span class="line">       <span class="keyword">if</span> (msg.callback != <span class="keyword">null</span>) &#123;</span><br><span class="line">           handleCallback(msg);</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">       <span class="comment">//当 run方法为空的话。并且 mCallBack不为空的话</span></span><br><span class="line">       <span class="comment">//mCallback 为 接口。里面实现了 handleMessage接口。也就是当我们需要处理的逻辑。</span></span><br><span class="line">           <span class="keyword">if</span> (mCallback != <span class="keyword">null</span>) &#123;</span><br><span class="line">           <span class="comment">//处理 handleMessage 方法</span></span><br><span class="line">               <span class="keyword">if</span> (mCallback.handleMessage(msg)) &#123;</span><br><span class="line">                   <span class="keyword">return</span>;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           handleMessage(msg);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>总结</li>
+</ul>
+<p>Looper类主要是为了每个线程开启单独的消息循环</p>
+<p>Handler可以看做是Looper的一个接口。用来向指定Looper中的messageQueue中发送消息</p>
+<p>在非主线程中直接new Handler()是不可以的。因为Handler需要发送消息到messageQueu。而你所在的线程中没有MessageQeue。而MessageQueue是由Looper管理的。所以如果你想在非线程中使用，必须先创建出Looper。</p>
 
       
     </div>
@@ -450,11 +444,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/自定义view/" rel="tag"># 自定义view</a>
-          
             <a href="/tags/android/" rel="tag"># android</a>
           
-            <a href="/tags/源码分析/" rel="tag"># 源码分析</a>
+            <a href="/tags/面试/" rel="tag"># 面试</a>
           
         </div>
       
@@ -469,12 +461,12 @@
   <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2018/10/16/滑动冲突/">滑动冲突</a></p>
+  <p><span>本文标题:</span><a href="/2018/10/28/Android面试（二）/">Android面试（二）</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 基本密码 的个人博客">基本密码</a></p>
-  <p><span>发布时间:</span>2018年10月16日 - 17:10</p>
-  <p><span>最后更新:</span>2018年10月22日 - 17:10</p>
-  <p><span>原始链接:</span><a href="/2018/10/16/滑动冲突/" title="滑动冲突">http://yoursite.com/2018/10/16/滑动冲突/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/10/16/滑动冲突/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年10月28日 - 17:10</p>
+  <p><span>最后更新:</span>2018年10月28日 - 17:10</p>
+  <p><span>原始链接:</span><a href="/2018/10/28/Android面试（二）/" title="Android面试（二）">http://yoursite.com/2018/10/28/Android面试（二）/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/10/28/Android面试（二）/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -505,8 +497,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/13/popularWindow封装、单选、多选/" rel="next" title="popularWindow封装、单选、多选">
-                <i class="fa fa-chevron-left"></i> popularWindow封装、单选、多选
+              <a href="/2018/10/28/Android面试（一）/" rel="next" title="Android面试（一）">
+                <i class="fa fa-chevron-left"></i> Android面试（一）
               </a>
             
           </div>
@@ -515,8 +507,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/10/16/okhttp/" rel="prev" title="okhttp">
-                okhttp <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/13/android爬虫-Fruit/" rel="prev" title="android爬虫-Fruit">
+                android爬虫-Fruit <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -624,7 +616,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -635,7 +627,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -646,7 +638,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index-1.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -697,7 +689,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#滑动冲突的解决方案："><span class="nav-number">1.</span> <span class="nav-text">滑动冲突的解决方案：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#外部拦截方法"><span class="nav-number">1.1.</span> <span class="nav-text">外部拦截方法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#总结"><span class="nav-number">1.1.1.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#内部拦截方法"><span class="nav-number">1.2.</span> <span class="nav-text">内部拦截方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#Handler"><span class="nav-number">1.</span> <span class="nav-text">Handler</span></a></li></ol></div>
             
 
           </div>
@@ -722,7 +714,7 @@ var jiathis_config={
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
