@@ -77,6 +77,11 @@ storeFile=E:\\flutter\\key\\key.jks
 **注意：里面不用有空格，注意路径的\的使用**
 
 
+##### 执行命令
+```Java
+flutter build apk
+```
+
 ##### 查看打包文件
 在   `项目\build\app\outputs\apk\release` 下面查看
 
