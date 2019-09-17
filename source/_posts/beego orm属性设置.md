@@ -22,25 +22,25 @@ typora-root-url: ..
 
 > `beego`属性的设置
 
- ###### 主键、自增
+ ##### 主键、自增
 
 ```mysql
 Id  int `orm:"pk;auto"`  pk 主键   auto 自增 使用;进行分割  
 ```
 
-###### 是否为空
+##### 是否为空
 
 ```mysql
 Title  string `orm:"null"` 默认情况下，不能为空。如果设置了null，那么就可以为空了
 ```
 
-###### 大小
+##### 大小
 
 ```mysql
 Content string `orm:"size(200)"`  size(200) 大小是 200 
 ```
 
-###### 时间类型
+##### 时间类型
 
 - datetime 日期时间类型
 
@@ -60,19 +60,19 @@ auto_now_add第一次保存的时候的时间。
 auto_now:model保存时都会对时间自动更新     
 ```
 
-###### 默认值
+##### 默认值
 
 ```mysql
 Count  int  `orm:"default(0)"` 默认值为0   
 ```
 
-###### 唯一的值
+##### 唯一的值
 
 ```mysql
 UserName string `orm:"unique"`
 ```
 
-###### 浮点数精度
+##### 浮点数精度
 
 ```mysql
 Num float64 `orm:"digits(12);decimals(4)"` //  浮点型 一共12位数，小数点后面4位
