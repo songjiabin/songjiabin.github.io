@@ -7,9 +7,6 @@ tags:
 copyright: true
 categories: beego
 toc: true
-
- 
- 
 typora-copy-images-to: ..\images
 typora-root-url: ..
 ---
@@ -76,5 +73,32 @@ UserName string `orm:"unique"`
 
 ```mysql
 Num float64 `orm:"digits(12);decimals(4)"` //  浮点型 一共12位数，小数点后面4位
+```
+
+##### 一对一设置
+
+```go
+rel(one)
+reverse(one)
+```
+
+##### 一对多
+
+```golang
+rel(fk) //forign key 外键
+reverse(mang) //多
+例子：
+ArticleType *ArticleType `orm:"rel(fk)"`  //外键  设置一对多的关系 -->表1
+Article  []*Article `orm:"reverse(many)"` //一对多的反向关系       -->表2
+```
+
+##### 多对多
+
+```golang
+rel(m2m)
+reverse(many) 
+例子：
+Article  []*Article `orm:"reverse(many)"` //多对多  -->表1
+User        []*User      `orm:"rel(m2m)"` //多对多	 -->表2
 ```
 
