@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>封装SharedPreferences | 基本密码</title>
+  <title>beego orm属性设置 | 基本密码</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="长风破浪会有时，直挂云帆济沧海">
-<meta name="keywords" content="android,日常问题,工具类">
+  <meta name="keywords" content="beego,go">
 <meta property="og:type" content="article">
-<meta property="og:title" content="封装SharedPreferences">
-<meta property="og:url" content="http://yoursite.com/2019/01/31/封装SharedPreferences/index.html">
+<meta property="og:title" content="beego orm属性设置">
+<meta property="og:url" content="http://yoursite.com/2019/09/16/beego orm 属性设置/index.html">
 <meta property="og:site_name" content="基本密码">
-<meta property="og:description" content="长风破浪会有时，直挂云帆济沧海">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-31T10:28:58.601Z">
+<meta property="og:image" content="http://yoursite.com/images/book-2304389__340.jpg">
+<meta property="og:updated_time" content="2019-09-20T10:10:46.804Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="封装SharedPreferences">
-<meta name="twitter:description" content="长风破浪会有时，直挂云帆济沧海">
+<meta name="twitter:title" content="beego orm属性设置">
+<meta name="twitter:image" content="http://yoursite.com/images/book-2304389__340.jpg">
   
     <link rel="alternative" href="/atom.xml" title="基本密码" type="application/atom+xml">
   
@@ -144,14 +143,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-封装SharedPreferences" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-beego orm 属性设置" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      封装SharedPreferences
+      beego orm属性设置
     </h1>
   
 
@@ -165,21 +164,63 @@
   </a>
 
         
-        <a href="/2019/01/31/封装SharedPreferences/" class="archive-article-date">
-  	<time datetime="2019-01-31T10:28:16.924Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-31</time>
+        <a href="/2019/09/16/beego orm 属性设置/" class="archive-article-date">
+  	<time datetime="2019-09-16T09:07:54.903Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-16</time>
 </a>
         
       </header>
     
 	
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+	<div id="toc-article" class="toc-article">
+	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+		<strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#主键、自增"><span class="toc-number">1.</span> <span class="toc-text">主键、自增</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#是否为空"><span class="toc-number">2.</span> <span class="toc-text">是否为空</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#大小"><span class="toc-number">3.</span> <span class="toc-text">大小</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#时间类型"><span class="toc-number">4.</span> <span class="toc-text">时间类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#默认值"><span class="toc-number">5.</span> <span class="toc-text">默认值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#唯一的值"><span class="toc-number">6.</span> <span class="toc-text">唯一的值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#浮点数精度"><span class="toc-number">7.</span> <span class="toc-text">浮点数精度</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#一对一设置"><span class="toc-number">8.</span> <span class="toc-text">一对一设置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#一对多"><span class="toc-number">9.</span> <span class="toc-text">一对多</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#多对多"><span class="toc-number">10.</span> <span class="toc-text">多对多</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#多表联合查询"><span class="toc-number">11.</span> <span class="toc-text">多表联合查询</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#base"><span class="toc-number">12.</span> <span class="toc-text">base</span></a></li></ol>
+         </div>
+   <script type="text/javascript">
+	function showToc(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:block");
+		show_toc_btn.setAttribute("style","display:none");
+		};
+	function showBtn(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:none");
+		show_toc_btn.setAttribute("style","display:block");
+		};
+   </script>
+      
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote class="blockquote-center">长风破浪会有时，直挂云帆济沧海</blockquote>
-
+        <p><img src="/images/book-2304389__340.jpg" alt="æ¬ä¹¦, è¯&quot;å, æ¾æ¾, èå°, ä¹¦é¡µ, æè², å¾ä¹¦, å­¦ä¹ , æå­¦, éè"></p>
 <a id="more"></a>
-<h6 id="一"><a href="#一" class="headerlink" title="一"></a>一</h6><p>上代码吧直接<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpUtils</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 上下文</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Context mContext;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//是否使用apply方式提交</span></span><br><span class="line">    <span class="comment">// apply --&gt; 异步提交，先将数据提交到内存。无返回键结果</span></span><br><span class="line">    <span class="comment">//commit --&gt; 同步提交，将数据直接提交到硬盘上 成功返回True 失败返回false</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> isApply = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * SharedPreferences对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> SharedPreferences sp;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 构造函数 传入上下文</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> context 上下文</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SpUtils</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        mContext = context;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 写入至sp中</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> key   存储节点名称</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> value 存储节点的值 boolean</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 是否插入成功 apply 方式返回null</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Boolean <span class="title">put</span><span class="params">(String key, T value)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//(存储节点文件名称,读写方式)</span></span><br><span class="line">        <span class="keyword">if</span> (sp == <span class="keyword">null</span>) &#123;</span><br><span class="line">            sp = mContext.getSharedPreferences(<span class="string">"S_V"</span>, Context.MODE_PRIVATE);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        SharedPreferences.Editor editor = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (value <span class="keyword">instanceof</span> Boolean) &#123;</span><br><span class="line">            editor = sp.edit().putBoolean(key, (Boolean) value);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (value <span class="keyword">instanceof</span> String) &#123;</span><br><span class="line">            editor = sp.edit().putString(key, (String) value);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (value <span class="keyword">instanceof</span> Integer) &#123;</span><br><span class="line">            editor = sp.edit().putInt(key, (Integer) value);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (value <span class="keyword">instanceof</span> Long) &#123;</span><br><span class="line">            editor = sp.edit().putLong(key, (Long) value);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (value <span class="keyword">instanceof</span> Float) &#123;</span><br><span class="line">            editor = sp.edit().putFloat(key, (Float) value);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (editor != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (isApply) &#123;</span><br><span class="line">                editor.apply();</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> editor.commit();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 从sp中读取</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> key      存储节点名称</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> defValue 默认值</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 读取boolean标示从sp中</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">get</span><span class="params">(String key, T defValue)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//(存储节点文件名称,读写方式)</span></span><br><span class="line">        Object o = <span class="keyword">new</span> Object();</span><br><span class="line">        <span class="keyword">if</span> (sp == <span class="keyword">null</span>) &#123;</span><br><span class="line">            sp = mContext.getSharedPreferences(<span class="string">"S_V"</span>, Context.MODE_PRIVATE);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (defValue <span class="keyword">instanceof</span> Boolean) &#123;</span><br><span class="line">            o = (sp.getBoolean(key, (Boolean) defValue));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (defValue <span class="keyword">instanceof</span> String) &#123;</span><br><span class="line">            o = sp.getString(key, (String) defValue);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (defValue <span class="keyword">instanceof</span> Integer) &#123;</span><br><span class="line">            o = sp.getInt(key, (Integer) defValue);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (defValue <span class="keyword">instanceof</span> Long) &#123;</span><br><span class="line">            o = sp.getLong(key, (Long) defValue);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (defValue <span class="keyword">instanceof</span> Float) &#123;</span><br><span class="line">            o = sp.getFloat(key, (Float) defValue);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (T) o;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 从sp中移除指定节点</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> key 需要移除节点的名称</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 是否插入成功 apply 方式返回null</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Boolean <span class="title">remove</span><span class="params">(String key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (sp == <span class="keyword">null</span>) &#123;</span><br><span class="line">            sp = mContext.getSharedPreferences(<span class="string">"S_V"</span>, Context.MODE_PRIVATE);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        SharedPreferences.Editor editor = sp.edit().remove(key);</span><br><span class="line">        <span class="keyword">if</span> (isApply) &#123;</span><br><span class="line">            editor.apply();</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> editor.commit();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 设置是否以 apply方式提交</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> apply 以apply方式提交，否则：commit</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setApply</span><span class="params">(<span class="keyword">boolean</span> apply)</span> </span>&#123;</span><br><span class="line">        isApply = apply;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>使用的话很简单<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SpfUtils&lt;String&gt; stringSpfUtils = <span class="keyword">new</span> SpfUtils&lt;&gt;(<span class="keyword">this</span>);</span><br><span class="line">        stringSpfUtils.put(<span class="string">"基本密码"</span>, <span class="string">"jjmm"</span>);</span><br></pre></td></tr></table></figure></p>
-
+<blockquote>
+<p><code>beego</code>属性的设置</p>
+</blockquote>
+<h5 id="主键、自增"><a href="#主键、自增" class="headerlink" title="主键、自增"></a>主键、自增</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Id  int `orm:&quot;pk;auto&quot;`  pk 主键   auto 自增 使用;进行分割</span><br></pre></td></tr></table></figure>
+<h5 id="是否为空"><a href="#是否为空" class="headerlink" title="是否为空"></a>是否为空</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Title  string `orm:&quot;null&quot;` 默认情况下，不能为空。如果设置了null，那么就可以为空了</span><br></pre></td></tr></table></figure>
+<h5 id="大小"><a href="#大小" class="headerlink" title="大小"></a>大小</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content string `orm:&quot;size(200)&quot;`  size(200) 大小是 200</span><br></pre></td></tr></table></figure>
+<h5 id="时间类型"><a href="#时间类型" class="headerlink" title="时间类型"></a>时间类型</h5><ul>
+<li>datetime 日期时间类型</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Time  time.Time `orm:&quot;type(datetime);auto_now_add&quot;` </span><br><span class="line">type(datetime)日期时间类型。</span><br><span class="line">auto_now_add:第一次保存时候的时间。  </span><br><span class="line">auto_now:model保存时都会对时间自动更新</span><br></pre></td></tr></table></figure>
+<ul>
+<li>date 日期类型</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Time  time.Time `orm:&quot;type(date);auto_now_add&quot;` 设置Time类型为日期类型。第一次保存设置时间</span><br><span class="line">type(datetime)时间类型。</span><br><span class="line">auto_now_add第一次保存的时候的时间。  </span><br><span class="line">auto_now:model保存时都会对时间自动更新</span><br></pre></td></tr></table></figure>
+<h5 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Count  int  `orm:&quot;default(0)&quot;` 默认值为0</span><br></pre></td></tr></table></figure>
+<h5 id="唯一的值"><a href="#唯一的值" class="headerlink" title="唯一的值"></a>唯一的值</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UserName string `orm:&quot;unique&quot;`</span><br></pre></td></tr></table></figure>
+<h5 id="浮点数精度"><a href="#浮点数精度" class="headerlink" title="浮点数精度"></a>浮点数精度</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Num float64 `orm:&quot;digits(12);decimals(4)&quot;` //  浮点型 一共12位数，小数点后面4位</span><br></pre></td></tr></table></figure>
+<h5 id="一对一设置"><a href="#一对一设置" class="headerlink" title="一对一设置"></a>一对一设置</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rel(one)</span><br><span class="line">reverse(one)</span><br></pre></td></tr></table></figure>
+<h5 id="一对多"><a href="#一对多" class="headerlink" title="一对多"></a>一对多</h5><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rel(fk) <span class="comment">//forign key 外键</span></span><br><span class="line">reverse(mang) <span class="comment">//多</span></span><br><span class="line">例子：</span><br><span class="line">ArticleType *ArticleType <span class="string">`orm:"rel(fk)"`</span>  <span class="comment">//外键  设置一对多的关系 --&gt;表1</span></span><br><span class="line">Article  []*Article <span class="string">`orm:"reverse(many)"`</span> <span class="comment">//一对多的反向关系       --&gt;表2</span></span><br></pre></td></tr></table></figure>
+<h5 id="多对多"><a href="#多对多" class="headerlink" title="多对多"></a>多对多</h5><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rel(m2m)</span><br><span class="line">reverse(many) </span><br><span class="line">例子：</span><br><span class="line">Article  []*Article <span class="string">`orm:"reverse(many)"`</span> <span class="comment">//多对多  --&gt;表1</span></span><br><span class="line">User        []*User      <span class="string">`orm:"rel(m2m)"`</span> <span class="comment">//多对多	 --&gt;表2</span></span><br></pre></td></tr></table></figure>
+<h5 id="多表联合查询"><a href="#多表联合查询" class="headerlink" title="多表联合查询"></a>多表联合查询</h5><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">查询Article表中中的外键ArticleType对应表的TypeName==se的所有类型</span><br><span class="line">newOrm.QueryTable(<span class="string">"Article"</span>).RelatedSel(<span class="string">"ArticleType"</span>).Filter(<span class="string">"ArticleType__TypeName"</span>, se).All(&amp;articles)</span><br><span class="line">RelatedSel 需要联合的表 </span><br><span class="line">ArticleType__TypeName 根据联合表（ArticleType）中的（TypeName）字段进行查询</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">查询Article表中id为idInt的数据，并关联ArticleType表 </span><br><span class="line">newOrm.QueryTable(<span class="string">"Article"</span>).Filter(<span class="string">"Id"</span>,idInt).RelatedSel(<span class="string">"ArticleType"</span>).One(&amp;article)</span><br><span class="line"></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h5 id="base"><a href="#base" class="headerlink" title="base"></a>base</h5>
       
 
       
@@ -192,15 +233,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">beego</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">日常问题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">工具类</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">go</a>
         		</li>
       		
 		</ul>
@@ -212,7 +249,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/android//" class="article-tag-list-link color3">android</a>
+        			<a href="/categories/beego//" class="article-tag-list-link color1">beego</a>
         		</li>
       		
 		</ul>
@@ -230,18 +267,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/02/15/读取联系人/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/09/17/beego datetime 时间少八个小时问题/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          读取联系人
+          beego datetime 时间少八个小时问题
         
       </div>
     </a>
   
   
-    <a href="/2019/01/31/封装IO读写/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">封装IO读写</div>
+    <a href="/2019/09/12/远程登录mysql Error 1130 Host xxx is not allowed to connect to this MySQL server/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">远程登录mysql Error 1130 Host xxx is not allowed to connect to this MySQL server</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -268,7 +305,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#一"><span class="toc-number">1.</span> <span class="toc-text">一</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#主键、自增"><span class="toc-number">1.</span> <span class="toc-text">主键、自增</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#是否为空"><span class="toc-number">2.</span> <span class="toc-text">是否为空</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#大小"><span class="toc-number">3.</span> <span class="toc-text">大小</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#时间类型"><span class="toc-number">4.</span> <span class="toc-text">时间类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#默认值"><span class="toc-number">5.</span> <span class="toc-text">默认值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#唯一的值"><span class="toc-number">6.</span> <span class="toc-text">唯一的值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#浮点数精度"><span class="toc-number">7.</span> <span class="toc-text">浮点数精度</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#一对一设置"><span class="toc-number">8.</span> <span class="toc-text">一对一设置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#一对多"><span class="toc-number">9.</span> <span class="toc-text">一对多</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#多对多"><span class="toc-number">10.</span> <span class="toc-text">多对多</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#多表联合查询"><span class="toc-number">11.</span> <span class="toc-text">多表联合查询</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#base"><span class="toc-number">12.</span> <span class="toc-text">base</span></a></li></ol>
                     </div>
                 </span>
             </div>

@@ -102,3 +102,21 @@ Article  []*Article `orm:"reverse(many)"` //多对多  -->表1
 User        []*User      `orm:"rel(m2m)"` //多对多	 -->表2
 ```
 
+#####  多表联合查询
+
+```golang
+查询Article表中中的外键ArticleType对应表的TypeName==se的所有类型
+newOrm.QueryTable("Article").RelatedSel("ArticleType").Filter("ArticleType__TypeName", se).All(&articles)
+RelatedSel 需要联合的表 
+ArticleType__TypeName 根据联合表（ArticleType）中的（TypeName）字段进行查询
+
+---
+
+查询Article表中id为idInt的数据，并关联ArticleType表 
+newOrm.QueryTable("Article").Filter("Id",idInt).RelatedSel("ArticleType").One(&article)
+
+--- 
+```
+
+##### base
+

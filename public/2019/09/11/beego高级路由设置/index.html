@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="基本密码">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/clover-1225988__340.jpg">
-<meta property="og:updated_time" content="2019-09-12T07:34:51.934Z">
+<meta property="og:updated_time" content="2019-09-23T07:38:48.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="beego高级路由设置">
 <meta name="twitter:image" content="http://yoursite.com/images/clover-1225988__340.jpg">
@@ -178,7 +178,7 @@
 	<div id="toc-article" class="toc-article">
 	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
 		<strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#普通的路由"><span class="toc-number">1.</span> <span class="toc-text">普通的路由</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#正则路由"><span class="toc-number">2.</span> <span class="toc-text">正则路由</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#0个或者一个-当后面没有任何数据的时候也可以匹配"><span class="toc-number">2.1.</span> <span class="toc-text">?  0个或者一个  当后面没有任何数据的时候也可以匹配</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#匹配数字-0-9"><span class="toc-number">2.2.</span> <span class="toc-text">匹配数字 [0-9]+</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#匹配字母-w"><span class="toc-number">2.3.</span> <span class="toc-text">匹配字母 [\\w]+</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#匹配-xxx-xxx-前面的字符和后面的字符"><span class="toc-number">2.4.</span> <span class="toc-text">匹配    xxx.xxx   .前面的字符和后面的字符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#全匹配的方式"><span class="toc-number">2.5.</span> <span class="toc-text">全匹配的方式</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#复杂的路由"><span class="toc-number">3.</span> <span class="toc-text">复杂的路由</span></a></li></ol>
+           <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#普通的路由"><span class="toc-number">1.</span> <span class="toc-text">普通的路由</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#正则路由"><span class="toc-number">2.</span> <span class="toc-text">正则路由</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#0个或者一个-当后面没有任何数据的时候也可以匹配"><span class="toc-number">2.1.</span> <span class="toc-text">?  0个或者一个  当后面没有任何数据的时候也可以匹配</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#匹配数字-0-9"><span class="toc-number">2.2.</span> <span class="toc-text">匹配数字 [0-9]+</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#匹配字母-w"><span class="toc-number">2.3.</span> <span class="toc-text">匹配字母 [\\w]+</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#匹配-xxx-xxx-前面的字符和后面的字符"><span class="toc-number">2.4.</span> <span class="toc-text">匹配    xxx.xxx   .前面的字符和后面的字符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#全匹配的方式"><span class="toc-number">2.5.</span> <span class="toc-text">全匹配的方式</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#复杂的路由"><span class="toc-number">3.</span> <span class="toc-text">复杂的路由</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#过滤路由"><span class="toc-number">4.</span> <span class="toc-text">过滤路由</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#注册路由过滤器"><span class="toc-number">4.1.</span> <span class="toc-text">注册路由过滤器</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Prepare-使用该方法"><span class="toc-number">4.2.</span> <span class="toc-text">Prepare 使用该方法</span></a></li></ol></li></ol>
          </div>
    <script type="text/javascript">
 	function showToc(){
@@ -209,6 +209,18 @@
 <h6 id="匹配-xxx-xxx-前面的字符和后面的字符"><a href="#匹配-xxx-xxx-前面的字符和后面的字符" class="headerlink" title="匹配    xxx.xxx   .前面的字符和后面的字符"></a>匹配    xxx.xxx   .前面的字符和后面的字符</h6><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">beego.Router(<span class="string">"/download/*.*"</span>,&amp;controllers.DownLoadController&#123;&#125;,<span class="string">"get:DownLoadFile"</span>)</span><br><span class="line">在后台接受的话是：</span><br><span class="line">s := c.GetString(<span class="string">":path"</span>)   	 <span class="comment">//接收匹配.前面  这里必须是path</span></span><br><span class="line">	s2 := c.GetString(<span class="string">":ext"</span>) 	<span class="comment">//接收匹配.后面   这里必须是ext</span></span><br><span class="line">	beego.Info(s,s2)</span><br><span class="line">	c.TplName = <span class="string">"1.html"</span></span><br></pre></td></tr></table></figure>
 <h6 id="全匹配的方式"><a href="#全匹配的方式" class="headerlink" title="全匹配的方式"></a>全匹配的方式</h6><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">beego.Router(<span class="string">"/all/*"</span>,&amp;controllers.AllController&#123;&#125;,<span class="string">"get:All"</span>) </span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *AllController)</span> <span class="title">All</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	s := c.GetString(<span class="string">":splat"</span>)  <span class="comment">//splat 固定 不能更改       </span></span><br><span class="line">	beego.Info(s)            </span><br><span class="line">	c.TplName = <span class="string">"1.html"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="复杂的路由"><a href="#复杂的路由" class="headerlink" title="复杂的路由"></a>复杂的路由</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">beego.Router(<span class="string">"/num/?:id(你复杂的路由)"</span>,&amp;controllers.NumController&#123;&#125;,<span class="string">"get:GetNum"</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="过滤路由"><a href="#过滤路由" class="headerlink" title="过滤路由"></a>过滤路由</h5><h6 id="注册路由过滤器"><a href="#注册路由过滤器" class="headerlink" title="注册路由过滤器"></a>注册路由过滤器</h6><ul>
+<li>BeforeStatic     静态地址之前 </li>
+<li>BeforeRouter   寻找路由之前</li>
+<li>BeforeExec      找到路由之后，开始执行相应的Controller之前</li>
+<li>AfterExec         执行完Controller逻辑之后执行的过滤器</li>
+<li>FinishRouter    执行完逻辑之后执行的过滤器</li>
+</ul>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//过滤router</span></span><br><span class="line">beego.InsertFilter(<span class="string">"/article/*"</span>, beego.BeforeRouter, filtFun)</span><br><span class="line"> </span><br><span class="line"> <span class="comment">//当匹配的时候 router之前进行的操作</span></span><br><span class="line"><span class="keyword">var</span> filtFun = <span class="function"><span class="keyword">func</span><span class="params">(ctx *context.Context)</span></span> &#123;</span><br><span class="line">	session := ctx.Input.Session(<span class="string">"userName"</span>)</span><br><span class="line">	<span class="keyword">if</span> session == <span class="literal">nil</span> &#123;</span><br><span class="line">		url := ctx.Request.URL</span><br><span class="line">		logs.Info(<span class="string">"请求的url事："</span>, url)</span><br><span class="line">		ctx.Redirect(<span class="number">302</span>, <span class="string">"/"</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="Prepare-使用该方法"><a href="#Prepare-使用该方法" class="headerlink" title="Prepare 使用该方法"></a>Prepare 使用该方法</h6><blockquote>
+<p>定义<code>baseControllers</code> 使所有的<code>controllers</code>都继承它。在所有controllers都执行的方法里面，进行过滤</p>
+</blockquote>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(this *BaseController)</span> <span class="title">Prepare</span><span class="params">()</span></span> &#123;</span><br><span class="line"><span class="comment">//所有的路由都会继承此方法</span></span><br><span class="line"><span class="comment">//首先执行的方法</span></span><br><span class="line">this.IsLogin = <span class="literal">false</span></span><br><span class="line">	session := this.GetSession(SESSION_USER_KEY)</span><br><span class="line">	logs.Info(<span class="string">"session---&gt;"</span>, session)</span><br><span class="line">	<span class="keyword">if</span> session != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="comment">//session是否为User对象</span></span><br><span class="line">		<span class="keyword">if</span> u, ok := session.(models.User); ok &#123;</span><br><span class="line">			this.User = u</span><br><span class="line">			this.Data[<span class="string">"user"</span>] = u</span><br><span class="line">			this.IsLogin = <span class="literal">true</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -294,7 +306,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#普通的路由"><span class="toc-number">1.</span> <span class="toc-text">普通的路由</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#正则路由"><span class="toc-number">2.</span> <span class="toc-text">正则路由</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#0个或者一个-当后面没有任何数据的时候也可以匹配"><span class="toc-number">2.1.</span> <span class="toc-text">?  0个或者一个  当后面没有任何数据的时候也可以匹配</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#匹配数字-0-9"><span class="toc-number">2.2.</span> <span class="toc-text">匹配数字 [0-9]+</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#匹配字母-w"><span class="toc-number">2.3.</span> <span class="toc-text">匹配字母 [\\w]+</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#匹配-xxx-xxx-前面的字符和后面的字符"><span class="toc-number">2.4.</span> <span class="toc-text">匹配    xxx.xxx   .前面的字符和后面的字符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#全匹配的方式"><span class="toc-number">2.5.</span> <span class="toc-text">全匹配的方式</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#复杂的路由"><span class="toc-number">3.</span> <span class="toc-text">复杂的路由</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#普通的路由"><span class="toc-number">1.</span> <span class="toc-text">普通的路由</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#正则路由"><span class="toc-number">2.</span> <span class="toc-text">正则路由</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#0个或者一个-当后面没有任何数据的时候也可以匹配"><span class="toc-number">2.1.</span> <span class="toc-text">?  0个或者一个  当后面没有任何数据的时候也可以匹配</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#匹配数字-0-9"><span class="toc-number">2.2.</span> <span class="toc-text">匹配数字 [0-9]+</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#匹配字母-w"><span class="toc-number">2.3.</span> <span class="toc-text">匹配字母 [\\w]+</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#匹配-xxx-xxx-前面的字符和后面的字符"><span class="toc-number">2.4.</span> <span class="toc-text">匹配    xxx.xxx   .前面的字符和后面的字符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#全匹配的方式"><span class="toc-number">2.5.</span> <span class="toc-text">全匹配的方式</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#复杂的路由"><span class="toc-number">3.</span> <span class="toc-text">复杂的路由</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#过滤路由"><span class="toc-number">4.</span> <span class="toc-text">过滤路由</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#注册路由过滤器"><span class="toc-number">4.1.</span> <span class="toc-text">注册路由过滤器</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Prepare-使用该方法"><span class="toc-number">4.2.</span> <span class="toc-text">Prepare 使用该方法</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -398,18 +410,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">flutter</a>
               </li>
              
@@ -418,7 +418,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">自定义view</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -430,6 +438,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自定义view</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">日常问题</a>
               </li>
              
@@ -438,15 +450,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">okhttp</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">源码分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
               </li>
              
               <li class="article-tag-list-item">

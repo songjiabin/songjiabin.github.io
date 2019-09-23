@@ -79,6 +79,55 @@ func (c *AllController) All()  {
 beego.Router("/num/?:id(你复杂的路由)",&controllers.NumController{},"get:GetNum") 
 ```
 
+##### 过滤路由 
+
+######  注册路由过滤器 
+
+- BeforeStatic     静态地址之前 
+- BeforeRouter   寻找路由之前
+- BeforeExec      找到路由之后，开始执行相应的Controller之前
+- AfterExec         执行完Controller逻辑之后执行的过滤器
+- FinishRouter    执行完逻辑之后执行的过滤器
+
+
+
+```golang
+//过滤router
+beego.InsertFilter("/article/*", beego.BeforeRouter, filtFun)
+ 
+ //当匹配的时候 router之前进行的操作
+var filtFun = func(ctx *context.Context) {
+	session := ctx.Input.Session("userName")
+	if session == nil {
+		url := ctx.Request.URL
+		logs.Info("请求的url事：", url)
+		ctx.Redirect(302, "/")
+	}
+}
+```
+
+######  Prepare 使用该方法 
+
+> 定义`baseControllers` 使所有的`controllers`都继承它。在所有controllers都执行的方法里面，进行过滤
+
+```golang
+func (this *BaseController) Prepare() {
+//所有的路由都会继承此方法
+//首先执行的方法
+this.IsLogin = false
+	session := this.GetSession(SESSION_USER_KEY)
+	logs.Info("session--->", session)
+	if session != nil {
+		//session是否为User对象
+		if u, ok := session.(models.User); ok {
+			this.User = u
+			this.Data["user"] = u
+			this.IsLogin = true
+		}
+	}
+}
+```
+
 
 
 
