@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>beego常用模块语法 | 基本密码</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="beego,go">
+  <meta name="keywords" content="go,beego">
 <meta property="og:type" content="article">
 <meta property="og:title" content="beego常用模块语法">
 <meta property="og:url" content="http://yoursite.com/2019/09/17/beego常用模块语法/index.html">
 <meta property="og:site_name" content="基本密码">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/1568788572743.png">
-<meta property="og:updated_time" content="2019-09-23T09:35:25.291Z">
+<meta property="og:image" content="http://yoursite.com/images/fire-bug-4489824__340.jpg">
+<meta property="og:updated_time" content="2019-09-29T09:21:51.347Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="beego常用模块语法">
-<meta name="twitter:image" content="http://yoursite.com/images/1568788572743.png">
+<meta name="twitter:image" content="http://yoursite.com/images/fire-bug-4489824__340.jpg">
   
     <link rel="alternative" href="/atom.xml" title="基本密码" type="application/atom+xml">
   
@@ -178,7 +178,7 @@
 	<div id="toc-article" class="toc-article">
 	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
 		<strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#for-循环"><span class="toc-number">1.</span> <span class="toc-text">for 循环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#格式化时间"><span class="toc-number">2.</span> <span class="toc-text">格式化时间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在分页中遇到的知识点"><span class="toc-number">3.</span> <span class="toc-text">在分页中遇到的知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#使用视图代码（在html中进行调用go代码）"><span class="toc-number">3.1.</span> <span class="toc-text">使用视图代码（在html中进行调用go代码）</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#if-else-gt-大于-lt-小于"><span class="toc-number">4.</span> <span class="toc-text">if else  gt(大于)       lt(小于)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#gt-大于-lt-小于-gte-大于等于-lte-小于等于"><span class="toc-number">5.</span> <span class="toc-text">gt(大于)  lt(小于)  gte(大于等于)    lte(小于等于)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#等于compare、eq"><span class="toc-number">6.</span> <span class="toc-text">等于compare、eq</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#不等于"><span class="toc-number">7.</span> <span class="toc-text">不等于</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#template"><span class="toc-number">8.</span> <span class="toc-text">template</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Layout"><span class="toc-number">9.</span> <span class="toc-text">Layout</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#LayoutSections"><span class="toc-number">10.</span> <span class="toc-text">LayoutSections</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#注意的地方（在range中使用控制器中的变量时）"><span class="toc-number">11.</span> <span class="toc-text">$.注意的地方（在range中使用控制器中的变量时）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Cookie的注意点"><span class="toc-number">12.</span> <span class="toc-text">Cookie的注意点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Session-和-路由过滤器"><span class="toc-number">13.</span> <span class="toc-text">Session 和 路由过滤器</span></a></li></ol>
+           <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#for-循环"><span class="toc-number">1.</span> <span class="toc-text">for 循环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#格式化时间"><span class="toc-number">2.</span> <span class="toc-text">格式化时间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在分页中遇到的知识点"><span class="toc-number">3.</span> <span class="toc-text">在分页中遇到的知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#使用视图代码（在html中进行调用go代码）"><span class="toc-number">3.1.</span> <span class="toc-text">使用视图代码（在html中进行调用go代码）</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#if-else-gt-大于-lt-小于"><span class="toc-number">4.</span> <span class="toc-text">if else  gt(大于)       lt(小于)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#gt-大于-lt-小于-gte-大于等于-lte-小于等于"><span class="toc-number">5.</span> <span class="toc-text">gt(大于)  lt(小于)  gte(大于等于)    lte(小于等于)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#等于compare、eq"><span class="toc-number">6.</span> <span class="toc-text">等于compare、eq</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#不等于"><span class="toc-number">7.</span> <span class="toc-text">不等于</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#template"><span class="toc-number">8.</span> <span class="toc-text">template</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Layout"><span class="toc-number">9.</span> <span class="toc-text">Layout</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#LayoutSections"><span class="toc-number">10.</span> <span class="toc-text">LayoutSections</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#注意的地方（在range中使用控制器中的变量时）"><span class="toc-number">11.</span> <span class="toc-text">$.注意的地方（在range中使用控制器中的变量时）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Cookie的注意点"><span class="toc-number">12.</span> <span class="toc-text">Cookie的注意点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Session-和-路由过滤器"><span class="toc-number">13.</span> <span class="toc-text">Session 和 路由过滤器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用错误界面"><span class="toc-number">14.</span> <span class="toc-text">使用错误界面</span></a></li></ol>
          </div>
    <script type="text/javascript">
 	function showToc(){
@@ -197,7 +197,7 @@
       
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1568788572743.png" alt="1568788572743"></p>
+        <p><img src="/images/fire-bug-4489824__340.jpg" alt="火的Bug, 麝香锦葵, 错误, 锦葵, 黄, 麝香-锦葵, 印度锦葵芙蓉"></p>
 <a id="more"></a>
 <blockquote>
 <p>在html中使用数据的一些方法</p>
@@ -241,6 +241,11 @@
 <h5 id="Session-和-路由过滤器"><a href="#Session-和-路由过滤器" class="headerlink" title="Session 和 路由过滤器"></a>Session 和 路由过滤器</h5><blockquote>
 <p>存储用户信息，beego默认把数据存在后台 内存中。临时存储数据，如果浏览器关闭，session数据失效。当在浏览器上</p>
 </blockquote>
+<h5 id="使用错误界面"><a href="#使用错误界面" class="headerlink" title="使用错误界面"></a>使用错误界面</h5><blockquote>
+<p>当404的时候，直接使用<code>beego</code>中定义好的错误模板</p>
+</blockquote>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、定义ErrorController</span><br><span class="line"><span class="keyword">type</span> ErrorController <span class="keyword">struct</span> &#123;</span><br><span class="line">	BaseController</span><br><span class="line">&#125;</span><br><span class="line"><span class="number">2</span>、<span class="number">404</span>处理</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(this *ErrorController)</span> <span class="title">Error404</span><span class="params">()</span></span> &#123;</span><br><span class="line">	this.Data[<span class="string">"content"</span>] = <span class="string">"page not found---404"</span></span><br><span class="line">	this.TplName = <span class="string">"error/404.html"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="number">3</span>、<span class="number">500</span>处理</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(this *ErrorController)</span> <span class="title">Error500</span><span class="params">()</span></span> &#123;</span><br><span class="line">	err, _ := this.Data[<span class="string">"error"</span>].(error)</span><br><span class="line">	this.Data[<span class="string">"err"</span>] = err</span><br><span class="line">	this.TplName = <span class="string">"error/500.html"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="number">4</span>、在router注册</span><br><span class="line"><span class="comment">//错误处理的界面</span></span><br><span class="line">beego.ErrorController(&amp;controllers.ErrorController&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>当要出发500错误的时候，需要调用controll.Abort(‘500’)</strong></p>
 
       
 
@@ -254,11 +259,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">beego</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">go</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">go</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">beego</a>
         		</li>
       		
 		</ul>
@@ -287,6 +292,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/09/24/centos 7 git/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          centos 7 git
+        
+      </div>
+    </a>
   
   
     <a href="/2019/09/17/beego datetime 时间少八个小时问题/" id="article-nav-older" class="article-nav-link-wrap">
@@ -317,7 +331,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#for-循环"><span class="toc-number">1.</span> <span class="toc-text">for 循环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#格式化时间"><span class="toc-number">2.</span> <span class="toc-text">格式化时间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在分页中遇到的知识点"><span class="toc-number">3.</span> <span class="toc-text">在分页中遇到的知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#使用视图代码（在html中进行调用go代码）"><span class="toc-number">3.1.</span> <span class="toc-text">使用视图代码（在html中进行调用go代码）</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#if-else-gt-大于-lt-小于"><span class="toc-number">4.</span> <span class="toc-text">if else  gt(大于)       lt(小于)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#gt-大于-lt-小于-gte-大于等于-lte-小于等于"><span class="toc-number">5.</span> <span class="toc-text">gt(大于)  lt(小于)  gte(大于等于)    lte(小于等于)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#等于compare、eq"><span class="toc-number">6.</span> <span class="toc-text">等于compare、eq</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#不等于"><span class="toc-number">7.</span> <span class="toc-text">不等于</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#template"><span class="toc-number">8.</span> <span class="toc-text">template</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Layout"><span class="toc-number">9.</span> <span class="toc-text">Layout</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#LayoutSections"><span class="toc-number">10.</span> <span class="toc-text">LayoutSections</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#注意的地方（在range中使用控制器中的变量时）"><span class="toc-number">11.</span> <span class="toc-text">$.注意的地方（在range中使用控制器中的变量时）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Cookie的注意点"><span class="toc-number">12.</span> <span class="toc-text">Cookie的注意点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Session-和-路由过滤器"><span class="toc-number">13.</span> <span class="toc-text">Session 和 路由过滤器</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#for-循环"><span class="toc-number">1.</span> <span class="toc-text">for 循环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#格式化时间"><span class="toc-number">2.</span> <span class="toc-text">格式化时间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在分页中遇到的知识点"><span class="toc-number">3.</span> <span class="toc-text">在分页中遇到的知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#使用视图代码（在html中进行调用go代码）"><span class="toc-number">3.1.</span> <span class="toc-text">使用视图代码（在html中进行调用go代码）</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#if-else-gt-大于-lt-小于"><span class="toc-number">4.</span> <span class="toc-text">if else  gt(大于)       lt(小于)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#gt-大于-lt-小于-gte-大于等于-lte-小于等于"><span class="toc-number">5.</span> <span class="toc-text">gt(大于)  lt(小于)  gte(大于等于)    lte(小于等于)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#等于compare、eq"><span class="toc-number">6.</span> <span class="toc-text">等于compare、eq</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#不等于"><span class="toc-number">7.</span> <span class="toc-text">不等于</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#template"><span class="toc-number">8.</span> <span class="toc-text">template</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Layout"><span class="toc-number">9.</span> <span class="toc-text">Layout</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#LayoutSections"><span class="toc-number">10.</span> <span class="toc-text">LayoutSections</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#注意的地方（在range中使用控制器中的变量时）"><span class="toc-number">11.</span> <span class="toc-text">$.注意的地方（在range中使用控制器中的变量时）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Cookie的注意点"><span class="toc-number">12.</span> <span class="toc-text">Cookie的注意点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Session-和-路由过滤器"><span class="toc-number">13.</span> <span class="toc-text">Session 和 路由过滤器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用错误界面"><span class="toc-number">14.</span> <span class="toc-text">使用错误界面</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -413,6 +427,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">android</a>
               </li>
              
@@ -429,7 +451,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color3">自定义view</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -437,19 +459,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">beego</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">自定义view</a>
+                <a href="javascript:void(0)" class="js-tag color1">beego</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -461,7 +475,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -470,6 +488,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">源码分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,11 +511,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
+                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">

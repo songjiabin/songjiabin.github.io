@@ -11,7 +11,7 @@ typora-copy-images-to: ..\images
 typora-root-url: ..
 ---
 
-![1568788572743](/images/1568788572743.png)
+![火的Bug, 麝香锦葵, 错误, 锦葵, 黄, 麝香-锦葵, 印度锦葵芙蓉](/images/fire-bug-4489824__340.jpg)
 
 <!-- more -->
 
@@ -269,4 +269,31 @@ check := this.GetString("remember")
 ##### Session 和 路由过滤器
 
 > 存储用户信息，beego默认把数据存在后台 内存中。临时存储数据，如果浏览器关闭，session数据失效。当在浏览器上
+
+##### 使用错误界面
+
+> 当404的时候，直接使用`beego`中定义好的错误模板
+
+```golang
+1、定义ErrorController
+type ErrorController struct {
+	BaseController
+}
+2、404处理
+func (this *ErrorController) Error404() {
+	this.Data["content"] = "page not found---404"
+	this.TplName = "error/404.html"
+}
+3、500处理
+func (this *ErrorController) Error500() {
+	err, _ := this.Data["error"].(error)
+	this.Data["err"] = err
+	this.TplName = "error/500.html"
+}
+4、在router注册
+//错误处理的界面
+beego.ErrorController(&controllers.ErrorController{})
+```
+
+**当要出发500错误的时候，需要调用controll.Abort('500')**
 

@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2953304-669e8b3861d09178.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2953304-255f3801d01766fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2953304-eed0bbee69aaf674.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-08-22T03:56:05.328Z">
+<meta property="og:updated_time" content="2019-09-24T09:58:01.594Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux常用">
 <meta name="twitter:description" content="我花开后百花杀">
@@ -196,7 +196,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ll -h  --&gt;查看并标出大小</span><br><span class="line">ls     ---&gt;列出目录或者文件</span><br><span class="line">ls -l  ---&gt;以列表的方式</span><br><span class="line">ls -a  ---&gt;包括隐藏文件全部显示</span><br><span class="line">mkdir A --&gt;在当前目录下创建新文件夹</span><br><span class="line">pwd    ---&gt;得到当前所在的目录</span><br><span class="line">su - use1 ---&gt;从高权限切换到低权限的用户</span><br><span class="line">exit  --&gt;当在一个低权限的用户的时候，立马回到高权限中去</span><br><span class="line">cd ~  或者    cd     ---&gt;回到家目录</span><br><span class="line">mkdir <span class="keyword">new</span>  --&gt;当前目录下创建<span class="keyword">new</span></span><br><span class="line">mkdir -p <span class="keyword">new</span>/new2/new3 --&gt;在当前目录下创建多个目录</span><br><span class="line">rmdir  /root/<span class="keyword">new</span>  ---&gt;删除一个目录(必须删除的事空目录)</span><br><span class="line">rm -rf  /root/<span class="keyword">new</span>   --&gt;强制删除一个文件或者一个文件夹  </span><br><span class="line">cat /etc/passwd     ---&gt;查看用户列表</span><br><span class="line">cat /etc/group      ---&gt;查看用户组列表</span><br><span class="line">每当安装了一个软件后，默认会放到/usr/local下面的目录下，比如安装了mysql,在usr/local 下面会有/usr/local/mysql 的目录 </span><br><span class="line">chown -R mysql:mysql /usr/local/mysql ----&gt;将该目录下的所有文件的所属人和分组都改为mysql</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>文件的操作</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">touch a.txt  ---&gt;创建一个空文件</span><br><span class="line">toucch a.txt b.txt --&gt; 一次可以创建多个文件</span><br><span class="line">cp  a.txt /root/<span class="keyword">new</span>/ --&gt;拷贝当前目录下的a.txt到 /root/<span class="keyword">new</span>/目录下</span><br><span class="line">cp  -r go/ /roo/<span class="keyword">new</span>/  --&gt;靠谱当前目录下的go文件到 /root/<span class="keyword">new</span>目录下。</span><br><span class="line">\cp -r go/ /roo/<span class="keyword">new</span>/ --&gt;强制覆盖内容 拷贝目录到指定地址去 </span><br><span class="line">rm   a.txt     ---&gt;删除一个文件</span><br><span class="line">rm -f /root/a.txt --&gt;不给提示，删除一个文件（只能删除一个文件）</span><br><span class="line">rm -rf /root/go  --&gt;删除一个文件夹或者一个文件（强制） -f(不想让他提示)  </span><br><span class="line">mv  a.txt b.txt  --&gt;将a.txt 重命名为b.txt (在一个文件目录下操作)</span><br><span class="line">mv  /root/a.txt  /home/b.txt  --&gt;将/root/a.txt 文件移动到 /home/b.txt下，并改名为b.txt</span><br><span class="line">cat a.txt   ---&gt;查看问文件a.txt(只读的方式)</span><br><span class="line">cat -n a.txt ---&gt;显示行号的只读查看 </span><br><span class="line">cat -n /etc/profile | more  ---&gt;带上行号查看并且分页查看 [more] 按空格 是换页 </span><br><span class="line">more /etc/profile  --&gt;使用more查看(空格下一页，回车下一行，ctr+b上一页,ctr+f下一页)</span><br><span class="line">less /etc/profile 查看大文件的时候使用</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">touch a.txt  ---&gt;创建一个空文件</span><br><span class="line">toucch a.txt b.txt --&gt; 一次可以创建多个文件</span><br><span class="line">cp  a.txt /root/<span class="keyword">new</span>/ --&gt;拷贝当前目录下的a.txt到 /root/<span class="keyword">new</span>/目录下</span><br><span class="line">cp  -r go/ /roo/<span class="keyword">new</span>/  --&gt;靠谱当前目录下的go文件到 /root/<span class="keyword">new</span>目录下。</span><br><span class="line">\cp -r go/ /roo/<span class="keyword">new</span>/ --&gt;强制覆盖内容 拷贝目录到指定地址去 </span><br><span class="line">cp -r /home/java .   --&gt;拷贝 /home/java  下的所有文件夹/文件到当前目录下</span><br><span class="line">rm   a.txt     ---&gt;删除一个文件</span><br><span class="line">rm -f /root/a.txt --&gt;不给提示，删除一个文件（只能删除一个文件）</span><br><span class="line">rm -rf /root/go  --&gt;删除一个文件夹或者一个文件（强制） -f(不想让他提示)  </span><br><span class="line">mv  a.txt b.txt  --&gt;将a.txt 重命名为b.txt (在一个文件目录下操作)</span><br><span class="line">mv  /root/a.txt  /home/b.txt  --&gt;将/root/a.txt 文件移动到 /home/b.txt下，并改名为b.txt</span><br><span class="line">cat a.txt   ---&gt;查看问文件a.txt(只读的方式)</span><br><span class="line">cat -n a.txt ---&gt;显示行号的只读查看 </span><br><span class="line">cat -n /etc/profile | more  ---&gt;带上行号查看并且分页查看 [more] 按空格 是换页 </span><br><span class="line">more /etc/profile  --&gt;使用more查看(空格下一页，回车下一行，ctr+b上一页,ctr+f下一页)</span><br><span class="line">less /etc/profile 查看大文件的时候使用</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>>指令      &gt;&gt;指令</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;       ---&gt;追加覆盖</span><br><span class="line">&gt;&gt;      ---&gt;向内容后面添加 </span><br><span class="line">ls &gt; a.txt  ---&gt;将ls显示的内容覆盖写入到a.txt中（a.txt如果没有则创建）</span><br><span class="line">ls &gt;&gt; a.txt   ---&gt;将显示的内容追加到a.txt中去</span><br></pre></td></tr></table></figure>
@@ -236,11 +236,11 @@
 <li style="list-style: none"><input type="checkbox" checked> 进行查询<code>locate abc.txt</code>  </li>
 </ul>
 <ul>
-<li>grep  过滤<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cat /roo/go/a.txt  | grep  abc  --&gt; 查询目标路径中 字段为 abc 的信息</span><br><span class="line"></span><br><span class="line">cat /roo/go/a.txt  | grep  abc -n  --&gt; 查询目标路径中 字段为 abc 的信息 ,并显示行号</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cat /roo/go/a.txt  | grep  abc -n -i --&gt; 查询目标路径中 字段为 abc(忽略大小写) 的信息 ,并显示行号</span><br></pre></td></tr></table></figure>
+<li><p>grep  过滤</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cat /roo/go/a.txt  | grep  abc  --&gt; 查询目标路径中 字段为 abc 的信息</span><br><span class="line"></span><br><span class="line">cat /roo/go/a.txt  | grep  abc -n  --&gt; 查询目标路径中 字段为 abc 的信息 ,并显示行号</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cat /roo/go/a.txt  | grep  abc -n -i --&gt; 查询目标路径中 字段为 abc(忽略大小写) 的信息 ,并显示行号</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<ul>
-<li>压缩 解压缩 <h6 id="gizp、gunzip"><a href="#gizp、gunzip" class="headerlink" title="gizp、gunzip"></a>gizp、gunzip</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gzip    ---&gt;用于压缩文件（只能压缩为*.gz文件）压缩后 此前文件没有</span><br><span class="line">gunzip  ---&gt;解压缩文件 </span><br><span class="line">gzip /home/go/abc.txt   ---&gt;将指定文件压缩成.gz文件</span><br></pre></td></tr></table></figure>
+<li><p>压缩 解压缩 </p>
+<h6 id="gizp、gunzip"><a href="#gizp、gunzip" class="headerlink" title="gizp、gunzip"></a>gizp、gunzip</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gzip    ---&gt;用于压缩文件（只能压缩为*.gz文件）压缩后 此前文件没有</span><br><span class="line">gunzip  ---&gt;解压缩文件 </span><br><span class="line">gzip /home/go/abc.txt   ---&gt;将指定文件压缩成.gz文件</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h6 id="zip-、unzip"><a href="#zip-、unzip" class="headerlink" title="zip 、unzip"></a>zip 、unzip</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">zip -r myPackage.zip /home      -----&gt;将目录/home压缩成myPackage.zip 文件</span><br><span class="line">unzip  myPackage.zip     ---&gt;将压缩包进行解压 解压到当前目录下</span><br><span class="line">upzip -d /root/<span class="keyword">new</span> myPackage.zip   --&gt;将当前目录下的 myPackage.zip解压到 /root/<span class="keyword">new</span> 下面</span><br></pre></td></tr></table></figure>
@@ -482,6 +482,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">android</a>
               </li>
              
@@ -498,7 +506,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color3">自定义view</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -506,19 +514,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">beego</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">自定义view</a>
+                <a href="javascript:void(0)" class="js-tag color1">beego</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -530,7 +530,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,6 +543,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">源码分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -558,11 +566,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
+                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">

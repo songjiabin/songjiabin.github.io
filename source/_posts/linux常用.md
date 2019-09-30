@@ -72,6 +72,7 @@ toucch a.txt b.txt --> 一次可以创建多个文件
 cp  a.txt /root/new/ -->拷贝当前目录下的a.txt到 /root/new/目录下
 cp  -r go/ /roo/new/  -->靠谱当前目录下的go文件到 /root/new目录下。
 \cp -r go/ /roo/new/ -->强制覆盖内容 拷贝目录到指定地址去 
+cp -r /home/java .   -->拷贝 /home/java  下的所有文件夹/文件到当前目录下
 rm   a.txt     --->删除一个文件
 rm -f /root/a.txt -->不给提示，删除一个文件（只能删除一个文件）
 rm -rf /root/go  -->删除一个文件夹或者一个文件（强制） -f(不想让他提示)  
@@ -200,7 +201,7 @@ cat /roo/go/a.txt  | grep  abc -n  --> 查询目标路径中 字段为 abc 的�
 cat /roo/go/a.txt  | grep  abc -n -i --> 查询目标路径中 字段为 abc(忽略大小写) 的信息 ,并显示行号
 
 ```
- 
+
 - 压缩 解压缩 
 ###### gizp、gunzip 
 ```Java
@@ -240,7 +241,7 @@ upzip -d /root/new myPackage.zip   -->将当前目录下的 myPackage.zip解压�
 
 
  
- 
+
  
 
 
@@ -264,7 +265,7 @@ sync   -->将内存数据保存到磁盘上
 
 ##### 从xshell 注销
 > logout --> 图形界面使用此命令无效
- 
+
 
 
  

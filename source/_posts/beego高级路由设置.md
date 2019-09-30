@@ -128,6 +128,22 @@ this.IsLogin = false
 }
 ```
 
+##### 注释路由
+
+不用在`router`里面写匹配，直接在方法的上面写上匹配的规则
+
+```golang
+// @router /  [get]   再方法上匹配这样的(也可以在这里进行匹配规则，和上面的匹配相似)
+//展示注册的界面  注释必须写在这里 其他地方不行
+func (this *IndexController) Index() {
+    ...
+}
+//在router上进行注册
+/主页路由
+beego.Include(&controllers.IndexController{})
+
+```
+
 
 
 

@@ -11,7 +11,7 @@ typora-copy-images-to: ..\images
 typora-root-url: ..
 ---
 
-![æ¬ä¹¦, è¯"å, æ¾æ¾, èå°, ä¹¦é¡µ, æè², å¾ä¹¦, å­¦ä¹ , æå­¦, éè](/images/book-2304389__340.jpg)
+![Maślaki, 蘑菇, 帽子, 苔藓, 森林, 天空, 植被, 性质](/images/maslaki-4496903__340.jpg)
 
 <!-- more -->
 
@@ -102,7 +102,7 @@ Article  []*Article `orm:"reverse(many)"` //多对多  -->表1
 User        []*User      `orm:"rel(m2m)"` //多对多	 -->表2
 ```
 
-#####  多表联合查询
+#####  多表联合查询（一对多）
 
 ```golang
 查询Article表中中的外键ArticleType对应表的TypeName==se的所有类型
@@ -118,5 +118,58 @@ newOrm.QueryTable("Article").Filter("Id",idInt).RelatedSel("ArticleType").One(&a
 --- 
 ```
 
-##### base
+##### 多对多插入操作
+
+```golang
+//多对多插入数据
+//获取多对多的操作对象
+m2m := newOrm.QueryM2M(&article, "User")  //article 为其中一个表。 User（字段名） 为其中的多对多字段
+就是下面的实体类：
+type Article struct {
+	User        []*User      `orm:"rel(m2m)"`                         //多对多
+}
+
+//根据session获取用户
+sessionUserName := this.GetSession("userName")
+user := models.User{UserName: sessionUserName.(string)}
+newOrm.Read(&user, "userName")
+_, e = m2m.Add(&user)     //添加文章所对应的用户
+if e != nil {
+	logs.Info("添加多对多的时候失败", e)
+	return
+}
+
+```
+
+##### 多对多查询
+
+- 第一种方法（`LoadRelated`）
+
+```golang
+//查询多对多
+//这个文章都被哪些用户看过
+newOrm.LoadRelated(&article, "User")   //查询对应该文章下所有的用户记录
+
+newOrm.LoadRelated(&user, "Article")   //查询该用户下所有的文章记录
+	for _, v := range user.Article {
+		logs.Info("该用户下所有的文章", v.Id, v.Title)
+	}
+```
+
+
+
+-  第二种方法（`QueryTable`）
+
+```golang
+//查询所有的用户 根据文章
+users := []models.User{}
+newOrm.QueryTable("User"). //指定查询的表
+	Filter("Article__Article__Id", id). //字段名__表名__查询的字段
+	Distinct(). //去重
+	All(&users)
+this.Data["article_users"] = users
+logs.Info("用户--->", users)
+```
+
+
 
