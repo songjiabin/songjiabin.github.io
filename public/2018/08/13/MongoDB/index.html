@@ -315,18 +315,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/08/13/仿照微博折叠效果/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/08/13/scrollTo 以及  scrollBy/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          仿照微博折叠效果
+          scrollTo 以及  scrollBy
         
       </div>
     </a>
   
   
-    <a href="/2018/08/13/scrollTo 以及  scrollBy/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">scrollTo 以及  scrollBy</div>
+    <a href="/2018/08/13/popularWindow封装、单选、多选/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">popularWindow封装、单选、多选</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -345,19 +345,6 @@
             </div>
         </div>
         
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#流程"><span class="toc-number">1.</span> <span class="toc-text">流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#操作数据库"><span class="toc-number">2.</span> <span class="toc-text">操作数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#查看所有的数据库"><span class="toc-number">2.1.</span> <span class="toc-text">查看所有的数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建或者使用数据库"><span class="toc-number">2.2.</span> <span class="toc-text">创建或者使用数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除当前的数据库（首先必须要是正在操作的数据库）"><span class="toc-number">2.3.</span> <span class="toc-text">删除当前的数据库（首先必须要是正在操作的数据库）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看当前数据库"><span class="toc-number">2.4.</span> <span class="toc-text">查看当前数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#插入数据"><span class="toc-number">2.5.</span> <span class="toc-text">插入数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#断开连接"><span class="toc-number">2.6.</span> <span class="toc-text">断开连接</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#集合操作"><span class="toc-number">3.</span> <span class="toc-text">集合操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#查看当前数据下所有的集合-就是当前数据库下有几个表"><span class="toc-number">3.1.</span> <span class="toc-text">查看当前数据下所有的集合(就是当前数据库下有几个表)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建集合-创建表"><span class="toc-number">3.2.</span> <span class="toc-text">创建集合(创建表)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除集合（删除表）"><span class="toc-number">3.3.</span> <span class="toc-text">删除集合（删除表）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文档操作"><span class="toc-number">4.</span> <span class="toc-text">文档操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#使用insert方式"><span class="toc-number">4.1.</span> <span class="toc-text">使用insert方式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用save方式"><span class="toc-number">4.2.</span> <span class="toc-text">使用save方式</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文档的更新"><span class="toc-number">5.</span> <span class="toc-text">文档的更新</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文档的删除"><span class="toc-number">6.</span> <span class="toc-text">文档的删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文档的查询"><span class="toc-number">7.</span> <span class="toc-text">文档的查询</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#pretty-格式化数据显示方式-显示的是json格式"><span class="toc-number">7.1.</span> <span class="toc-text">pretty 格式化数据显示方式  显示的是json格式</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#条件操作符号"><span class="toc-number">8.</span> <span class="toc-text">条件操作符号</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#大于-gt"><span class="toc-number">8.1.</span> <span class="toc-text">大于          $gt</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#大于等于-gte"><span class="toc-number">8.2.</span> <span class="toc-text">大于等于    $gte</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#小于-lt"><span class="toc-number">8.3.</span> <span class="toc-text">小于          $lt</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#小于等于-lte"><span class="toc-number">8.4.</span> <span class="toc-text">小于等于      $lte</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#大于等于…小于等于…"><span class="toc-number">8.5.</span> <span class="toc-text">大于等于…小于等于….</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#等于"><span class="toc-number">8.6.</span> <span class="toc-text">等于          $:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用-id进行查询"><span class="toc-number">8.7.</span> <span class="toc-text">使用_id进行查询</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查询某个结果集的数据的条数"><span class="toc-number">8.8.</span> <span class="toc-text">查询某个结果集的数据的条数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查询某个字段的值当中是否包含另一个值"><span class="toc-number">8.9.</span> <span class="toc-text">查询某个字段的值当中是否包含另一个值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查询某个字段的值是否以另一个值开头"><span class="toc-number">8.10.</span> <span class="toc-text">查询某个字段的值是否以另一个值开头</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ADN"><span class="toc-number">8.11.</span> <span class="toc-text">ADN</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#OR"><span class="toc-number">8.12.</span> <span class="toc-text">OR</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#limit-skip"><span class="toc-number">8.13.</span> <span class="toc-text">limit skip</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#排序"><span class="toc-number">8.14.</span> <span class="toc-text">排序</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
         
     </div>
 </aside>
@@ -449,6 +436,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
@@ -465,14 +460,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
@@ -485,11 +472,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color1">beego</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">beego</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -498,6 +485,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Viper</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,6 +549,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">读书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">gin</a>
               </li>
             
             <div class="clearfix"></div>

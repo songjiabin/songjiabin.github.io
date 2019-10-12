@@ -309,15 +309,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/06/02/view 事件体系/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/13/View top、left、x、y、translationX、translationY 理解/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          View 事件体系
+          View top、left、x、y、translationX、translationY 理解
         
       </div>
     </a>
   
+  
+    <a href="/2017/06/02/view 事件体系/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">View 事件体系</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -334,19 +339,6 @@
             </div>
         </div>
         
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#View"><span class="toc-number">1.</span> <span class="toc-text">View</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概叙"><span class="toc-number">1.1.</span> <span class="toc-text">概叙</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#onMeasure-测量"><span class="toc-number">1.2.</span> <span class="toc-text">onMeasure 测量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#onDraw-绘制"><span class="toc-number">1.3.</span> <span class="toc-text">onDraw  绘制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ViewGroup"><span class="toc-number">2.</span> <span class="toc-text">ViewGroup</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概述"><span class="toc-number">2.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自己设计一个ViewGroup"><span class="toc-number">2.2.</span> <span class="toc-text">自己设计一个ViewGroup</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#例子"><span class="toc-number">2.3.</span> <span class="toc-text">例子</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#onMeasure-测量-1"><span class="toc-number">2.3.1.</span> <span class="toc-text">onMeasure()测量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#onLayout-布局"><span class="toc-number">2.3.2.</span> <span class="toc-text">onLayout() 布局</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实现自己的Demo"><span class="toc-number">2.4.</span> <span class="toc-text">实现自己的Demo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实现一个四个View在四个角上-支持边距"><span class="toc-number">2.5.</span> <span class="toc-text">实现一个四个View在四个角上 支持边距</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
         
     </div>
 </aside>
@@ -438,6 +430,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
@@ -454,14 +454,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
@@ -474,11 +466,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color1">beego</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">beego</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -487,6 +479,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Viper</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -543,6 +543,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">读书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">gin</a>
               </li>
             
             <div class="clearfix"></div>

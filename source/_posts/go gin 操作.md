@@ -3,6 +3,7 @@ title: go gin 操作
 tags: 
 - gin
 - go 
+- android 
 copyright: true
 categories: go 
 toc: true
@@ -492,20 +493,451 @@ compile 'ru.bartwell:exfilepicker:2.1'
 func main() {
 	engine := gin.Default()
 	engine.POST("/uploads", func(context *gin.Context) {
+		//获取请求中文件的名字为 file
 		form, _ := context.MultipartForm()
+		//获取传递过来的参数
+		name := context.DefaultPostForm("name", "基本密码")
+		log.Println(name)
 		// 拿到集合
-		files := form.File["upload[]"]
+		files := form.File["files"]
 		for _, file := range files {
 			log.Println(file.Filename)
 		}
 		context.String(http.StatusOK, fmt.Sprintf("%d files uploaded!", len(files)))
+
 	})
+	engine.Run()
+}
+而对应Android双传多个文件的时候，只要添加多个 
+ bodyBuilder.addFormDataPart("file", file.getName(),
+      RequestBody.create(mediaType, file));
+即可！
+```
+
+#### 其他格式的数据
+
+> 一些复杂的场景下，如用户直接 `POST`一段 `json`字符串到应用中，我们需要获取原始数据，这时需要用 `c.GetRawData`来获取原始字节。
+
+```golang
+func main() {
+	engine := gin.Default()
+	engine.POST("/jsonDataToMe", func(context *gin.Context) {
+	    //接受json数据
+		data, err := context.GetRawData()
+		if err != nil {
+			log.Fatalln(err)
+			return
+		}
+		log.Println("data--->", string(data))
+		context.String(http.StatusOK, "ok")
+	})
+	engine.Run()
 }
 ```
 
+下面是`android`的代码
+
+```android
+private void jsonDataToGo() {
+        String json = "{\n" +
+                "    \"name\": \"张三 \"\"age\": \"23 \"\n" +
+                "}";
+                //定义上传的类型数据格式
+        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+        String url = "http:192.168.2.133:8080/jsonDataToMe";
+        OkHttpClient client = new OkHttpClient();//创建okhttp实例
+        RequestBody body = RequestBody.create(JSON, json);
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body)
+                .build();
+        Call call = client.newCall(request);
+        call.enqueue(new Callback() {
+            //请求失败时调用
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.i(">>>>>>>", "onFailure: " + e);
+            }
+
+            //请求成功时调用
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    Log.i(">>>>>>>", "onResponse: " + response.body().string());
+                }
+            }
+        });
+    }
+```
+
+#### 数据绑定(请求到数据绑定到实体)
+
+> Gin 提供了非常方便的数据绑定功能，可以将用户传来的参数自动跟我们定义的结构体绑定在一起。
+
+##### 绑定 Url 查询参数（Only Bind Query String）
+
+使用 `c.ShouldBindQuery`方法，可以自动绑定 Url 查询参数到 `struct`.
+
+```golang
+type Person struct {
+	Name string `form:"name"`
+	Age  int    `form:"age"`
+}
+
+func main() {
+	engine := gin.Default()
+	engine.GET("/getname", func(context *gin.Context) {
+		//name := context.DefaultQuery("name", "基本密码")
+		//age := context.DefaultQuery("age", "22")
+		var person Person
+		if context.ShouldBindQuery(&person) == nil {
+			log.Println(person.Name)
+			log.Println(person.Age)
+		}
+		context.String(http.StatusOK, "Success")
+	})
+	engine.Run()
+}
+
+```
+
+##### 绑定url查询参数和POST参数
+
+使用 `c.ShouldBind`方法，可以将参数自动绑定到 `struct`.该方法是会检查 Url 查询字符串和 POST 的数据，而且会根据 `content-type`类型，优先匹配`JSON`或者 `XML`,之后才是 `Form`. 有关详情查阅 [这里](https://github.com/gin-gonic/gin/blob/master/binding/binding.go#L48)
+
+```golang
+package main
+
+import "log"
+import "github.com/gin-gonic/gin"
+import "time"
+
+// 定义一个 Person 结构体，用来绑定数据
+type Person struct {
+    Name     string    `form:"name"`
+    Address  string    `form:"address"`
+    Birthday time.Time `form:"birthday" time_format:"2006-01-02" time_utc:"1"`
+}
+
+func main() {
+    route := gin.Default()
+    route.GET("/testing", startPage)
+    route.Run(":8085")
+}
+
+func startPage(c *gin.Context) {
+    var person Person
+    // 绑定到 person
+    if c.ShouldBind(&person) == nil {
+        log.Println(person.Name)
+        log.Println(person.Address)
+        log.Println(person.Birthday)
+    }
+
+    c.String(200, "Success")
+}
+```
+
+#### 其他数据绑定
+
+> Gin 提供的数据绑定功能很强大，建议你仔细查阅官方文档，了解 `gin.Context`的 `Bind*`系列方法。这里就不再一一详述。
+
+#### 数据验证
+
+> 永远不要相信用户任何的输入。对于获取的外来数据，我们要做的第一步就是校验和转换。对于这类基础并且常用的功能， Gin 很贴心的帮我们提供了数据校验的方法，省去我们重复判断的烦恼。
+>
+> Gin 的数据验证是和数据绑定结合在一起的。只需要在数据绑定的结构体成员变量的标签添加`binding`规则即可。详细的规则查阅 [这里](https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Baked_In_Validators_and_Tags)。
+
+登录数据简单验证。`form`和`json`数据
+
+```golang
+type Login struct {
+	User     string `form:"user" json:"user" binding:"required"`         //required 意思是必须要传过来 不然bind直接报error
+	Password string `form:"password" json:"password" binding:"required"` //required 意思是必须要传过来 不然bind直接报error
+}
+
+func main() {
+	engine := gin.Default()
+
+	engine.POST("/loginJSON", func(context *gin.Context) {
+		//1.请求的参数格式为：{"user": "manu", "password": "123"}
+		// 验证数据并绑定
+		var loginJson Login
+		if err := context.ShouldBindJSON(&loginJson); err == nil {
+			if loginJson.User == "基本密码" && loginJson.Password == "123456" {
+				context.JSON(http.StatusOK, gin.H{
+					"code": http.StatusOK,
+					"msg":  "成功",
+				})
+			} else {
+				context.JSON(http.StatusUnauthorized, gin.H{
+					"code": http.StatusUnauthorized,
+					"msg":  "未经授权",
+				})
+			}
+		} else {
+			context.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		}
+	})
+
+	engine.POST("/loginForm", func(context *gin.Context) {
+		//2.请求的格式为form表单提交 表单 (user=manu&password=123)
+		var loginFrom Login
+		if error := context.ShouldBind(&loginFrom); error == nil {
+			if loginFrom.User == "基本密码" && loginFrom.Password == "123456" {
+				context.JSON(http.StatusOK, gin.H{
+					"code": http.StatusOK,
+					"msg":  "成功",
+				})
+			} else {
+				context.JSON(http.StatusUnauthorized, gin.H{
+					"code": http.StatusUnauthorized,
+					"msg":  "未经授权",
+				})
+			}
+		}
+	})
+	engine.Run()
+}
+```
+
+除了绑定验证之外，你还可以注册自定义的验证器。
+
+```golang
+package main
+
+import (
+    "net/http"
+    "reflect"
+    "time"
+    "github.com/gin-gonic/gin"
+    "github.com/gin-gonic/gin/binding"
+    "gopkg.in/go-playground/validator.v8"
+)
+
+// 定义的 Booking 结构体
+// 注意成员变量CheckIn的标签 binding:"required,bookabledate"
+// bookabledate 即下面自定义的验证函数
+// 成员变量CheckOut的标签 binding:"required,gtfield=CheckIn"
+// gtfield 是一个默认规则，意思是要大于某个字段的值
+type Booking struct {
+    CheckIn  time.Time `form:"check_in" binding:"required,bookabledate" time_format:"2006-01-02"`
+    CheckOut time.Time `form:"check_out" binding:"required,gtfield=CheckIn" time_format:"2006-01-02"`
+}
+
+// 定义一个验证方法，用来验证时间是否合法
+// 验证方法返回值应该是个布尔值
+func bookableDate(
+    v *validator.Validate, topStruct reflect.Value, currentStructOrField reflect.Value,
+    field reflect.Value, fieldType reflect.Type, fieldKind reflect.Kind, param string,
+) bool {
+    if date, ok := field.Interface().(time.Time); ok {
+        today := time.Now()
+        if today.Year() > date.Year() || today.YearDay() > date.YearDay() {
+            return false
+        }
+    }
+    return true
+}
+
+func main() {
+    route := gin.Default()
+    // 注册一个自定义验证方法 bookabledate
+    binding.Validator.RegisterValidation("bookabledate", bookableDate)
+    route.GET("/bookable", getBookable)
+    route.Run(":8085")
+}
+
+func getBookable(c *gin.Context) {
+    var b Booking
+    // 验证数据并绑定
+    if err := c.ShouldBindWith(&b, binding.Query); err == nil {
+        c.JSON(http.StatusOK, gin.H{"message": "Booking dates are valid!"})
+    } else {
+        c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+    }
+}
+```
+
+Gin 提供的验证灰常灰常强大，可以帮我们很好的处理数据验证和省掉各种 `if else`的判断，建议各位使用 Gin 的道友一定要把这个东东吃透。
+
+#### 输出响应
+
+> Web 应用的目标之一就是输出响应。Gin 为我们提供了多种常见格式的输出，包括 `HTML`, `String`，`JSON`， `XML`， `YAML`。
+
+##### string
+
+```golang
+// 省略的代码 ...
+
+func Handler(c *gin.Context) {
+    // 使用 String 方法即可
+    c.String(200, "Success")
+}
+
+// 省略的代码 ...
+```
+
+##### JSON、 XML、 YAML
+
+Gin 输出这三种格式非常方便，直接使用对用方法并赋值一个结构体给它就行了。
+
+你还可以使用`gin.H`。`gin.H` 是一个很巧妙的设计，你可以像`javascript`定义`json`一样，直接一层层写键值对，只需要在每一层加上 `gin.H`即可。看代码：
+
+```golang
+// 省略的代码 ...
+
+func main() {
+    r := gin.Default()
+
+    // gin.H 本质是 map[string]interface{}
+    r.GET("/someJSON", func(c *gin.Context) {
+        // 会输出头格式为 application/json; charset=UTF-8 的 json 字符串
+        c.JSON(http.StatusOK, gin.H{"message": "hey", "status": http.StatusOK})
+    })
+
+    r.GET("/moreJSON", func(c *gin.Context) {
+        // 直接使用结构体定义
+        var msg struct {
+            Name    string `json:"user"`
+            Message string
+            Number  int
+        }
+        msg.Name = "Lena"
+        msg.Message = "hey"
+        msg.Number = 123
+        // 会输出  {"user": "Lena", "Message": "hey", "Number": 123}
+        c.JSON(http.StatusOK, msg)
+    })
+
+    r.GET("/someXML", func(c *gin.Context) {
+        // 会输出头格式为 text/xml; charset=UTF-8 的 xml 字符串
+        c.XML(http.StatusOK, gin.H{"message": "hey", "status": http.StatusOK})
+    })
+
+    r.GET("/someYAML", func(c *gin.Context) {
+        // 会输出头格式为 text/yaml; charset=UTF-8 的 yaml 字符串
+        c.YAML(http.StatusOK, gin.H{"message": "hey", "status": http.StatusOK})
+    })
+
+    r.Run(":8080")
+}
+
+// 省略的代码 ...
+```
+
+#### HTML
+
+> Gin 使用 Html 模板就是官方标准包`html/template`, 模板的用法没什么太多要说明的。这里给大家说一下如何在 gin 中输出 `html`。
+>
+> 由于 Gin 并没有强制的文件夹命名规范，所以我们必须要告诉 Gin 我们的静态资源（如图片、Css、JS 脚本等）和我们的html 模板放在了哪里，看代码：
+
+- 目录结构是单层的
+
+```golang
+type student struct {
+	Name string
+	Age  int8
+}
+func main() {
+	engine := gin.Default()
+	engine.LoadHTMLGlob("templates/*")  
+	stu1 := &student{Name: "Geektutu", Age: 20}
+	stu2 := &student{Name: "Jack", Age: 22}
+
+	engine.GET("/arr", func(c *gin.Context) {
+		// 访问的路径是： /templates/arr.html
+		c.HTML(http.StatusOK, "arr.html", gin.H{
+			"title":  "Gin",
+			"stuArr": [2]*student{stu1, stu2},
+		})
+	})
+	engine.Run()
+}
+
+- - - 
+
+html文件的路径是: /templates/arr.html
+html的代码为：
+<!DOCTYPE html>
+<html>
+<body>
+<p>hello, {{.title}}</p>
+{{range $index, $ele := .stuArr }}
+    <p>{{ $index }}: {{ $ele.Name }} is {{ $ele.Age }} years old</p>
+{{ end }}
+</body>
+</html>
+```
+
+- 多层目录结构
+
+```golang
+func main() {
+	engine := gin.Default()
+	// 注册一个目录，gin 会把该目录当成一个静态的资源目录
+	// 该目录下的资源看可以按照路径访问
+	// 如 static 目录下有图片路径 index/logo.png , 你可以通过 GET /static/index/logo.png 访问到
+	engine.Static("/static", "./static")
+	// 注册一个路径，gin 加载模板的时候会从该目录查找
+	// 参数是一个匹配字符，如 views/*/* 的意思是 模板目录有两层
+	// gin 在启动时会自动把该目录的文件编译一次缓存，不用担心效率问题
+	engine.LoadHTMLGlob("views/*/*")  
+
+	engine.GET("/getHtml", func(context *gin.Context) {
+		// 输出 html
+		// 三个参数，200 是http状态码
+		// "shop/search" 要加载的模板路径，对应目录路径 views/shop/search.html
+		// gin.H{"keywords":"macbook pro"} 是模板变量
+		context.HTML(200, "shop/search.html", gin.H{"keywords": "macbook pro"})
+	})
+	engine.Run()
+}
+
+- - - 
+这里注意：html的代码：
+需要添加此 {{define "shop/search.html"}} //将该模板作为嵌套模板  
+路径是：/views/shop/search.html
+
+
+{{define "shop/search.html"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<h1>模板路径</h1>
+
+
+<h1>模板路径2</h1>
+
+
+<h1>模板路径3</h1>
+
+<a>{{.keywords}}</a>
+
+</body>
+</html>
+{{end}}
+```
+
+#### 开发热更新
+
+> 我们在开发代码时希望能够边改代码边运行看到结果，类似于 `PHP`脚本语言那样，但受限于 Go 的编译运行，自身无法实现，所以要借助一些第三方工具来解决这个问题。
+>
+> 我使用 Go 开发了一个文件更新通知的软件 `fileboy`，可以很好的处理这类问题。该软件已开源，有兴趣的朋友可以在 [fileboy github ](https://github.com/dengsgo/fileboy)下载使用。
 
 
 
+#### 参考
+
+<https://www.itfanr.cc/2017/07/30/golang-web-framework-gin/>
+
+https://www.yoytang.com/go-gin-doc.html#Gin%20的介绍
 
 
 
