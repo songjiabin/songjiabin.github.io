@@ -49,7 +49,7 @@ db.DB().SetMaxIdleConns(0) // 用于设置闲置的连接数.设置闲置的连�
 ```golang
 type User struct {
 	gorm.Model  //继承了gorm的model方法。默认创建了ID、CreatedAt、UpdatedAt、DeletedAt
-	Name string `gorm:"not null"`
+	Name string `gorm:"column:name;not null"`
 }
 ```
 
@@ -73,14 +73,14 @@ db.AutoMigrate(&User{})
 
 ```golang
 自己创建数据库的时候的语句，别忘了添加 `ID`、`CreatedAt`、`UpdatedAt`、`DeletedAt` 
-CREATE TABLE tb_users(
+CREATE TABLE users(
    id INTEGER PRIMARY KEY AUTO_INCREMENT,
-   username VARCHAR(200) NOT NULL,
-   PASSWORD VARCHAR(200) NOT NULL,
-   CreatedAt timestamp null default null,
-   UpdatedAt timestamp null default null,
-   DeletedAt timestamp null default null,
-   UNIQUE(username)
+   name VARCHAR(200) NOT NULL,
+   password VARCHAR(200) NOT NULL,
+   createdAt timestamp null default null,
+   updatedAt timestamp null default null,
+   deletedAt timestamp null default null,
+   UNIQUE(name)
 );
 ```
 
@@ -89,7 +89,7 @@ CREATE TABLE tb_users(
 ```golang
 type UserModel struct {
 	BaseModel
-	Username string `json:"username" gorm:"column:username;not null" binding:"required" validate:"min=1,max=32"`
+	Username string `json:"username" gorm:"column:name;not null" binding:"required" validate:"min=1,max=32"`
 	Password string `json:"password" gorm:"column:password;not null" binding:"required" validate:"min=5,max=128"`
 }
 ```
@@ -116,7 +116,7 @@ func (UserModel *UserModel) TableName() string {
 }
 ```
 
-
+**注意的是：创建`mysql`字段和`struct`中字段大小写一定要区分。并保持一致**
 
 #### 使用
 
@@ -127,7 +127,7 @@ func (UserModel *UserModel) TableName() string {
 ```golang
 func main() {
 	db, err := gorm.Open("mysql",
-		"root:...@tcp(192.144.238.85:3306)/test?charset=utf8&loc=Asia%2FShanghai")
+		"root:...@tcp(192.144.238.85:3306)/test?charset=utf8&parseTime=true&loc=Asia%2FShanghai")
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -184,7 +184,55 @@ err := db.Delete(&user).Error
 
 ##### 查询记录
 
+查询记录很简单，直接将查询好的数据放到实体中
 
+```golang
+//从数据库获取user 查询单个数据源
+func GetUser(username string) (*UserModel, error) {
+	u := &UserModel{}
+	result := DB.Self.Where("username = ?", username).First(&u)
+	return u, result.Error
+}
+- - - 
+//获取所有的用户信息
+func ListUser(username string, offset, limit int) ([]*UserModel, uint, error) {
+	//获取默认值
+	if limit == 0 {
+		limit = constvar.DefaultLimit
+	}
+
+	var count uint
+	users := make([]*UserModel, 0)
+	where := fmt.Sprintf("username like '%%%s%%'", username)
+
+	//先用 db.Model() 选择一个表  并计算数量
+	if err := DB.Self.Model(&UserModel{}).Where(where).Count(&count).Error; err != nil {
+		return users, count, err
+	}
+
+	logs.Info(">>>>>>>>>>>>>>>>", users)
+
+	//可以使用 db.Find(&Likes) 或者只需要查一条记录 db.First(&Like)
+	if err := DB.Self.Where(where).Offset(offset).Limit(limit).Order("id desc").Find(&users).Error; err != nil {
+		return users, count, err
+	}
+
+	logs.Info("<<<<<<<<<<<<<<<<<", users[0].Username, users[0].Password)
+
+	var u []UserModel
+	DB.Self.Exec("select * from tb_users").Find(&u)
+	logs.Info("<<<<<<<<<<<<<<<<<", u[0].Username, u[0].Password, u[0].CreatedAt)
+
+	return users, count, nil
+
+}
+```
+
+#### 代码参考
+
+[单个小实例](<https://github.com/songjiabin/goproject/tree/master/goproject/src/itcast/06(%E4%BD%BF%E7%94%A8gorm)>)
+
+[整体Demo的大实例](<https://github.com/songjiabin/goproject/blob/master/goproject/src/myapiserver/model/user.go>)
 
 
 

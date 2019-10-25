@@ -29,7 +29,11 @@ typora-root-url: ..
 
 ##### 配置环境变量如下
 
+`vim /etc/profile`
+
 ![1568181827834](/images/1568181827834.png)
+
+刷新下环境变量`source /etc/profile`
 
 ##### 检测是否安装成功
 
