@@ -1,15 +1,22 @@
+
+
 ---
-title: linux常用
+title: window openssl 
 date: 
 tags: 
-- linux
+- openssl
 copyright: true
-categories: linux
+categories: window
+toc: true
+typora-copy-images-to: ..\images
+typora-root-url: ..
 ---
 
 
 
-<blockquote class="blockquote-center">我花开后百花杀</blockquote>
+![1572245375620](../images/1572245375620.png)
+
+
 
 <!-- more -->
 

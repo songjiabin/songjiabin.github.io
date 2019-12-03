@@ -15,7 +15,8 @@
 <meta property="og:site_name" content="基本密码">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/rockets-4528194__340.png">
-<meta property="og:updated_time" content="2019-10-12T09:31:45.030Z">
+<meta property="og:image" content="http://yoursite.com/images/1571017737396.png">
+<meta property="og:updated_time" content="2019-10-14T06:57:42.315Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="go 使用viper加载配置文件">
 <meta name="twitter:image" content="http://yoursite.com/images/rockets-4528194__340.png">
@@ -178,7 +179,7 @@
 	<div id="toc-article" class="toc-article">
 	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
 		<strong class="toc-title">文章目录</strong>
-           
+           <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#指定参数"><span class="toc-number">1.</span> <span class="toc-text">指定参数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#main函数"><span class="toc-number">2.</span> <span class="toc-text">main函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#config包的代码"><span class="toc-number">3.</span> <span class="toc-text">config包的代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用"><span class="toc-number">4.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#项目路径"><span class="toc-number">5.</span> <span class="toc-text">项目路径</span></a></li></ol>
          </div>
    <script type="text/javascript">
 	function showToc(){
@@ -200,8 +201,26 @@
         <p><img src="/images/rockets-4528194__340.png" alt="火箭, 天空, 空间, 开始, 提升, 启动, 速度, 引力, 航天, 宇航员"></p>
 <a id="more"></a>
 <blockquote>
-<p>今天使用了<code>viper</code>来加载配置文件信息。下面来总结下！在这里我做了更加详细的记录</p>
+<p>今天使用了<code>viper</code>来加载配置文件信息。下面来总结下！在<a href="https://jjmima.top/2019/10/12/go%20Viper(%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%BB%E5%8F%96%E9%AB%98%E7%BA%A7" target="_blank" rel="noopener">这里</a>/&gt;)我做了更加详细的记录。</p>
+<p>需求很简单，加载配置文件（<code>yaml</code>）。如果没有指定那么则加载项目中默认的配置文件。</p>
 </blockquote>
+<p><img src="/images/1571017737396.png" alt="1571017737396"></p>
+<h5 id="指定参数"><a href="#指定参数" class="headerlink" title="指定参数"></a>指定参数</h5><p>如果指定的配置文件的话 需要读取命令行的参数。那么用到了<code>pflag</code> 。</p>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">	<span class="comment">//命令行参数</span></span><br><span class="line">	cfg = pflag.StringP(<span class="string">"config"</span>, <span class="string">"c"</span>, <span class="string">""</span>, <span class="string">"apiserver config file path."</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h5 id="main函数"><a href="#main函数" class="headerlink" title="main函数"></a>main函数</h5><p>下面是<code>main</code>函数</p>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始化配置 读取配置文件</span></span><br><span class="line">	<span class="comment">//解析函数  将会在碰到第一个非flag命令行参数时停止</span></span><br><span class="line">	pflag.Parse()</span><br><span class="line">	<span class="comment">// init config</span></span><br><span class="line">	<span class="keyword">if</span> err := config.Init(*cfg); err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="built_in">panic</span>(err)</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="config包的代码"><a href="#config包的代码" class="headerlink" title="config包的代码"></a>config包的代码</h5><p><code>config</code>包下面的</p>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> config</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"github.com/fsnotify/fsnotify"</span></span><br><span class="line">	<span class="string">"github.com/spf13/viper"</span></span><br><span class="line">	<span class="string">"log"</span></span><br><span class="line">	<span class="string">"strings"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Config <span class="keyword">struct</span> &#123;</span><br><span class="line">	Name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化 配置文件</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Init</span><span class="params">(cfg <span class="keyword">string</span>)</span> <span class="title">error</span></span> &#123;</span><br><span class="line">	config := Config&#123;Name: cfg&#125;</span><br><span class="line">	<span class="keyword">if</span> err := config.initConfig(); err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> err</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//监控配置文件并热加载程序</span></span><br><span class="line">	config.watchConfig()</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化配置文件</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Config)</span> <span class="title">initConfig</span><span class="params">()</span> <span class="title">error</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> c.Name != <span class="string">""</span> &#123;</span><br><span class="line">		viper.SetConfigFile(c.Name) <span class="comment">//如果制定了配置文件 ，那么就解析这个指定的</span></span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="comment">// ./conf/config.yaml</span></span><br><span class="line">		viper.AddConfigPath(<span class="string">"./conf"</span>) <span class="comment">//添加需要解析配置文件的路径</span></span><br><span class="line">		viper.SetConfigName(<span class="string">"config"</span>)  <span class="comment">//添加需要解析的文件</span></span><br><span class="line">	&#125;</span><br><span class="line">	viper.SetConfigType(<span class="string">"yaml"</span>) <span class="comment">//设置配置文件的格式为： yaml</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 通过指定配置文件可以很方便地连接不同的环境（开发环境、测试环境）并加载不同的配置，方便开发和测试。</span></span><br><span class="line">	viper.AutomaticEnv()            <span class="comment">//读取匹配的环境变量</span></span><br><span class="line">	viper.SetEnvPrefix(<span class="string">"APISERVER"</span>) <span class="comment">// 读取环境变量的前缀为APISERVER</span></span><br><span class="line">	replacer := strings.NewReplacer(<span class="string">"."</span>, <span class="string">"_"</span>)</span><br><span class="line">	viper.SetEnvKeyReplacer(replacer)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> err := viper.ReadInConfig(); err != <span class="literal">nil</span> &#123; <span class="comment">// viper解析配置文件</span></span><br><span class="line">		log.Println(<span class="string">"错误时"</span>, err)</span><br><span class="line">		<span class="keyword">return</span> err</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 监控配置文件变化并热加载程序</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c *Config)</span> <span class="title">watchConfig</span><span class="params">()</span></span> &#123;</span><br><span class="line">	viper.WatchConfig()</span><br><span class="line">	viper.OnConfigChange(<span class="function"><span class="keyword">func</span><span class="params">(e fsnotify.Event)</span></span> &#123;</span><br><span class="line">		log.Printf(<span class="string">"Config file changed: %s"</span>, e.Name)</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的注释很清楚，就是初始化了<code>viper</code>的参数。当设定了配置文件后，读取配置文件的信息，如果没有设定那么读取目录结构中<code>gopath/项目/conf/config.yaml</code>的配置信息。</p>
+<h5 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h5><ul>
+<li>指定配置文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd gopath/src/myspiservce </span><br><span class="line">go build -v</span><br><span class="line">产生了mysqiserver.exe文件</span><br><span class="line">mysqiserver.exe -c config.yaml</span><br></pre></td></tr></table></figure>
+<ul>
+<li>不指定配置文件</li>
+</ul>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd gopath/src/myspiservce </span><br><span class="line"><span class="keyword">go</span> build -v</span><br><span class="line">产生了mysqiserver.exe文件</span><br><span class="line">直接运行就行了</span><br></pre></td></tr></table></figure>
+<h5 id="项目路径"><a href="#项目路径" class="headerlink" title="项目路径"></a>项目路径</h5><p><a href="https://github.com/songjiabin/goproject/tree/master/goproject/src/myapiserver" target="_blank" rel="noopener">项目地址</a></p>
 
       
 
@@ -248,6 +267,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/10/22/window openssl /" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
   
     <a href="/2019/10/12/go Viper(配置文件的读取高级)/" id="article-nav-older" class="article-nav-link-wrap">
@@ -413,6 +441,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">curl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
@@ -433,15 +465,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">剪辑</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">头条号</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
               </li>
              
               <li class="article-tag-list-item">
