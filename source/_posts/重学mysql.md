@@ -12,7 +12,7 @@ typora-root-url: ..
 
 
 
-![1575373608933](/images/1575373608933.png)
+![](/images/1575373608933.png)
 
 
 
@@ -251,7 +251,7 @@ select sname,company,salary from class where id = 4;
 - int 
 - bigint 
 
-![1575373872570](/images/1575373872570.png)
+![](/images/1575373872570.png)
 
 > 当我需要存储数据的时候，无非就是正数或者负数。怎么声明呢？
 
@@ -470,11 +470,153 @@ char类型如果存储的不够定长，那么会用空格补齐，当取出来�
 
 ###### date
 
+> 存储年月日 ( YYYY-MM-DD 存储范围： 1000-01-01 到 9999-12-31)
+
+```mysql
+create table test3(
+    star varchar(20) not null default '',
+    birth date not null default '2019-11-01'
+)engine myisam charset utf8;
+#存入数据
+insert into test3
+values
+('宋佳宾','2019-01-17');
+```
+
 ###### time
+
+> 时间类型()
+
+```mysql
+#给test3 增加一列，增加一列签到的时间列
+alter table test3 add sign time not null default '00:00:00';
+#desc test3;
++-------+-------------+------+-----+------------+-------+
+| Field | Type        | Null | Key | Default    | Extra |
++-------+-------------+------+-----+------------+-------+
+| star  | varchar(20) | NO   |     |            |       |
+| birth | date        | NO   |     | 2019-11-01 |       |
+| sign  | time        | NO   |     | 00:00:00   |       |# 时间列
++-------+-------------+------+-----+------------+-------+
+
+#插入数据
+insert into test3 
+(star,sign)
+values
+('天天','19:34:22');
+
+```
 
 ###### datetime
 
+> 年月日时分秒YYYY-mm-dd HH:mm:ss
+
+```mysql
+create table test4(
+    sname varchar(20) not null default '',
+    logintime datetime not null default '2000-01-01 00:00:00'  # 这里要写入一个准确的时间，不然建表错误
+)engine myisam charset utf8;
+
+#插入数据
+insert into test4
+(sname,logintime)
+values
+('张三','2019-12-25 15:22:22');
+```
+
+###### timestamp
+
+> 自动获取当前的时间并插入到该列中。
+
+```mysql
+create table test5(
+    ts timestamp default CURRENT_TIMESTAMP,
+    id int 
+)engine myisam charset utf8;
+#desc 
+desc test5;
++-------+-----------+------+-----+-------------------+-------+
+| Field | Type      | Null | Key | Default           | Extra |
++-------+-----------+------+-----+-------------------+-------+
+| ts    | timestamp | NO   |     | CURRENT_TIMESTAMP |       |
+| id    | int(11)   | YES  |     | NULL              |       |
++-------+-----------+------+-----+-------------------+-------+
+ 
+insert into test5
+(id)
+values
+(1),(2),(3);
+ 
+#再次插入 
+insert into test5
+(id)
+values
+(1),(2),(3); 
+
+select * from test5;
++---------------------+------+
+| ts                  | id   |
++---------------------+------+
+| 2019-12-04 17:48:31 |    1 |
+| 2019-12-04 17:48:31 |    2 |
+| 2019-12-04 17:48:31 |    3 |
+| 2019-12-04 17:49:08 |    4 |
+| 2019-12-04 17:49:08 |    5 |
+| 2019-12-04 17:49:08 |    6 |
++---------------------+------+
+```
+
 ###### year
+
+> 年份  只占一个字节（所以范围是1901~2155）
+
+```mysql
+create table test6(
+    thing varchar(20) not null default '',
+    ye year not null default '0000'
+)engine myisam charset utf8;
+
+# desc test6;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| thing | varchar(20) | NO   |     |         |       |
+| ye    | year(4)     | NO   |     | 0000    |       |
++-------+-------------+------+-----+---------+-------+
+ 
+insert into test6 
+values 
+('肥水之战',1923);
+```
+
+##### 建表语句
+
+> 练习
+
+|        列名称         |                            列类型                            | 默认值 | 是否是主键 |
+| :-------------------: | :----------------------------------------------------------: | :----: | :--------: |
+|          id           |                      int unsigned(正数)                      |        |     是     |
+|       username        |                         varchar(20)                          |   ''   |            |
+|        gender         | char(1)  1代表一个字符。tinyint 一个字节也是可以的(0:女,1:男)。 |        |            |
+|        weight         |                    tinyint unsigned(正数)                    |        |            |
+|         birth         |                             date                             |        |            |
+|    salary（工资）     |            decimal(8,2) 浮点型 最大值是999999.99             |        |            |
+| lastlogin上次登录时间 |                           datetime                           |        |            |
+|   info（跟人简介）    |                        varchar(1500)                         |        |            |
+
+> 分析，上面的表。除了`username` 和`info`两个列其他都是定长的。当是定长的话，在查找的时候会提高查找的速度。这个时候我们可以将两个`varchar`类型的改为`char`类型，虽然可能会存储上浪费空间，但是提高了速度!具体看下
+
+```mysql
+varchar(20)--->char(20) 	浪费空间可以接受
+varchar(1500)--->char(1500) 浪费的空间就有点儿多了
+所以这个时候需要把 info 拿出来，单独成为一张表。用户经常操作的数据放到一张表，其他的放在表中去。
+#
+lastlogin 上次登录时间 使用datetime 不是很理想，在实际中不是
+```
+
+
+
+ 
 
 
 
