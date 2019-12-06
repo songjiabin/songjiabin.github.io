@@ -16,7 +16,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/1575373608933.png">
 <meta property="og:image" content="http://yoursite.com/images/1575373872570.png">
-<meta property="og:updated_time" content="2019-12-04T12:01:47.631Z">
+<meta property="og:updated_time" content="2019-12-06T10:00:19.761Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重学mysql">
 <meta name="twitter:image" content="http://yoursite.com/images/1575373608933.png">
@@ -423,7 +423,11 @@
 <blockquote>
 <p>分析，上面的表。除了<code>username</code> 和<code>info</code>两个列其他都是定长的。当是定长的话，在查找的时候会提高查找的速度。这个时候我们可以将两个<code>varchar</code>类型的改为<code>char</code>类型，虽然可能会存储上浪费空间，但是提高了速度!具体看下</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">varchar(20)---&gt;char(20) 	浪费空间可以接受</span><br><span class="line">varchar(1500)---&gt;char(1500) 浪费的空间就有点儿多了</span><br><span class="line">所以这个时候需要把 info 拿出来，单独成为一张表。用户经常操作的数据放到一张表，其他的放在表中去。</span><br><span class="line">#</span><br><span class="line">lastlogin 上次登录时间 使用datetime 不是很理想，在实际中不是</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">varchar(20)---&gt;char(20) 	浪费空间可以接受</span><br><span class="line">varchar(1500)---&gt;char(1500) 浪费的空间就有点儿多了</span><br><span class="line">所以这个时候需要把 info 拿出来，单独成为一张表。用户经常操作的数据放到一张表，其他的放在表中去。</span><br><span class="line">#</span><br><span class="line">lastlogin 上次登录时间 使用datetime 不是很理想，在实际开发中用int型时间戳</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>开始真正的建表了要</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create table member(</span><br><span class="line">    id int unsigned auto_increment primary key,</span><br><span class="line">    </span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
       
 
@@ -615,15 +619,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">beego</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">日常问题</a>
+                <a href="javascript:void(0)" class="js-tag color1">beego</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -635,11 +635,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">curl</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color5">日常问题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -651,15 +655,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">okhttp</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">源码分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
               </li>
              
               <li class="article-tag-list-item">

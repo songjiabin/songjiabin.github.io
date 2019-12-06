@@ -611,7 +611,16 @@ varchar(20)--->char(20) 	浪费空间可以接受
 varchar(1500)--->char(1500) 浪费的空间就有点儿多了
 所以这个时候需要把 info 拿出来，单独成为一张表。用户经常操作的数据放到一张表，其他的放在表中去。
 #
-lastlogin 上次登录时间 使用datetime 不是很理想，在实际中不是
+lastlogin 上次登录时间 使用datetime 不是很理想，在实际开发中用int型时间戳
+```
+
+> 开始真正的建表了要
+
+```mysql
+create table member(
+    id int unsigned auto_increment primary key,
+    
+)
 ```
 
 
