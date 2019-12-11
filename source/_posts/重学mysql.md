@@ -597,12 +597,12 @@ values
 | :-------------------: | :----------------------------------------------------------: | :----: | :--------: |
 |          id           |                      int unsigned(正数)                      |        |     是     |
 |       username        |                         varchar(20)                          |   ''   |            |
-|        gender         | char(1)  1代表一个字符。tinyint 一个字节也是可以的(0:女,1:男)。 |        |            |
+|        gender         | char(1)  1代表一个字符,占用一个字节。tinyint 一个字节也是可以的(0:女,1:男)。 |        |            |
 |        weight         |                    tinyint unsigned(正数)                    |        |            |
-|         birth         |                             date                             |        |            |
+|         birth         |                     date（占用3个字节）                      |        |            |
 |    salary（工资）     |            decimal(8,2) 浮点型 最大值是999999.99             |        |            |
-| lastlogin上次登录时间 |                           datetime                           |        |            |
-|   info（跟人简介）    |                        varchar(1500)                         |        |            |
+| lastlogin上次登录时间 |                   datetime（定长8个字节）                    |        |            |
+|   info（个人简介）    |                        varchar(1500)                         |        |            |
 
 > 分析，上面的表。除了`username` 和`info`两个列其他都是定长的。当是定长的话，在查找的时候会提高查找的速度。这个时候我们可以将两个`varchar`类型的改为`char`类型，虽然可能会存储上浪费空间，但是提高了速度!具体看下
 
@@ -618,9 +618,32 @@ lastlogin 上次登录时间 使用datetime 不是很理想，在实际开发中
 
 ```mysql
 create table member(
-    id int unsigned auto_increment primary key,
-    
-)
+    id int unsigned auto_increment primary key,#主键并且自增长
+    username char(20) not null default '',
+    gender char(1) 	not null default '',
+    weight tinyint unsigned not null default 0,
+    birth date not null default '2000-01-01',
+    salary decimal(8,2) not null default 0.00,
+    lastlonin int unsigned not null default 0
+)engine myisam 	 charset utf8; #设置引擎
+```
+
+##### 修改表
+
+先创建一个表
+
+```mysql
+create table m1(
+id int unsigned auto_increment primary key   
+)engine myisam charset utf8;
+```
+
+修改表
+
+> alter  table  表名  (增加、修改、删除)  列名称  列类型  列参数 
+
+```mysql
+alter table m1 add username char(20) not null default '';
 ```
 
 
