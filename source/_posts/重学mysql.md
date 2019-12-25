@@ -628,6 +628,28 @@ create table member(
 )engine myisam 	 charset utf8; #设置引擎
 ```
 
+###### 查看建表语句
+
+```mysql
+show create table m1(表名);
+show create table m1;
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table | Create Table                                                                                                                                                                                                                                       |
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| m1    | CREATE TABLE `m1` (
+  `uid` int(10) unsigned NOT NULL,
+  `username` char(20) NOT NULL DEFAULT '',
+  `gender` char(4) NOT NULL DEFAULT '',
+  `birth` date NOT NULL DEFAULT '2000-01-01',
+  PRIMARY KEY (`uid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 |
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+```
+
+
+
 ##### 修改表
 
 先创建一个表
@@ -638,17 +660,146 @@ id int unsigned auto_increment primary key
 )engine myisam charset utf8;
 ```
 
-修改表
+###### 新增列
 
 > alter  table  表名  (增加、修改、删除)  列名称  列类型  列参数 
 
 ```mysql
+# 给m1表添加username列
 alter table m1 add username char(20) not null default '';
+# 给m1添加一个生日列
+alter table m1 add birth date not null default '2000-01-01';
+```
+
+给`m1`添加列`gender`并将其放到`username`后面。
+
+```mysql
+alter table m1 add gender char(1) not null default '' after username;
+```
+
+ 给`m1`添加列，在最前面。使用`first`
+
+```mysql
+#在m1上面的最上面添加 pid 列
+alter table m1 add pid int not null default 0 first ;
+#查看表
+desc m1;
++----------+------------------+------+-----+------------+----------------+
+| Field    | Type             | Null | Key | Default    | Extra          |
++----------+------------------+------+-----+------------+----------------+
+| pid      | int(11)          | NO   |     | 0          |                |#跑到了最上面
+| id       | int(10) unsigned | NO   | PRI | NULL       | auto_increment |
+| username | char(20)         | NO   |     |            |                |
+| gender   | char(1)          | NO   |     |            |                |
+| birth    | date             | NO   |     | 2000-01-01 |                |
++----------+------------------+------+-----+------------+----------------+
+```
+
+###### 删除列
+
+```mysql
+# 删除表 m1的 pid 列 
+alter table m1 drop pid;
+```
+
+###### 修改列类型
+
+```mysql
+# 修改表 
+alter table m1 modify  gender char(4) not null default '';
+```
+
+###### 修改列的名字及其类型
+
+```mysql
+# 修改 表 m1 id字段 修改为uid 类型为 int  unsigned
+alter table m1 change id uid int unsigned  
+```
+
+###  查
+
+> 在学习查之前先建立一个小型的商城表。
+
+```mysql
+商品表
+goods_id, //商品id 
+cat_id,	  // 分类
+goods_sn, // 商品分类
+goods_name, //商品的名字
+click_count, //商品的点击量 
+goods_number,//库存量
+marker_price,//市场价
+shop_price,//本店价
+add_time,//添加时间
+is_best, //是否最好的
+is_new, //是否最新上架 
+is_not  //是否最热商品
+
+# 开始创建库
+create database myGoods charset  utf8;
+
+# 开始创建表
+create table goods (
+  goods_id mediumint(8) unsigned primary key auto_increment, #商品id 
+  goods_name varchar(120) not null default '',				 #商品名字	
+  cat_id smallint(5) unsigned not null default '0',			 #商品分类
+  brand_id smallint(5) unsigned not null default '0',  		 #商品的品牌
+  goods_sn char(15) not null default '', 					 
+  goods_number smallint(5) unsigned not null default '0',    #商品的数量
+  shop_price decimal(10,2) unsigned not null default '0.00', #商品的现在价格
+  market_price decimal(10,2) unsigned not null default '0.00',#商品的市场价
+  click_count int(10) unsigned not null default '0'           #点击量
+) engine=myisam default charset=utf8;
+
+# 插入数据
+insert into goods values (1,'kd876',4,8,'ecs000000',1,1388.00,1665.60,9),
+(4,'诺基亚n85原装充电器',8,1,'ecs000004',17,58.00,69.60,0),
+(3,'诺基亚原装5800耳机',8,1,'ecs000002',24,68.00,81.60,3),
+(5,'索爱原装m2卡读卡器',11,7,'ecs000005',8,20.00,24.00,3),
+(6,'胜创kingmax内存卡',11,0,'ecs000006',15,42.00,50.40,0),
+(7,'诺基亚n85原装立体声耳机hs-82',8,1,'ecs000007',20,100.00,120.00,0),
+(8,'飞利浦9@9v',3,4,'ecs000008',1,399.00,478.79,10),
+(9,'诺基亚e66',3,1,'ecs000009',4,2298.00,2757.60,20),
+(10,'索爱c702c',3,7,'ecs000010',7,1328.00,1593.60,11),
+(11,'索爱c702c',3,7,'ecs000011',1,1300.00,0.00,0),
+(12,'摩托罗拉a810',3,2,'ecs000012',8,983.00,1179.60,13),
+(13,'诺基亚5320 xpressmusic',3,1,'ecs000013',8,1311.00,1573.20,13),
+(14,'诺基亚5800xm',4,1,'ecs000014',1,2625.00,3150.00,6),
+(15,'摩托罗拉a810',3,2,'ecs000015',3,788.00,945.60,8),
+(16,'恒基伟业g101',2,11,'ecs000016',0,823.33,988.00,3),
+(17,'夏新n7',3,5,'ecs000017',1,2300.00,2760.00,2),
+(18,'夏新t5',4,5,'ecs000018',1,2878.00,3453.60,0),
+(19,'三星sgh-f258',3,6,'ecs000019',12,858.00,1029.60,7),
+(20,'三星bc01',3,6,'ecs000020',12,280.00,336.00,14),
+(21,'金立 a30',3,10,'ecs000021',40,2000.00,2400.00,4),
+(22,'多普达touch hd',3,3,'ecs000022',1,5999.00,7198.80,16),
+(23,'诺基亚n96',5,1,'ecs000023',8,3700.00,4440.00,17),
+(24,'p806',3,9,'ecs000024',100,2000.00,2400.00,35),
+(25,'小灵通/固话50元充值卡',13,0,'ecs000025',2,48.00,57.59,0),
+(26,'小灵通/固话20元充值卡',13,0,'ecs000026',2,19.00,22.80,0),
+(27,'联通100元充值卡',15,0,'ecs000027',2,95.00,100.00,0),
+(28,'联通50元充值卡',15,0,'ecs000028',0,45.00,50.00,0),
+(29,'移动100元充值卡',14,0,'ecs000029',0,90.00,0.00,0),
+(30,'移动20元充值卡',14,0,'ecs000030',9,18.00,21.00,1),
+(31,'摩托罗拉e8 ',3,2,'ecs000031',1,1337.00,1604.39,5),
+(32,'诺基亚n85',3,1,'ecs000032',4,3010.00,3612.00,9);
+```
+
+> 进行查询操作
+
+```mysql
+# 查询商品主键为32的商品
+select * from goods where goods_id =32;
+# 查出不属于第三个栏目的商品信息
+select goods_name ,cat_id from goods where cat_id != 3;
+# 
 ```
 
 
 
- 
+
+
+
 
 
 
