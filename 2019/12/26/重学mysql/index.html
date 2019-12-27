@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>重学mysql | 基本密码</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="mysql,go">
+  <meta name="keywords" content="go,mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="重学mysql">
-<meta property="og:url" content="http://yoursite.com/2019/12/02/重学mysql/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/12/26/重学mysql/index.html">
 <meta property="og:site_name" content="基本密码">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/1575373608933.png">
 <meta property="og:image" content="http://yoursite.com/images/1575373872570.png">
-<meta property="og:updated_time" content="2019-12-25T10:02:07.458Z">
+<meta property="og:updated_time" content="2019-12-27T10:06:28.485Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重学mysql">
 <meta name="twitter:image" content="http://yoursite.com/images/1575373608933.png">
@@ -165,8 +165,8 @@
   </a>
 
         
-        <a href="/2019/12/02/重学mysql/" class="archive-article-date">
-  	<time datetime="2019-12-02T09:31:43.126Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-02</time>
+        <a href="/2019/12/26/重学mysql/" class="archive-article-date">
+  	<time datetime="2019-12-26T08:00:36.096Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
 </a>
         
       </header>
@@ -179,7 +179,7 @@
 	<div id="toc-article" class="toc-article">
 	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
 		<strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本简单的操作"><span class="toc-number">1.</span> <span class="toc-text">基本简单的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据库，表的基本操作"><span class="toc-number">1.1.</span> <span class="toc-text">数据库，表的基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建数据库"><span class="toc-number">1.1.1.</span> <span class="toc-text">创建数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看所有的数据库"><span class="toc-number">1.1.2.</span> <span class="toc-text">查看所有的数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用哪个数据库"><span class="toc-number">1.1.3.</span> <span class="toc-text">使用哪个数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除一个数据库"><span class="toc-number">1.1.4.</span> <span class="toc-text">删除一个数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改数据库的名字"><span class="toc-number">1.1.5.</span> <span class="toc-text">修改数据库的名字</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看所有表"><span class="toc-number">1.1.6.</span> <span class="toc-text">查看所有表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建一个简单的表"><span class="toc-number">1.1.7.</span> <span class="toc-text">创建一个简单的表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改表名"><span class="toc-number">1.1.8.</span> <span class="toc-text">修改表名</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#插入数据往表中"><span class="toc-number">1.1.9.</span> <span class="toc-text">插入数据往表中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#清空表数据-快速清空"><span class="toc-number">1.1.10.</span> <span class="toc-text">清空表数据(快速清空)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#彻底删除数据库-未完待续"><span class="toc-number">1.1.11.</span> <span class="toc-text">彻底删除数据库(未完待续)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#关于中文乱码的问题"><span class="toc-number">1.1.12.</span> <span class="toc-text">关于中文乱码的问题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#tee操作"><span class="toc-number">1.1.13.</span> <span class="toc-text">tee操作</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#表的增删改查"><span class="toc-number">1.2.</span> <span class="toc-text">表的增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#查看表的数据类型"><span class="toc-number">1.2.1.</span> <span class="toc-text">查看表的数据类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#插入数据"><span class="toc-number">1.2.2.</span> <span class="toc-text">插入数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更新数据"><span class="toc-number">1.2.3.</span> <span class="toc-text">更新数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除数据"><span class="toc-number">1.2.4.</span> <span class="toc-text">删除数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查询数据"><span class="toc-number">1.2.5.</span> <span class="toc-text">查询数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#建表（列类型）"><span class="toc-number">2.</span> <span class="toc-text">建表（列类型）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mysql-三大数据类型"><span class="toc-number">2.1.</span> <span class="toc-text">mysql 三大数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#数值型"><span class="toc-number">2.1.1.</span> <span class="toc-text">数值型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#声明正负值"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">声明正负值</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#浮点数-float"><span class="toc-number">2.1.2.</span> <span class="toc-text">浮点数(float)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#浮点数（decimal）"><span class="toc-number">2.1.3.</span> <span class="toc-text">浮点数（decimal）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#字符串"><span class="toc-number">2.1.4.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#日期时间类型"><span class="toc-number">2.1.5.</span> <span class="toc-text">日期时间类型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#date"><span class="toc-number">2.1.5.1.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#time"><span class="toc-number">2.1.5.2.</span> <span class="toc-text">time</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#datetime"><span class="toc-number">2.1.5.3.</span> <span class="toc-text">datetime</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#timestamp"><span class="toc-number">2.1.5.4.</span> <span class="toc-text">timestamp</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#year"><span class="toc-number">2.1.5.5.</span> <span class="toc-text">year</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#建表语句"><span class="toc-number">2.1.6.</span> <span class="toc-text">建表语句</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#查看建表语句"><span class="toc-number">2.1.6.1.</span> <span class="toc-text">查看建表语句</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改表"><span class="toc-number">2.1.7.</span> <span class="toc-text">修改表</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#新增列"><span class="toc-number">2.1.7.1.</span> <span class="toc-text">新增列</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#删除列"><span class="toc-number">2.1.7.2.</span> <span class="toc-text">删除列</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#修改列类型"><span class="toc-number">2.1.7.3.</span> <span class="toc-text">修改列类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#修改列的名字及其类型"><span class="toc-number">2.1.7.4.</span> <span class="toc-text">修改列的名字及其类型</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查"><span class="toc-number">3.</span> <span class="toc-text">查</span></a></li></ol>
+           <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本简单的操作"><span class="toc-number">1.</span> <span class="toc-text">基本简单的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据库，表的基本操作"><span class="toc-number">1.1.</span> <span class="toc-text">数据库，表的基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建数据库"><span class="toc-number">1.1.1.</span> <span class="toc-text">创建数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看所有的数据库"><span class="toc-number">1.1.2.</span> <span class="toc-text">查看所有的数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用哪个数据库"><span class="toc-number">1.1.3.</span> <span class="toc-text">使用哪个数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除一个数据库"><span class="toc-number">1.1.4.</span> <span class="toc-text">删除一个数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改数据库的名字"><span class="toc-number">1.1.5.</span> <span class="toc-text">修改数据库的名字</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看所有表"><span class="toc-number">1.1.6.</span> <span class="toc-text">查看所有表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建一个简单的表"><span class="toc-number">1.1.7.</span> <span class="toc-text">创建一个简单的表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改表名"><span class="toc-number">1.1.8.</span> <span class="toc-text">修改表名</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#插入数据往表中"><span class="toc-number">1.1.9.</span> <span class="toc-text">插入数据往表中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#清空表数据-快速清空"><span class="toc-number">1.1.10.</span> <span class="toc-text">清空表数据(快速清空)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#彻底删除数据库-未完待续"><span class="toc-number">1.1.11.</span> <span class="toc-text">彻底删除数据库(未完待续)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#关于中文乱码的问题"><span class="toc-number">1.1.12.</span> <span class="toc-text">关于中文乱码的问题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#tee操作"><span class="toc-number">1.1.13.</span> <span class="toc-text">tee操作</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#表的增删改查"><span class="toc-number">1.2.</span> <span class="toc-text">表的增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#查看表的数据类型"><span class="toc-number">1.2.1.</span> <span class="toc-text">查看表的数据类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#插入数据"><span class="toc-number">1.2.2.</span> <span class="toc-text">插入数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更新数据"><span class="toc-number">1.2.3.</span> <span class="toc-text">更新数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除数据"><span class="toc-number">1.2.4.</span> <span class="toc-text">删除数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查询数据"><span class="toc-number">1.2.5.</span> <span class="toc-text">查询数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#建表（列类型）"><span class="toc-number">2.</span> <span class="toc-text">建表（列类型）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mysql-三大数据类型"><span class="toc-number">2.1.</span> <span class="toc-text">mysql 三大数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#数值型"><span class="toc-number">2.1.1.</span> <span class="toc-text">数值型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#声明正负值"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">声明正负值</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#浮点数-float"><span class="toc-number">2.1.2.</span> <span class="toc-text">浮点数(float)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#浮点数（decimal）"><span class="toc-number">2.1.3.</span> <span class="toc-text">浮点数（decimal）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#字符串"><span class="toc-number">2.1.4.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#日期时间类型"><span class="toc-number">2.1.5.</span> <span class="toc-text">日期时间类型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#date"><span class="toc-number">2.1.5.1.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#time"><span class="toc-number">2.1.5.2.</span> <span class="toc-text">time</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#datetime"><span class="toc-number">2.1.5.3.</span> <span class="toc-text">datetime</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#timestamp"><span class="toc-number">2.1.5.4.</span> <span class="toc-text">timestamp</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#year"><span class="toc-number">2.1.5.5.</span> <span class="toc-text">year</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#建表语句"><span class="toc-number">2.1.6.</span> <span class="toc-text">建表语句</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#查看建表语句"><span class="toc-number">2.1.6.1.</span> <span class="toc-text">查看建表语句</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改表"><span class="toc-number">2.1.7.</span> <span class="toc-text">修改表</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#新增列"><span class="toc-number">2.1.7.1.</span> <span class="toc-text">新增列</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#删除列"><span class="toc-number">2.1.7.2.</span> <span class="toc-text">删除列</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#修改列类型"><span class="toc-number">2.1.7.3.</span> <span class="toc-text">修改列类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#修改列的名字及其类型"><span class="toc-number">2.1.7.4.</span> <span class="toc-text">修改列的名字及其类型</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查"><span class="toc-number">3.</span> <span class="toc-text">查</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一些常用的筛选符号"><span class="toc-number">3.1.</span> <span class="toc-text">一些常用的筛选符号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#in"><span class="toc-number">3.2.</span> <span class="toc-text">in</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#between-and之间"><span class="toc-number">3.3.</span> <span class="toc-text">between and之间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#综合复习"><span class="toc-number">3.4.</span> <span class="toc-text">综合复习</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模糊查询"><span class="toc-number">3.5.</span> <span class="toc-text">模糊查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#将列变成变量来计算"><span class="toc-number">3.6.</span> <span class="toc-text">将列变成变量来计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#栗子练习"><span class="toc-number">3.7.</span> <span class="toc-text">栗子练习</span></a></li></ol></li></ol>
          </div>
    <script type="text/javascript">
 	function showToc(){
@@ -449,7 +449,29 @@
 <blockquote>
 <p>进行查询操作</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 查询商品主键为32的商品</span><br><span class="line">select * from goods where goods_id =32;</span><br><span class="line"># 查出不属于第三个栏目的商品信息</span><br><span class="line">select goods_name ,cat_id from goods where cat_id != 3;</span><br><span class="line">#</span><br></pre></td></tr></table></figure>
+<h4 id="一些常用的筛选符号"><a href="#一些常用的筛选符号" class="headerlink" title="一些常用的筛选符号"></a>一些常用的筛选符号</h4><blockquote>
+<p>> = &lt; …符号的运用</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 查询商品主键为32的商品</span><br><span class="line">select * from goods where goods_id =32;</span><br><span class="line"># 查出不属于第三个栏目的商品信息</span><br><span class="line">select goods_name ,cat_id from goods where cat_id != 3;</span><br><span class="line"># 本店价格大于300的商品信息</span><br><span class="line">select * from goods where shop_price&gt;300;</span><br></pre></td></tr></table></figure>
+<h4 id="in"><a href="#in" class="headerlink" title="in"></a>in</h4><blockquote>
+<p>表示在哪些值之中</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 取消商品类别是4和11的商品信息</span><br><span class="line">select * from goods where cat_id in (4,11);</span><br><span class="line"># 取出商品类别不是3和不是11的所有商品信息</span><br><span class="line"> select * from goods where cat_id not in (3,11);</span><br><span class="line">#上面的使用and来实现</span><br><span class="line">select * from goods where cat_id!=3 and cat_id!=11;</span><br></pre></td></tr></table></figure>
+<h4 id="between-and之间"><a href="#between-and之间" class="headerlink" title="between and之间"></a>between and之间</h4><blockquote>
+<p>从一个值到一个值之间 （包括两端的值）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 取出商品价格&gt;=100 &lt;=500的商品信息</span><br><span class="line">select *from goods where shop_id between 100 and 500;</span><br></pre></td></tr></table></figure>
+<h4 id="综合复习"><a href="#综合复习" class="headerlink" title="综合复习"></a>综合复习</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 取出价格大于100且小于300，或者大于4000且小于5000的商品信息</span><br><span class="line">select * from goods where (shop_price &gt;=100 &amp;&amp; shop_price&lt;=300) or (shop_price&gt;=4000&amp;&amp;shop_price&lt;=5000);</span><br><span class="line"># 取出第三个商品类别下 价格小于1000或者大于3000。同时点击量大于5的商品</span><br><span class="line">select * from goods where cat_id =3 and (shop_price &lt; 1000 or shop_price &gt;3000) and click_count &gt; 5;</span><br></pre></td></tr></table></figure>
+<h4 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h4><blockquote>
+<p>% 匹配任意字符</p>
+<p>_ 匹配任意一个字符</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#查出以为 诺基亚开头的商品</span><br><span class="line">select * from goods where goods_name like &quot;诺基亚%&quot;;</span><br><span class="line">#查询以诺基亚N开头，后面只有两个字符的商品信息</span><br><span class="line">select *from goods where goods_name like &quot;诺基亚N__&quot;;</span><br></pre></td></tr></table></figure>
+<h4 id="将列变成变量来计算"><a href="#将列变成变量来计算" class="headerlink" title="将列变成变量来计算"></a>将列变成变量来计算</h4><blockquote>
+<p>查询现价比市场的价格便宜多少钱  </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"># 查看现在手机的价格比当前市场的价格便宜多少</span><br><span class="line"> select goods_name,market_price-shop_price as 差价 from goods  where 1;</span><br><span class="line">+----------------------------------------+----------+</span><br><span class="line">| goods_name                             | 差价     |</span><br><span class="line">+----------------------------------------+----------+</span><br><span class="line">| kd876                                  |   277.60 |</span><br><span class="line">| 诺基亚n85原装充电器                    |    11.60 |</span><br><span class="line">| 诺基亚原装5800耳机                     |    13.60 |</span><br><span class="line">| 索爱原装m2卡读卡器                     |     4.00 |</span><br><span class="line">| 胜创kingmax内存卡                      |     8.40 |</span><br><span class="line">| 诺基亚n85原装立体声耳机hs-82           |    20.00 |</span><br><span class="line">| 飞利浦9@9v                             |    79.79 |</span><br><span class="line">| 诺基亚e66                              |   459.60 |</span><br><span class="line">| 索爱c702c                              |   265.60 |</span><br><span class="line">| 索爱c702c                              | -1300.00 |</span><br><span class="line">| 摩托罗拉a810                           |   196.60 |</span><br><span class="line">| 诺基亚5320 xpressmusic                 |   262.20 |</span><br><span class="line">| 诺基亚5800xm                           |   525.00 |</span><br><span class="line">| 摩托罗拉a810                           |   157.60 |</span><br><span class="line">| 恒基伟业g101                           |   164.67 |</span><br><span class="line">| 夏新n7                                 |   460.00 |</span><br><span class="line">| 夏新t5                                 |   575.60 |</span><br><span class="line">| 三星sgh-f258                           |   171.60 |</span><br><span class="line">| 三星bc01                               |    56.00 |</span><br><span class="line">| 金立 a30                               |   400.00 |</span><br><span class="line">| 多普达touch hd                         |  1199.80 |</span><br><span class="line">| 诺基亚n96                              |   740.00 |</span><br><span class="line">| p806                                   |   400.00 |</span><br><span class="line">| 小灵通/固话50元充值卡                  |     9.59 |</span><br><span class="line">| 小灵通/固话20元充值卡                  |     3.80 |</span><br><span class="line">| 联通100元充值卡                        |     5.00 |</span><br><span class="line">| 联通50元充值卡                         |     5.00 |</span><br><span class="line">| 移动100元充值卡                        |   -90.00 |</span><br><span class="line">| 移动20元充值卡                         |     3.00 |</span><br><span class="line">| 摩托罗拉e8                             |   267.39 |</span><br><span class="line">| 诺基亚n85                              |   602.00 |</span><br><span class="line">+----------------------------------------+----------+</span><br><span class="line">31 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<h4 id="栗子练习"><a href="#栗子练习" class="headerlink" title="栗子练习"></a>栗子练习</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 先创建一个表</span><br><span class="line">create table num(</span><br><span class="line"> num int </span><br><span class="line">);</span><br><span class="line">#插入数据</span><br><span class="line">insert into num values </span><br><span class="line">(3),</span><br><span class="line">(12),</span><br><span class="line">(15),</span><br><span class="line">(25),</span><br><span class="line">(23),</span><br><span class="line">(29),</span><br><span class="line">(34),</span><br><span class="line">(37),</span><br><span class="line">(32),</span><br><span class="line">(45),</span><br><span class="line">(48),</span><br><span class="line">(52);</span><br><span class="line"># 现在将num [20,29]之间改为20。</span><br><span class="line"># 将 num [30,39]之间改为30</span><br><span class="line"></span><br><span class="line"># sql语句如下</span><br><span class="line">update num set num =float(num/10)*10 where num&gt;=20 and num&lt;=30;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -463,11 +485,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">go</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">go</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
         		</li>
       		
 		</ul>
@@ -609,6 +631,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">dart</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">android</a>
               </li>
              
@@ -621,27 +651,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dart</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">日常问题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -649,7 +659,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">自定义view</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -661,15 +671,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">日常问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自定义view</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">curl</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Viper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -678,22 +700,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">源码分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">剪辑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">头条号</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -709,11 +715,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">剪辑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">头条号</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">开源项目学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">curl</a>
               </li>
              
               <li class="article-tag-list-item">
