@@ -144,6 +144,104 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-记Flutter完整的开发总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/02/记Flutter完整的开发总结/">记Flutter完整开发总结</a>
+    </h1>
+  
+
+		
+        
+        <a href="/2020/01/02/记Flutter完整的开发总结/" class="archive-article-date">
+  	<time datetime="2020-01-02T07:53:10.650Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-02</time>
+</a>
+        
+      </header>
+    
+	
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1577951789158.png" alt="1577951789158"></p>
+<blockquote>
+<p>之前一直在学习<code>Flutter</code>,做一些小实例。没有真正的实战过。巧的是，这次有了一次锻炼的机会，公司要求写一个门店用来管理员工的<code>app</code>,我们正好使用了<code>Flutter</code>来进行写这个项目。下面我把遇到的问题，用到的相关知识点记录下。</p>
+</blockquote>
+<h5 id="学习到的库"><a href="#学习到的库" class="headerlink" title="学习到的库"></a>学习到的库</h5><h6 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h6><p>传统的想法使用<code>StatefulWidget</code>，在<code>init</code>中初始化数据，保存数据的状态。当数据量大，操作的数据多的时候，维护起来相当的困难。这个时候使用了<code>provider</code>，用来维护界面上的所有数据状态，并且完全和<code>view</code>分离，和<code>android</code>的<code>mvp</code>好像，不过<code>model</code>并没有持有<code>view</code>对象的引用。使用起来也非常方便，感觉就是一个局部的<code>eventBus</code>。</p>
+<h6 id="全局消息总栈event-bus"><a href="#全局消息总栈event-bus" class="headerlink" title="全局消息总栈event_bus"></a>全局消息总栈<code>event_bus</code></h6><p>和<code>android</code>的<code>eventBus</code>一样，订阅，接受消息。</p>
+<h6 id="mqtt-client"><a href="#mqtt-client" class="headerlink" title="mqtt_client"></a>mqtt_client</h6><p>因为登录的时候使用互踢、扫码登录功能，需要使用推送。所以就用到了这个库，</p>
+<p><code>permission_handler</code>权限管理库</p>
+<p><code>dio</code>不多说，封装起来使用（<code>json</code>–&gt;<code>bean</code>）。</p>
+<h6 id="image-picker（照片选择）"><a href="#image-picker（照片选择）" class="headerlink" title="image_picker（照片选择）"></a>image_picker（照片选择）</h6><h6 id="photo-view-图片预览"><a href="#photo-view-图片预览" class="headerlink" title="photo_view (图片预览)"></a>photo_view (图片预览)</h6><h6 id="connectivity（查询网络状态）"><a href="#connectivity（查询网络状态）" class="headerlink" title="connectivity（查询网络状态）"></a>connectivity（查询网络状态）</h6><h6 id="flutter-easyrefresh-（上拉加载下拉刷新）"><a href="#flutter-easyrefresh-（上拉加载下拉刷新）" class="headerlink" title="flutter_easyrefresh （上拉加载下拉刷新）"></a>flutter_easyrefresh （上拉加载下拉刷新）</h6><h6 id="等等…"><a href="#等等…" class="headerlink" title="等等…"></a>等等…</h6><h5 id="使用到的插件"><a href="#使用到的插件" class="headerlink" title="使用到的插件"></a>使用到的插件</h5><h6 id="FlutterJsonBeanFactory"><a href="#FlutterJsonBeanFactory" class="headerlink" title="FlutterJsonBeanFactory"></a>FlutterJsonBeanFactory</h6><p>将<code>json</code>格式的数据直接转成<code>bean</code>的插件。</p>
+<p><code>flutter-img-sync</code></p>
+<p>图片导入后不需要在<code>pubspec.yaml</code>中进行注册，直接可以生产<code>r.dart</code>。使用的时候<code>R..</code>十分方便</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Flutter</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Flutter//" class="article-tag-list-link color3">Flutter</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/02/记Flutter完整的开发总结/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-重学mysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -151,14 +249,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/27/重学mysql/">重学mysql</a>
+      <a class="article-title" href="/2019/12/30/重学mysql/">重学mysql</a>
     </h1>
   
 
 		
         
-        <a href="/2019/12/27/重学mysql/" class="archive-article-date">
-  	<time datetime="2019-12-27T10:07:04.051Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
+        <a href="/2019/12/30/重学mysql/" class="archive-article-date">
+  	<time datetime="2019-12-30T10:08:21.819Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-30</time>
 </a>
         
       </header>
@@ -180,11 +278,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">go</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">go</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
         		</li>
       		
 		</ul>
@@ -205,7 +303,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/27/重学mysql/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/12/30/重学mysql/">展开全文 >></a>
         </p>
       
 
@@ -846,101 +944,6 @@
 
 
   
-    <article id="post-centos7 安装 docker" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/08/centos7 安装 docker/">centos7 安装 docker</a>
-    </h1>
-  
-
-		
-        
-        <a href="/2019/10/08/centos7 安装 docker/" class="archive-article-date">
-  	<time datetime="2019-10-08T08:13:51.241Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-08</time>
-</a>
-        
-      </header>
-    
-	
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/father-4525302__340.jpg" alt="父亲, 小女孩, 爱情, 穆尔, 令人钦佩的, 城市, 间隔, 安全, 恐惧"></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">go</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/linux//" class="article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/08/centos7 安装 docker/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1022,11 +1025,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color3">android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1038,19 +1041,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">自定义view</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自定义view</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1070,7 +1069,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1078,7 +1077,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1090,11 +1093,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">okhttp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">源码分析</a>
+                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1106,7 +1105,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
+                <a href="javascript:void(0)" class="js-tag color2">okhttp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">源码分析</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1131,6 +1134,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Flutter</a>
               </li>
              
               <li class="article-tag-list-item">
