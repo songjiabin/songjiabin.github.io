@@ -6,18 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>基本密码</title>
+  <title>重学mysql | 基本密码</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一路前行">
-<meta property="og:type" content="website">
-<meta property="og:title" content="基本密码">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="基本简单的操作数据库，表的基本操作创建数据库1create database sjb charset utf8; 查看所有的数据库1show databases; 使用哪个数据库1use sjb; 删除一个数据库1drop database sjb; 修改数据库的名字1想什么呢？数据库创建好后是不能改名字的 查看所有表1show tables; 创建一个简单的表12345create tab">
+<meta name="keywords" content="mysql,go">
+<meta property="og:type" content="article">
+<meta property="og:title" content="重学mysql">
+<meta property="og:url" content="http://yoursite.com/2020/01/09/重学mysql/index.html">
 <meta property="og:site_name" content="基本密码">
-<meta property="og:description" content="一路前行">
+<meta property="og:description" content="基本简单的操作数据库，表的基本操作创建数据库1create database sjb charset utf8; 查看所有的数据库1show databases; 使用哪个数据库1use sjb; 删除一个数据库1drop database sjb; 修改数据库的名字1想什么呢？数据库创建好后是不能改名字的 查看所有表1show tables; 创建一个简单的表12345create tab">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/1575373608933.png">
+<meta property="og:image" content="http://yoursite.com/images/1575373872570.png">
+<meta property="og:updated_time" content="2020-01-09T01:38:14.545Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基本密码">
-<meta name="twitter:description" content="一路前行">
+<meta name="twitter:title" content="重学mysql">
+<meta name="twitter:description" content="基本简单的操作数据库，表的基本操作创建数据库1create database sjb charset utf8; 查看所有的数据库1show databases; 使用哪个数据库1use sjb; 删除一个数据库1drop database sjb; 修改数据库的名字1想什么呢？数据库创建好后是不能改名字的 查看所有表1show tables; 创建一个简单的表12345create tab">
+<meta name="twitter:image" content="http://yoursite.com/images/1575373608933.png">
   
     <link rel="alternative" href="/atom.xml" title="基本密码" type="application/atom+xml">
   
@@ -142,20 +147,26 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-重学mysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-重学mysql" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/09/重学mysql/">重学mysql</a>
+    <h1 class="article-title" itemprop="name">
+      重学mysql
     </h1>
   
 
 		
+  <br/>
+  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+  <span class="icon-sort"></span>
+  <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+            阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+  </span>
+  </a>
+
         
         <a href="/2020/01/09/重学mysql/" class="archive-article-date">
   	<time datetime="2020-01-09T01:37:06.427Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-09</time>
@@ -164,6 +175,30 @@
       </header>
     
 	
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+	<div id="toc-article" class="toc-article">
+	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+		<strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本简单的操作"><span class="toc-number">1.</span> <span class="toc-text">基本简单的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据库，表的基本操作"><span class="toc-number">1.1.</span> <span class="toc-text">数据库，表的基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建数据库"><span class="toc-number">1.1.1.</span> <span class="toc-text">创建数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看所有的数据库"><span class="toc-number">1.1.2.</span> <span class="toc-text">查看所有的数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用哪个数据库"><span class="toc-number">1.1.3.</span> <span class="toc-text">使用哪个数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除一个数据库"><span class="toc-number">1.1.4.</span> <span class="toc-text">删除一个数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改数据库的名字"><span class="toc-number">1.1.5.</span> <span class="toc-text">修改数据库的名字</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看所有表"><span class="toc-number">1.1.6.</span> <span class="toc-text">查看所有表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建一个简单的表"><span class="toc-number">1.1.7.</span> <span class="toc-text">创建一个简单的表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改表名"><span class="toc-number">1.1.8.</span> <span class="toc-text">修改表名</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#插入数据往表中"><span class="toc-number">1.1.9.</span> <span class="toc-text">插入数据往表中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#清空表数据-快速清空"><span class="toc-number">1.1.10.</span> <span class="toc-text">清空表数据(快速清空)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#彻底删除数据库-未完待续"><span class="toc-number">1.1.11.</span> <span class="toc-text">彻底删除数据库(未完待续)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#关于中文乱码的问题"><span class="toc-number">1.1.12.</span> <span class="toc-text">关于中文乱码的问题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#tee操作"><span class="toc-number">1.1.13.</span> <span class="toc-text">tee操作</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#表的增删改查"><span class="toc-number">1.2.</span> <span class="toc-text">表的增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#查看表的数据类型"><span class="toc-number">1.2.1.</span> <span class="toc-text">查看表的数据类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#插入数据"><span class="toc-number">1.2.2.</span> <span class="toc-text">插入数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更新数据"><span class="toc-number">1.2.3.</span> <span class="toc-text">更新数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除数据"><span class="toc-number">1.2.4.</span> <span class="toc-text">删除数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查询数据"><span class="toc-number">1.2.5.</span> <span class="toc-text">查询数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#建表（列类型）"><span class="toc-number">2.</span> <span class="toc-text">建表（列类型）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mysql-三大数据类型"><span class="toc-number">2.1.</span> <span class="toc-text">mysql 三大数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#数值型"><span class="toc-number">2.1.1.</span> <span class="toc-text">数值型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#声明正负值"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">声明正负值</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#浮点数-float"><span class="toc-number">2.1.2.</span> <span class="toc-text">浮点数(float)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#浮点数（decimal）"><span class="toc-number">2.1.3.</span> <span class="toc-text">浮点数（decimal）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#字符串"><span class="toc-number">2.1.4.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#日期时间类型"><span class="toc-number">2.1.5.</span> <span class="toc-text">日期时间类型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#date"><span class="toc-number">2.1.5.1.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#time"><span class="toc-number">2.1.5.2.</span> <span class="toc-text">time</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#datetime"><span class="toc-number">2.1.5.3.</span> <span class="toc-text">datetime</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#timestamp"><span class="toc-number">2.1.5.4.</span> <span class="toc-text">timestamp</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#year"><span class="toc-number">2.1.5.5.</span> <span class="toc-text">year</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#建表语句"><span class="toc-number">2.1.6.</span> <span class="toc-text">建表语句</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#查看建表语句"><span class="toc-number">2.1.6.1.</span> <span class="toc-text">查看建表语句</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改表"><span class="toc-number">2.1.7.</span> <span class="toc-text">修改表</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#新增列"><span class="toc-number">2.1.7.1.</span> <span class="toc-text">新增列</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#删除列"><span class="toc-number">2.1.7.2.</span> <span class="toc-text">删除列</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#修改列类型"><span class="toc-number">2.1.7.3.</span> <span class="toc-text">修改列类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#修改列的名字及其类型"><span class="toc-number">2.1.7.4.</span> <span class="toc-text">修改列的名字及其类型</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查"><span class="toc-number">3.</span> <span class="toc-text">查</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一些常用的筛选符号"><span class="toc-number">3.1.</span> <span class="toc-text">一些常用的筛选符号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#in"><span class="toc-number">3.2.</span> <span class="toc-text">in</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#between-and之间"><span class="toc-number">3.3.</span> <span class="toc-text">between and之间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#综合复习"><span class="toc-number">3.4.</span> <span class="toc-text">综合复习</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模糊查询"><span class="toc-number">3.5.</span> <span class="toc-text">模糊查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#将列变成变量来计算"><span class="toc-number">3.6.</span> <span class="toc-text">将列变成变量来计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#栗子练习"><span class="toc-number">3.7.</span> <span class="toc-text">栗子练习</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#统计函数"><span class="toc-number">3.8.</span> <span class="toc-text">统计函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#max-求最大"><span class="toc-number">3.8.1.</span> <span class="toc-text">max 求最大</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#min-求最小"><span class="toc-number">3.8.2.</span> <span class="toc-text">min 求最小</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#sum-求和"><span class="toc-number">3.8.3.</span> <span class="toc-text">sum 求和</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#avg-平均数"><span class="toc-number">3.8.4.</span> <span class="toc-text">avg 平均数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#count-求数量（总行数）"><span class="toc-number">3.8.5.</span> <span class="toc-text">count 求数量（总行数）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#group-concat-拼接"><span class="toc-number">3.8.6.</span> <span class="toc-text">group_concat (拼接)</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分组"><span class="toc-number">3.9.</span> <span class="toc-text">分组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#having"><span class="toc-number">3.10.</span> <span class="toc-text">having</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#练习"><span class="toc-number">3.10.1.</span> <span class="toc-text">练习</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#有难度的练习"><span class="toc-number">3.10.2.</span> <span class="toc-text">有难度的练习</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#排序"><span class="toc-number">3.11.</span> <span class="toc-text">排序</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#需要用多个字段进行排序"><span class="toc-number">3.11.1.</span> <span class="toc-text">需要用多个字段进行排序</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#固定的条数-limit"><span class="toc-number">3.12.</span> <span class="toc-text">固定的条数 limit</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#语句的执行顺序"><span class="toc-number">3.13.</span> <span class="toc-text">语句的执行顺序</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#综合语句练习"><span class="toc-number">3.13.1.</span> <span class="toc-text">综合语句练习</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#子查询"><span class="toc-number">3.14.</span> <span class="toc-text">子查询</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#from子查询"><span class="toc-number">3.14.1.</span> <span class="toc-text">from子查询</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#exists-子查询"><span class="toc-number">3.14.2.</span> <span class="toc-text">exists 子查询</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#奇怪的null"><span class="toc-number">3.15.</span> <span class="toc-text">奇怪的null</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#左连接"><span class="toc-number">3.16.</span> <span class="toc-text">左连接</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#左连接预备"><span class="toc-number">3.16.1.</span> <span class="toc-text">左连接预备</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#左连接练习"><span class="toc-number">3.16.2.</span> <span class="toc-text">左连接练习</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#左右内连接的区别"><span class="toc-number">3.16.3.</span> <span class="toc-text">左右内连接的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#内连接的特性-inner-join-on"><span class="toc-number">3.16.4.</span> <span class="toc-text">内连接的特性(inner  join on)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#外连接"><span class="toc-number">3.16.5.</span> <span class="toc-text">外连接</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#左连接的demo"><span class="toc-number">3.16.6.</span> <span class="toc-text">左连接的demo</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#union"><span class="toc-number">3.17.</span> <span class="toc-text">union</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#当列表不一致的时候"><span class="toc-number">3.17.1.</span> <span class="toc-text">当列表不一致的时候</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用的场景"><span class="toc-number">3.17.2.</span> <span class="toc-text">使用的场景</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#union后的结果集可以在进行操作"><span class="toc-number">3.17.3.</span> <span class="toc-text">union后的结果集可以在进行操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#union-重复行的问题-union-all-为不去重"><span class="toc-number">3.17.4.</span> <span class="toc-text">union 重复行的问题(union all 为不去重)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#案例"><span class="toc-number">3.17.5.</span> <span class="toc-text">案例</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#案例2"><span class="toc-number">3.17.6.</span> <span class="toc-text">案例2</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#函数"><span class="toc-number">3.18.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一些常见的函数"><span class="toc-number">3.18.1.</span> <span class="toc-text">一些常见的函数</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#abs（是绝对值）"><span class="toc-number">3.18.1.1.</span> <span class="toc-text">abs（是绝对值）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#对小数取整"><span class="toc-number">3.18.1.2.</span> <span class="toc-text">对小数取整</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#向上取整"><span class="toc-number">3.18.1.3.</span> <span class="toc-text">向上取整</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#rang-随机数"><span class="toc-number">3.18.1.4.</span> <span class="toc-text">rang(随机数)</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#查看-ascii-码"><span class="toc-number">3.18.1.5.</span> <span class="toc-text">查看 ascii 码</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#计算字符串的字节个数-length"><span class="toc-number">3.18.1.6.</span> <span class="toc-text">计算字符串的字节个数 length</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#计算字符长度-char-length"><span class="toc-number">3.18.1.7.</span> <span class="toc-text">计算字符长度 char_length</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#反转字符串-按照字符串反转-reverse"><span class="toc-number">3.18.1.8.</span> <span class="toc-text">反转字符串(按照字符串反转) reverse</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#出现的位置-position-in"><span class="toc-number">3.18.1.9.</span> <span class="toc-text">出现的位置 position in</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#截取-right"><span class="toc-number">3.18.1.10.</span> <span class="toc-text">截取 right</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#综合案例"><span class="toc-number">3.18.1.11.</span> <span class="toc-text">综合案例</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#日期时间函数"><span class="toc-number">3.18.2.</span> <span class="toc-text">日期时间函数</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#当前日期时间-now"><span class="toc-number">3.18.2.1.</span> <span class="toc-text">当前日期时间 now()</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#日期-curdate"><span class="toc-number">3.18.2.2.</span> <span class="toc-text">日期 curdate</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#时间-curtime"><span class="toc-number">3.18.2.3.</span> <span class="toc-text">时间 curtime</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#查询某日是哪一周的第几天-dayofweek"><span class="toc-number">3.18.2.4.</span> <span class="toc-text">查询某日是哪一周的第几天 dayofweek</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#查询第几周-week"><span class="toc-number">3.18.2.5.</span> <span class="toc-text">查询第几周  week</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#加密函数"><span class="toc-number">3.18.3.</span> <span class="toc-text">加密函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#控制流函数"><span class="toc-number">3.18.4.</span> <span class="toc-text">控制流函数</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#select-case-when-then"><span class="toc-number">3.18.4.1.</span> <span class="toc-text">select case when then</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#if-相当于三元表达式"><span class="toc-number">3.18.4.2.</span> <span class="toc-text">if 相当于三元表达式</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#ifnull"><span class="toc-number">3.18.4.3.</span> <span class="toc-text">ifnull</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#系统调试函数"><span class="toc-number">3.18.5.</span> <span class="toc-text">系统调试函数</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#user"><span class="toc-number">3.18.5.1.</span> <span class="toc-text">user</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#database"><span class="toc-number">3.18.6.</span> <span class="toc-text">database</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#version"><span class="toc-number">3.18.6.1.</span> <span class="toc-text">version</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#视图-view"><span class="toc-number">3.19.</span> <span class="toc-text">视图 view</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#创建视图"><span class="toc-number">3.19.0.1.</span> <span class="toc-text">创建视图</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#视图作用"><span class="toc-number">3.19.0.2.</span> <span class="toc-text">视图作用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#视图的修改"><span class="toc-number">3.19.0.3.</span> <span class="toc-text">视图的修改</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#algorithm"><span class="toc-number">3.19.0.4.</span> <span class="toc-text">algorithm</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#乱码问题"><span class="toc-number">3.20.</span> <span class="toc-text">乱码问题</span></a></li></ol></li></ol>
+         </div>
+   <script type="text/javascript">
+	function showToc(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:block");
+		show_toc_btn.setAttribute("style","display:none");
+		};
+	function showBtn(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:none");
+		show_toc_btn.setAttribute("style","display:block");
+		};
+   </script>
+      
     <div class="article-entry" itemprop="articleBody">
       
         <a id="more"></a>
@@ -610,16 +645,24 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/09/重学mysql/">展开全文 >></a>
-        </p>
-      
 
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/01/02/记Flutter完整的开发总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">记Flutter完整开发总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -639,721 +682,14 @@
 
 
 
-
-  
-    <article id="post-记Flutter完整的开发总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/02/记Flutter完整的开发总结/">记Flutter完整开发总结</a>
-    </h1>
-  
-
-		
-        
-        <a href="/2020/01/02/记Flutter完整的开发总结/" class="archive-article-date">
-  	<time datetime="2020-01-02T07:53:10.650Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-02</time>
-</a>
-        
-      </header>
-    
-	
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1577951789158.png" alt="1577951789158"></p>
-<blockquote>
-<p>之前一直在学习<code>Flutter</code>,做一些小实例。没有真正的实战过。巧的是，这次有了一次锻炼的机会，公司要求写一个门店用来管理员工的<code>app</code>,我们正好使用了<code>Flutter</code>来进行写这个项目。下面我把遇到的问题，用到的相关知识点记录下。</p>
-</blockquote>
-<h5 id="学习到的库"><a href="#学习到的库" class="headerlink" title="学习到的库"></a>学习到的库</h5><h6 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h6><p>传统的想法使用<code>StatefulWidget</code>，在<code>init</code>中初始化数据，保存数据的状态。当数据量大，操作的数据多的时候，维护起来相当的困难。这个时候使用了<code>provider</code>，用来维护界面上的所有数据状态，并且完全和<code>view</code>分离，和<code>android</code>的<code>mvp</code>好像，不过<code>model</code>并没有持有<code>view</code>对象的引用。使用起来也非常方便，感觉就是一个局部的<code>eventBus</code>。</p>
-<h6 id="全局消息总栈event-bus"><a href="#全局消息总栈event-bus" class="headerlink" title="全局消息总栈event_bus"></a>全局消息总栈<code>event_bus</code></h6><p>和<code>android</code>的<code>eventBus</code>一样，订阅，接受消息。</p>
-<h6 id="mqtt-client"><a href="#mqtt-client" class="headerlink" title="mqtt_client"></a>mqtt_client</h6><p>因为登录的时候使用互踢、扫码登录功能，需要使用推送。所以就用到了这个库，</p>
-<p><code>permission_handler</code>权限管理库</p>
-<p><code>dio</code>不多说，封装起来使用（<code>json</code>–&gt;<code>bean</code>）。</p>
-<h6 id="image-picker（照片选择）"><a href="#image-picker（照片选择）" class="headerlink" title="image_picker（照片选择）"></a>image_picker（照片选择）</h6><h6 id="photo-view-图片预览"><a href="#photo-view-图片预览" class="headerlink" title="photo_view (图片预览)"></a>photo_view (图片预览)</h6><h6 id="connectivity（查询网络状态）"><a href="#connectivity（查询网络状态）" class="headerlink" title="connectivity（查询网络状态）"></a>connectivity（查询网络状态）</h6><h6 id="flutter-easyrefresh-（上拉加载下拉刷新）"><a href="#flutter-easyrefresh-（上拉加载下拉刷新）" class="headerlink" title="flutter_easyrefresh （上拉加载下拉刷新）"></a>flutter_easyrefresh （上拉加载下拉刷新）</h6><h6 id="等等…"><a href="#等等…" class="headerlink" title="等等…"></a>等等…</h6><h5 id="使用到的插件"><a href="#使用到的插件" class="headerlink" title="使用到的插件"></a>使用到的插件</h5><h6 id="FlutterJsonBeanFactory"><a href="#FlutterJsonBeanFactory" class="headerlink" title="FlutterJsonBeanFactory"></a>FlutterJsonBeanFactory</h6><p>将<code>json</code>格式的数据直接转成<code>bean</code>的插件。</p>
-<p><code>flutter-img-sync</code></p>
-<p>图片导入后不需要在<code>pubspec.yaml</code>中进行注册，直接可以生产<code>r.dart</code>。使用的时候<code>R..</code>十分方便</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Flutter</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Flutter//" class="article-tag-list-link color3">Flutter</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/02/记Flutter完整的开发总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-go学习资源" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/go学习资源/">go基础知识巩固</a>
-    </h1>
-  
-
-		
-        
-        <a href="/2019/11/20/go学习资源/" class="archive-article-date">
-  	<time datetime="2019-11-20T02:54:25.197Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-20</time>
-</a>
-        
-      </header>
-    
-	
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote class="blockquote-center">古今多少事，都付笑谈中。</blockquote>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">go</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/go//" class="article-tag-list-link color3">go</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/20/go学习资源/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-new" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-	
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="../images/1571998352047.png" alt="1571998352047"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/25/new/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-curl学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/23/curl学习/">curl网络请求</a>
-    </h1>
-  
-
-		
-        
-        <a href="/2019/10/23/curl学习/" class="archive-article-date">
-  	<time datetime="2019-10-23T08:36:53.524Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-23</time>
-</a>
-        
-      </header>
-    
-	
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="../images/ferris-wheel-4476991__340.jpg" alt="摩天轮, 西雅图, 华盛顿, 市中心, 车轮, 西北, 天际线, 海滨, 摩天"></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">go</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">curl</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/curl//" class="article-tag-list-link color5">curl</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/23/curl学习/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vim" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-	
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/22/vim/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-window openssl " class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-	
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>title: window openssl<br>date:<br>tags: </p>
-<ul>
-<li>openssl<br>copyright: true<br>categories: window<br>toc: true<br>typora-copy-images-to: ..\images<br>typora-root-url: ..</li>
-</ul>
-<hr>
-<p><img src="../images/1572245375620.png" alt="1572245375620"></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/22/window openssl /">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-go 使用viper加载配置文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/12/go 使用viper加载配置文件/">go 使用viper加载配置文件</a>
-    </h1>
-  
-
-		
-        
-        <a href="/2019/10/12/go 使用viper加载配置文件/" class="archive-article-date">
-  	<time datetime="2019-10-12T09:18:02.987Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-12</time>
-</a>
-        
-      </header>
-    
-	
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/rockets-4528194__340.png" alt="火箭, 天空, 空间, 开始, 提升, 启动, 速度, 引力, 航天, 宇航员"></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">go</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Viper</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/go//" class="article-tag-list-link color3">go</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/12/go 使用viper加载配置文件/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-go Viper(配置文件的读取高级)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/12/go Viper(配置文件的读取高级)/">go Viper(配置文件的读取高级)</a>
-    </h1>
-  
-
-		
-        
-        <a href="/2019/10/12/go Viper(配置文件的读取高级)/" class="archive-article-date">
-  	<time datetime="2019-10-12T06:04:29.658Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-12</time>
-</a>
-        
-      </header>
-    
-	
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/mushroom-4529778__340.jpg" alt="蘑菇, 鹅膏菌, 红色, 森林, 季节, 在秋天, 性质, 有毒"></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">go</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Viper</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/go//" class="article-tag-list-link color3">go</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/12/go Viper(配置文件的读取高级)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-go gin 操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/10/go gin 操作/">go gin 操作</a>
-    </h1>
-  
-
-		
-        
-        <a href="/2019/10/10/go gin 操作/" class="archive-article-date">
-  	<time datetime="2019-10-10T02:18:33.083Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
-</a>
-        
-      </header>
-    
-	
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/meadow-hogweed-4530921__340.jpg" alt="草地Hogweed, 弗罗斯特, 冻结, 冰, 冷, 严寒, 冰镇, 寒冬"></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">go</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">gin</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/go//" class="article-tag-list-link color3">go</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/10/go gin 操作/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -1376,8 +712,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
