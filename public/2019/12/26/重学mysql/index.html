@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>beego orm属性设置 | 基本密码</title>
+  <title>重学mysql | 基本密码</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="beego,go">
+  <meta name="keywords" content="go,mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="beego orm属性设置">
-<meta property="og:url" content="http://yoursite.com/2019/09/16/beego orm属性设置/index.html">
+<meta property="og:title" content="重学mysql">
+<meta property="og:url" content="http://yoursite.com/2019/12/26/重学mysql/index.html">
 <meta property="og:site_name" content="基本密码">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/book-2304389__340.jpg">
-<meta property="og:updated_time" content="2019-09-17T03:33:10.417Z">
+<meta property="og:image" content="http://yoursite.com/images/1575373608933.png">
+<meta property="og:image" content="http://yoursite.com/images/1575373872570.png">
+<meta property="og:updated_time" content="2019-12-27T10:06:28.485Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="beego orm属性设置">
-<meta name="twitter:image" content="http://yoursite.com/images/book-2304389__340.jpg">
+<meta name="twitter:title" content="重学mysql">
+<meta name="twitter:image" content="http://yoursite.com/images/1575373608933.png">
   
     <link rel="alternative" href="/atom.xml" title="基本密码" type="application/atom+xml">
   
@@ -143,14 +144,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-beego orm属性设置" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-重学mysql" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      beego orm属性设置
+      重学mysql
     </h1>
   
 
@@ -164,8 +165,8 @@
   </a>
 
         
-        <a href="/2019/09/16/beego orm属性设置/" class="archive-article-date">
-  	<time datetime="2019-09-16T09:07:54.903Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-16</time>
+        <a href="/2019/12/26/重学mysql/" class="archive-article-date">
+  	<time datetime="2019-12-26T08:00:36.096Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
 </a>
         
       </header>
@@ -178,7 +179,7 @@
 	<div id="toc-article" class="toc-article">
 	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
 		<strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#主键、自增"><span class="toc-number">1.</span> <span class="toc-text">主键、自增</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#是否为空"><span class="toc-number">2.</span> <span class="toc-text">是否为空</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#大小"><span class="toc-number">3.</span> <span class="toc-text">大小</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#时间类型"><span class="toc-number">4.</span> <span class="toc-text">时间类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#默认值"><span class="toc-number">5.</span> <span class="toc-text">默认值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#唯一的值"><span class="toc-number">6.</span> <span class="toc-text">唯一的值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#浮点数精度"><span class="toc-number">7.</span> <span class="toc-text">浮点数精度</span></a></li></ol>
+           <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本简单的操作"><span class="toc-number">1.</span> <span class="toc-text">基本简单的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据库，表的基本操作"><span class="toc-number">1.1.</span> <span class="toc-text">数据库，表的基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建数据库"><span class="toc-number">1.1.1.</span> <span class="toc-text">创建数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看所有的数据库"><span class="toc-number">1.1.2.</span> <span class="toc-text">查看所有的数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用哪个数据库"><span class="toc-number">1.1.3.</span> <span class="toc-text">使用哪个数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除一个数据库"><span class="toc-number">1.1.4.</span> <span class="toc-text">删除一个数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改数据库的名字"><span class="toc-number">1.1.5.</span> <span class="toc-text">修改数据库的名字</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看所有表"><span class="toc-number">1.1.6.</span> <span class="toc-text">查看所有表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建一个简单的表"><span class="toc-number">1.1.7.</span> <span class="toc-text">创建一个简单的表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改表名"><span class="toc-number">1.1.8.</span> <span class="toc-text">修改表名</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#插入数据往表中"><span class="toc-number">1.1.9.</span> <span class="toc-text">插入数据往表中</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#清空表数据-快速清空"><span class="toc-number">1.1.10.</span> <span class="toc-text">清空表数据(快速清空)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#彻底删除数据库-未完待续"><span class="toc-number">1.1.11.</span> <span class="toc-text">彻底删除数据库(未完待续)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#关于中文乱码的问题"><span class="toc-number">1.1.12.</span> <span class="toc-text">关于中文乱码的问题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#tee操作"><span class="toc-number">1.1.13.</span> <span class="toc-text">tee操作</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#表的增删改查"><span class="toc-number">1.2.</span> <span class="toc-text">表的增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#查看表的数据类型"><span class="toc-number">1.2.1.</span> <span class="toc-text">查看表的数据类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#插入数据"><span class="toc-number">1.2.2.</span> <span class="toc-text">插入数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更新数据"><span class="toc-number">1.2.3.</span> <span class="toc-text">更新数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除数据"><span class="toc-number">1.2.4.</span> <span class="toc-text">删除数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查询数据"><span class="toc-number">1.2.5.</span> <span class="toc-text">查询数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#建表（列类型）"><span class="toc-number">2.</span> <span class="toc-text">建表（列类型）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mysql-三大数据类型"><span class="toc-number">2.1.</span> <span class="toc-text">mysql 三大数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#数值型"><span class="toc-number">2.1.1.</span> <span class="toc-text">数值型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#声明正负值"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">声明正负值</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#浮点数-float"><span class="toc-number">2.1.2.</span> <span class="toc-text">浮点数(float)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#浮点数（decimal）"><span class="toc-number">2.1.3.</span> <span class="toc-text">浮点数（decimal）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#字符串"><span class="toc-number">2.1.4.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#日期时间类型"><span class="toc-number">2.1.5.</span> <span class="toc-text">日期时间类型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#date"><span class="toc-number">2.1.5.1.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#time"><span class="toc-number">2.1.5.2.</span> <span class="toc-text">time</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#datetime"><span class="toc-number">2.1.5.3.</span> <span class="toc-text">datetime</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#timestamp"><span class="toc-number">2.1.5.4.</span> <span class="toc-text">timestamp</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#year"><span class="toc-number">2.1.5.5.</span> <span class="toc-text">year</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#建表语句"><span class="toc-number">2.1.6.</span> <span class="toc-text">建表语句</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#查看建表语句"><span class="toc-number">2.1.6.1.</span> <span class="toc-text">查看建表语句</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改表"><span class="toc-number">2.1.7.</span> <span class="toc-text">修改表</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#新增列"><span class="toc-number">2.1.7.1.</span> <span class="toc-text">新增列</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#删除列"><span class="toc-number">2.1.7.2.</span> <span class="toc-text">删除列</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#修改列类型"><span class="toc-number">2.1.7.3.</span> <span class="toc-text">修改列类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#修改列的名字及其类型"><span class="toc-number">2.1.7.4.</span> <span class="toc-text">修改列的名字及其类型</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查"><span class="toc-number">3.</span> <span class="toc-text">查</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一些常用的筛选符号"><span class="toc-number">3.1.</span> <span class="toc-text">一些常用的筛选符号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#in"><span class="toc-number">3.2.</span> <span class="toc-text">in</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#between-and之间"><span class="toc-number">3.3.</span> <span class="toc-text">between and之间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#综合复习"><span class="toc-number">3.4.</span> <span class="toc-text">综合复习</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模糊查询"><span class="toc-number">3.5.</span> <span class="toc-text">模糊查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#将列变成变量来计算"><span class="toc-number">3.6.</span> <span class="toc-text">将列变成变量来计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#栗子练习"><span class="toc-number">3.7.</span> <span class="toc-text">栗子练习</span></a></li></ol></li></ol>
          </div>
    <script type="text/javascript">
 	function showToc(){
@@ -197,25 +198,280 @@
       
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/book-2304389__340.jpg" alt="æ¬ä¹¦, è¯&quot;å, æ¾æ¾, èå°, ä¹¦é¡µ, æè², å¾ä¹¦, å­¦ä¹ , æå­¦, éè"></p>
+        <p><img src="/images/1575373608933.png" alt=""></p>
 <a id="more"></a>
-<blockquote>
-<p><code>beego</code>属性的设置</p>
+<h3 id="基本简单的操作"><a href="#基本简单的操作" class="headerlink" title="基本简单的操作"></a>基本简单的操作</h3><h4 id="数据库，表的基本操作"><a href="#数据库，表的基本操作" class="headerlink" title="数据库，表的基本操作"></a>数据库，表的基本操作</h4><h5 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database sjb charset utf8;</span><br></pre></td></tr></table></figure>
+<h5 id="查看所有的数据库"><a href="#查看所有的数据库" class="headerlink" title="查看所有的数据库"></a>查看所有的数据库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
+<h5 id="使用哪个数据库"><a href="#使用哪个数据库" class="headerlink" title="使用哪个数据库"></a>使用哪个数据库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use sjb;</span><br></pre></td></tr></table></figure>
+<h5 id="删除一个数据库"><a href="#删除一个数据库" class="headerlink" title="删除一个数据库"></a>删除一个数据库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database sjb;</span><br></pre></td></tr></table></figure>
+<h5 id="修改数据库的名字"><a href="#修改数据库的名字" class="headerlink" title="修改数据库的名字"></a>修改数据库的名字</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">想什么呢？数据库创建好后是不能改名字的</span><br></pre></td></tr></table></figure>
+<h5 id="查看所有表"><a href="#查看所有表" class="headerlink" title="查看所有表"></a>查看所有表</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure>
+<h5 id="创建一个简单的表"><a href="#创建一个简单的表" class="headerlink" title="创建一个简单的表"></a>创建一个简单的表</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table stu(</span><br><span class="line">-&gt; snum int ,</span><br><span class="line">-&gt; sname varchar(10)</span><br><span class="line">-&gt; )engine myisam charset utf8;</span><br><span class="line">engine--&gt; 引擎和表的性能相关</span><br></pre></td></tr></table></figure>
+<p>#####删除表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table sjb;</span><br></pre></td></tr></table></figure>
+<h5 id="修改表名"><a href="#修改表名" class="headerlink" title="修改表名"></a>修改表名</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rename table oldername to newname;</span><br></pre></td></tr></table></figure>
+<h5 id="插入数据往表中"><a href="#插入数据往表中" class="headerlink" title="插入数据往表中"></a>插入数据往表中</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">insert into tab_stu values </span><br><span class="line">-&gt; (1,&apos;宋佳宾&apos;),</span><br><span class="line">-&gt; (2,&apos;sjb&apos;);</span><br></pre></td></tr></table></figure>
+<h5 id="清空表数据-快速清空"><a href="#清空表数据-快速清空" class="headerlink" title="清空表数据(快速清空)"></a>清空表数据(快速清空)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">truncate tab_stu(表名)；</span><br></pre></td></tr></table></figure>
+<h5 id="彻底删除数据库-未完待续"><a href="#彻底删除数据库-未完待续" class="headerlink" title="彻底删除数据库(未完待续)"></a>彻底删除数据库(未完待续)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete table tab_stu;</span><br></pre></td></tr></table></figure>
+<h5 id="关于中文乱码的问题"><a href="#关于中文乱码的问题" class="headerlink" title="关于中文乱码的问题"></a>关于中文乱码的问题</h5><blockquote>
+<p>有的时候字符集乱码。是因为我们连接时候使用的时候使用的终端是<code>gbk</code>,但是连接是数据库是<code>utf8</code>,这个时候就导致了字符集乱码。解决方案是在终端使用 <code>set names utf8</code>。让当前终端的字符集和数据库的字符集是统一的。</p>
 </blockquote>
-<h5 id="主键、自增"><a href="#主键、自增" class="headerlink" title="主键、自增"></a>主键、自增</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Id  int `orm:&quot;pk;auto&quot;`  pk 主键   auto 自增 使用;进行分割</span><br></pre></td></tr></table></figure>
-<h5 id="是否为空"><a href="#是否为空" class="headerlink" title="是否为空"></a>是否为空</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Title  string `orm:&quot;null&quot;` 默认情况下，不能为空。如果设置了null，那么就可以为空了</span><br></pre></td></tr></table></figure>
-<h5 id="大小"><a href="#大小" class="headerlink" title="大小"></a>大小</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content string `orm:&quot;size(200)&quot;`  size(200) 大小是 200</span><br></pre></td></tr></table></figure>
-<h5 id="时间类型"><a href="#时间类型" class="headerlink" title="时间类型"></a>时间类型</h5><ul>
-<li>datetime 日期时间类型</li>
+<h5 id="tee操作"><a href="#tee操作" class="headerlink" title="tee操作"></a>tee操作</h5><blockquote>
+<p>将我敲得<code>sql</code>及结果都输出到一个<code>sql</code>文件中</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tee /home/sql.sql  将我写入的sql及其结果都输入到sql.sql中去。</span><br></pre></td></tr></table></figure>
+<h4 id="表的增删改查"><a href="#表的增删改查" class="headerlink" title="表的增删改查"></a>表的增删改查</h4><blockquote>
+<p>先创建一个班级表</p>
+</blockquote>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create table class(</span><br><span class="line">id int primary key auto_increment,         # 主键并自增</span><br><span class="line">sname varchar(10) not null default &apos;&apos;, 	   # 姓名</span><br><span class="line">gender char(1) not null default &apos;&apos;,        # 性别 </span><br><span class="line">company varchar(20) not null default &apos;&apos;,   # 公司</span><br><span class="line">salary decimal(6,2) not null default 0.00, # 工资 decimal(6,2) 总共6位数，小数点后面两位</span><br><span class="line">fanbu smallint not null default 0 		   # 饭补	</span><br><span class="line">)engine myisam charset utf8;</span><br></pre></td></tr></table></figure>
+<h5 id="查看表的数据类型"><a href="#查看表的数据类型" class="headerlink" title="查看表的数据类型"></a>查看表的数据类型</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc class # 查看表的结构</span><br></pre></td></tr></table></figure>
+<h5 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h5><blockquote>
+<p>向那个表插入？插入哪些值？插入的值是什么？</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insert into class </span><br><span class="line">(id,sname,gender,company,salary,fanbu)</span><br><span class="line">values</span><br><span class="line">(1,&apos;宋佳宾&apos;,&apos;男&apos;,&apos;头条&apos;,8888.88,222);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>插入部分数据</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insert into class </span><br><span class="line">(sname,gender,salary)</span><br><span class="line">values</span><br><span class="line">(&apos;鸣人&apos;,&apos;男&apos;,9999.88);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果插入所有列数据的话，可以简写为下面的</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">class</span> </span><br><span class="line"><span class="keyword">values</span></span><br><span class="line">(<span class="number">3</span>,<span class="string">'卡卡西'</span>,<span class="string">'男'</span>,<span class="string">'新浪'</span>,<span class="number">4444.22</span>,<span class="number">222</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>插入多条数据</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">class</span></span><br><span class="line">(sname,salary,company)</span><br><span class="line"><span class="keyword">values</span></span><br><span class="line">(<span class="string">'张飞'</span>,<span class="number">1.23</span>,<span class="string">'张氏集团'</span>),</span><br><span class="line">(<span class="string">'刘备'</span>,<span class="number">0.26</span>,<span class="string">'皇室宗亲'</span>),</span><br><span class="line">(<span class="string">'孙策'</span>,<span class="number">1.23</span>,<span class="string">'江东子弟'</span>);</span><br></pre></td></tr></table></figure>
+<h5 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h5><blockquote>
+<p>修改哪个表？哪个列？哪一行？</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 修改表 class 将其中的饭补改为20</span><br><span class="line"><span class="keyword">update</span> <span class="keyword">class</span> </span><br><span class="line"><span class="keyword">set</span> fanbu = <span class="number">20</span></span><br><span class="line"><span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>修改多个列</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> <span class="keyword">class</span> </span><br><span class="line"><span class="keyword">set</span> </span><br><span class="line">gender=<span class="string">'女'</span>,     # 修改多个列的话 用 , 隔开 </span><br><span class="line">company = <span class="string">'江鸟公司'</span></span><br><span class="line"><span class="keyword">where</span> <span class="keyword">name</span> = <span class="string">'卡卡西'</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>查找多个条件</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> <span class="keyword">class</span></span><br><span class="line"><span class="keyword">set</span> </span><br><span class="line">gender=<span class="string">'男'</span>,</span><br><span class="line">company=<span class="string">'大保健集团'</span> </span><br><span class="line"><span class="keyword">where</span> sname = <span class="string">'卡卡西'</span> <span class="keyword">and</span>  gender =<span class="string">'女'</span>;</span><br></pre></td></tr></table></figure>
+<h5 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h5><blockquote>
+<p>删除哪个表？删除哪一行？</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> <span class="keyword">class</span></span><br><span class="line">where id = 2 ; # 条件  删除哪个行？</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>删除 工资大于8888的数据</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> <span class="keyword">class</span> </span><br><span class="line"><span class="keyword">where</span> salary&gt;<span class="number">8888</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>删除表中的所有数据</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from class ;  #警告 删除所有的数据</span><br></pre></td></tr></table></figure>
+<h5 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h5><blockquote>
+<p>查询哪个表？查询哪些列？</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> sname,company,salary <span class="keyword">from</span> <span class="keyword">class</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">4</span>;</span><br><span class="line">+<span class="comment">--------+--------------+--------+</span></span><br><span class="line">| sname  | company      | salary |</span><br><span class="line">+<span class="comment">--------+--------------+--------+</span></span><br><span class="line">| 刘备   | 皇室宗亲     |   0.26 |</span><br><span class="line">+<span class="comment">--------+--------------+--------+</span></span><br></pre></td></tr></table></figure>
+<h3 id="建表（列类型）"><a href="#建表（列类型）" class="headerlink" title="建表（列类型）"></a>建表（列类型）</h3><h4 id="mysql-三大数据类型"><a href="#mysql-三大数据类型" class="headerlink" title="mysql 三大数据类型"></a>mysql 三大数据类型</h4><h5 id="数值型"><a href="#数值型" class="headerlink" title="数值型"></a>数值型</h5><ul>
+<li><p>Tinyint (1字节) 具体指：<code>-126~127</code> 或<code>0~255</code> 。一个字节是8位，正数的话表示<code>0~2^8-1</code>。或者是<code>-2^7~2^7-1</code>如果是表示负数的话，前面的一位<code>0</code>表示正数，<code>-1</code>表示负数。</p>
+</li>
+<li><p>smallint </p>
+</li>
+<li>mediumint  </li>
+<li>int </li>
+<li>bigint </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Time  time.Time `orm:&quot;type(datetime);auto_now_add&quot;` </span><br><span class="line">type(datetime)日期时间类型。</span><br><span class="line">auto_now_add:第一次保存时候的时间。  </span><br><span class="line">auto_now:model保存时都会对时间自动更新</span><br></pre></td></tr></table></figure>
+<p><img src="/images/1575373872570.png" alt=""></p>
+<blockquote>
+<p>当我需要存储数据的时候，无非就是正数或者负数。怎么声明呢？</p>
+</blockquote>
+<h6 id="声明正负值"><a href="#声明正负值" class="headerlink" title="声明正负值"></a>声明正负值</h6><p>先声明一个表作测试</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> class2(</span><br><span class="line">    -&gt; sname <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> <span class="string">''</span>,                       </span><br><span class="line">    -&gt; age tinyint <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> <span class="number">0</span>   # tinyint测试下他能表示的值                       </span><br><span class="line">    -&gt; )<span class="keyword">engine</span> myisam <span class="keyword">charset</span> utf8;</span><br></pre></td></tr></table></figure>
+<p>插入数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> class2 </span><br><span class="line">    -&gt; (sname,age)</span><br><span class="line">    -&gt; <span class="keyword">values</span> </span><br><span class="line">    -&gt; (<span class="string">'刘备'</span>,<span class="number">28</span>);</span><br><span class="line"># 查询结果是：</span><br><span class="line"><span class="keyword">select</span> age <span class="keyword">from</span> class2;</span><br><span class="line">+<span class="comment">-----+</span></span><br><span class="line">| age |</span><br><span class="line">+<span class="comment">-----+</span></span><br><span class="line">|  28 |</span><br><span class="line">+<span class="comment">-----+</span></span><br></pre></td></tr></table></figure>
+<p>因为插入的不是临界值，所以并不能测试处理表示的范围。因为负数的范围是<code>-128~127</code>，那么插入一个<code>128</code>试试，如果<code>128</code>报错，那么说明插入的默认范围就是<code>-128~127</code>。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> class2 </span><br><span class="line">    -&gt; (sname,age)</span><br><span class="line">    -&gt; <span class="keyword">values</span> </span><br><span class="line">    -&gt; (<span class="string">'大龄剩男'</span>,<span class="number">128</span>);</span><br><span class="line">报错了:</span><br><span class="line">ERROR 1264 (22003): Out of range value for column 'age' at row 1。</span><br><span class="line">原因很是明显，超出了能存储的范围了。说明`tinyint`存储的默认范围就是-128~127</span><br></pre></td></tr></table></figure>
 <ul>
-<li>date 日期类型</li>
+<li><strong>unsigned</strong> 表示无符号的（就是表示的是正数，不能表示负数）</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Time  time.Time `orm:&quot;type(date);auto_now_add&quot;` 设置Time类型为日期类型。第一次保存设置时间</span><br><span class="line">type(datetime)时间类型。</span><br><span class="line">auto_now_add第一次保存的时候的时间。  </span><br><span class="line">auto_now:model保存时都会对时间自动更新</span><br></pre></td></tr></table></figure>
-<h5 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Count  int  `orm:&quot;default(0)&quot;` 默认值为0</span><br></pre></td></tr></table></figure>
-<h5 id="唯一的值"><a href="#唯一的值" class="headerlink" title="唯一的值"></a>唯一的值</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UserName string `orm:&quot;unique&quot;`</span><br></pre></td></tr></table></figure>
-<h5 id="浮点数精度"><a href="#浮点数精度" class="headerlink" title="浮点数精度"></a>浮点数精度</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Num float64 `orm:&quot;digits(12);decimals(4)&quot;` //  浮点型 一共12位数，小数点后面4位</span><br></pre></td></tr></table></figure>
+<p>添加一列<code>score</code>分数，分数不能为负数，所以加了修饰 <code>unsigned</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table class2 add score tinyint unsigned not null default 0;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>M （声明多少行）</p>
+</li>
+<li><p>zerofill （零填充）</p>
+</li>
+</ul>
+<blockquote>
+<p><code>zerofill</code>和<code>M</code>一起连用才有意义。举个栗子，我们的学生学号，位数都是相同的。如<code>001</code>和<code>138</code>位数都是3位。当前面的位数不够使用0来填充的。比如（<strong>tinyint(5) 相当于tinyint(M)</strong>）<code>M</code>就是补零的宽度。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"># 给表添加sum列，类型我smallint类型，一共是五位，位数不够用零来凑， zerofill不能为负数</span><br><span class="line">alter table class2  add sum smallint(5) zerofill not null default 0 ;</span><br><span class="line">#查看结构</span><br><span class="line">desc class2;</span><br><span class="line">+-------+-------------------------------+------+-----+---------+-------+</span><br><span class="line">| Field | Type                          | Null | Key | Default | Extra |</span><br><span class="line">+-------+-------------------------------+------+-----+---------+-------+</span><br><span class="line">| sname | varchar(20)                   | NO   |     |         |       |</span><br><span class="line">| age   | tinyint(4)                    | NO   |     | 0       |       |</span><br><span class="line">| score | tinyint(3) unsigned           | NO   |     | 0       |       |</span><br><span class="line">|# 可以看到下面 unsigned 自动填充了是因为当补齐0的时候，负数是不可行的</span><br><span class="line">|sum   | smallint(5) unsigned zerofill  | NO   |     | 00000   |       |</span><br><span class="line">+-------+-------------------------------+------+-----+---------+-------+</span><br><span class="line"># 插入数据--》</span><br><span class="line">insert into class2 (sname,sum) values (&apos;卢布&apos;,1);</span><br><span class="line">insert into class2 (sname,sum) values (&apos;张飞&apos;,20);</span><br><span class="line"> select * from class2;</span><br><span class="line">+--------+-----+-------+-------+</span><br><span class="line">| sname  | age | score | sum   |</span><br><span class="line">+--------+-----+-------+-------+</span><br><span class="line">| 刘备   |  28 |     0 | 00000 |</span><br><span class="line">| 卢布   |   0 |     0 | 00001 |</span><br><span class="line">| 张飞   |   0 |     0 | 00020 |</span><br><span class="line">+--------+-----+-------+-------+</span><br></pre></td></tr></table></figure>
+<h5 id="浮点数-float"><a href="#浮点数-float" class="headerlink" title="浮点数(float)"></a>浮点数(float)</h5><blockquote>
+<p>需要研究的无非就是左边可以存几位，右边可以存几位。如1.23 或者 234.2 等</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># M代表总的位数 D表示小数点后面的个数 如：Float(6,4)表示的范围是 -9999.99~9999.99</span><br><span class="line">Float(M,D)</span><br></pre></td></tr></table></figure>
+<p>创建一个表<code>xinshui</code>(薪水表)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">create table  xinshui (</span><br><span class="line">    -&gt; sname varchar(20) not null default &apos;&apos;,</span><br><span class="line">    -&gt; gongzi float(6,2) </span><br><span class="line">    -&gt; )engine myisam charset utf8;</span><br><span class="line">#插入数据</span><br><span class="line">insert into xinshui</span><br><span class="line">    -&gt; (sname,gongzi)</span><br><span class="line">    -&gt; values </span><br><span class="line">    -&gt; (&apos;sjb&apos;,9999.99);</span><br></pre></td></tr></table></figure>
+<p>**注意：float类型的值也可以用<code>unsigned</code>来修饰，表示不能使用负数</p>
+<p>添加一列 奖金</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">alter table xinshui add jiangjin float(5,2) unsigned not null default 0;</span><br><span class="line">查看表</span><br><span class="line">desc xinshui;</span><br><span class="line">+----------+---------------------+------+-----+---------+-------+</span><br><span class="line">| Field    | Type                | Null | Key | Default | Extra |</span><br><span class="line">+----------+---------------------+------+-----+---------+-------+</span><br><span class="line">| sname    | varchar(20)         | NO   |     |         |       |</span><br><span class="line">| gongzi   | float(6,2)          | YES  |     | NULL    |       |</span><br><span class="line">| jiangjin | float(5,2) unsigned | NO   |     | 0.00    |       |</span><br><span class="line">+----------+---------------------+------+-----+---------+-------+</span><br><span class="line"># 添加一个错误的奖金（负数）</span><br><span class="line">insert into xinshui </span><br><span class="line">(sname,jiangjin)</span><br><span class="line">values</span><br><span class="line">(&apos;宋佳宾&apos;,-253.44);</span><br><span class="line">ERROR 1264 (22003): Out of range value for column &apos;jiangjin&apos; at row 1</span><br></pre></td></tr></table></figure>
+<h5 id="浮点数（decimal）"><a href="#浮点数（decimal）" class="headerlink" title="浮点数（decimal）"></a>浮点数（decimal）</h5><blockquote>
+<p>这个比<code>float</code>更加精确，而<code>float</code>当位数长的话会有损精度</p>
+</blockquote>
+<p>举个栗子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 创建账户的表</span><br><span class="line">create table account(</span><br><span class="line">    sname varchar(20) not null default &apos;&apos;,</span><br><span class="line">    zh1 float(9,2),  # 账户1 为float(9,2)类型</span><br><span class="line">    zh2 decimal(9,2) # 账户2 为decimal(9,2)类型</span><br><span class="line">)engine myisam charset utf8; </span><br><span class="line"># 插入数据</span><br><span class="line">insert into account  (sname,zh1,zh2) values (&apos;sjb&apos;,1234567.22,1234567.22);</span><br><span class="line"># 查询结果可以看到</span><br><span class="line">select * from account;</span><br><span class="line">+-------+------------+------------+</span><br><span class="line">| sname | zh1        | zh2        |</span><br><span class="line">+-------+------------+------------+</span><br><span class="line">| sjb   | 1234567.25 | 1234567.22 | #很明显了，float缺失精度，而decimal则正常</span><br><span class="line">+-------+------------+------------+</span><br></pre></td></tr></table></figure>
+<h5 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h5><ul>
+<li>char（定长）</li>
+</ul>
+<blockquote>
+<p>char(N) 定长字符串 。因为存储时占的长度是一样的，所有查找的时候效率要高。但是，当存储的字节达不到要求的长度N时，会用空格在尾部自动补齐N个长度。会造成资源空间的浪费。</p>
+</blockquote>
+<ul>
+<li>varchar（变长）</li>
+</ul>
+<blockquote>
+<p>varchar(N) 存储0~N个字符。不用空格补齐，但是会在列前，用<code>1~2</code>个字符来标志该列的内容长度</p>
+</blockquote>
+<p>创建一个表，来试试<code>varchar 和 char</code>的区别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create table test(</span><br><span class="line">    ca char(6) not null default &apos;&apos;,</span><br><span class="line">    vca varchar(6) not null default &apos;&apos;</span><br><span class="line">)engine myisam charset utf8;</span><br></pre></td></tr></table></figure>
+<p>插入数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">insert into test </span><br><span class="line">values</span><br><span class="line">(&apos;hello&apos;,&apos;hello&apos;);</span><br><span class="line"></span><br><span class="line">insert into test</span><br><span class="line">values</span><br><span class="line">(&apos;aa &apos;,&apos;aa &apos;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">select * from test;</span><br><span class="line">+-------+-------+</span><br><span class="line">| ca    | vca   |</span><br><span class="line">+-------+-------+</span><br><span class="line">| hello | hello |</span><br><span class="line">+-------+-------+</span><br><span class="line"># 上面是没有任何区别的，</span><br><span class="line"># 这个时候用concat(连接的意思)</span><br><span class="line">select concat(ca,&apos;!&apos;),concat(vca,&apos;!&apos;) from test;</span><br><span class="line">+----------------+-----------------+</span><br><span class="line">| concat(ca,&apos;!&apos;) | concat(vca,&apos;!&apos;) |</span><br><span class="line">+----------------+-----------------+</span><br><span class="line">| hello!         | hello!          | </span><br><span class="line">| aa!            | aa !            |#可以看到varchar 类型后面有之前存储的空格</span><br><span class="line">+----------------+-----------------+#而char类型之前保存的空格，不见了</span><br><span class="line"></span><br><span class="line">char类型如果存储的不够定长，那么会用空格补齐，当取出来的时候，会自动去除空格。所以我们刚开始加入的空格不见了！</span><br></pre></td></tr></table></figure>
+<p><strong>注意：varchar 和 char限制的字符，不是字节</strong></p>
+<ul>
+<li>text 文本，存储量会很大。当时用text的时候，不能给其设置默认值</li>
+<li>blob 二进制类型，用来存储图像，音频等二进制信息。（老老实实存进去，然后原样子取出来。防止因为字符集的问题导致数据的丢失）</li>
+</ul>
+<h5 id="日期时间类型"><a href="#日期时间类型" class="headerlink" title="日期时间类型"></a>日期时间类型</h5><h6 id="date"><a href="#date" class="headerlink" title="date"></a>date</h6><blockquote>
+<p>存储年月日 ( YYYY-MM-DD 存储范围： 1000-01-01 到 9999-12-31)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create table test3(</span><br><span class="line">    star varchar(20) not null default &apos;&apos;,</span><br><span class="line">    birth date not null default &apos;2019-11-01&apos;</span><br><span class="line">)engine myisam charset utf8;</span><br><span class="line">#存入数据</span><br><span class="line">insert into test3</span><br><span class="line">values</span><br><span class="line">(&apos;宋佳宾&apos;,&apos;2019-01-17&apos;);</span><br></pre></td></tr></table></figure>
+<h6 id="time"><a href="#time" class="headerlink" title="time"></a>time</h6><blockquote>
+<p>时间类型()</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#给test3 增加一列，增加一列签到的时间列</span><br><span class="line">alter table test3 add sign time not null default &apos;00:00:00&apos;;</span><br><span class="line">#desc test3;</span><br><span class="line">+-------+-------------+------+-----+------------+-------+</span><br><span class="line">| Field | Type        | Null | Key | Default    | Extra |</span><br><span class="line">+-------+-------------+------+-----+------------+-------+</span><br><span class="line">| star  | varchar(20) | NO   |     |            |       |</span><br><span class="line">| birth | date        | NO   |     | 2019-11-01 |       |</span><br><span class="line">| sign  | time        | NO   |     | 00:00:00   |       |# 时间列</span><br><span class="line">+-------+-------------+------+-----+------------+-------+</span><br><span class="line"></span><br><span class="line">#插入数据</span><br><span class="line">insert into test3 </span><br><span class="line">(star,sign)</span><br><span class="line">values</span><br><span class="line">(&apos;天天&apos;,&apos;19:34:22&apos;);</span><br></pre></td></tr></table></figure>
+<h6 id="datetime"><a href="#datetime" class="headerlink" title="datetime"></a>datetime</h6><blockquote>
+<p>年月日时分秒YYYY-mm-dd HH:mm:ss</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">create table test4(</span><br><span class="line">    sname varchar(20) not null default &apos;&apos;,</span><br><span class="line">    logintime datetime not null default &apos;2000-01-01 00:00:00&apos;  # 这里要写入一个准确的时间，不然建表错误</span><br><span class="line">)engine myisam charset utf8;</span><br><span class="line"></span><br><span class="line">#插入数据</span><br><span class="line">insert into test4</span><br><span class="line">(sname,logintime)</span><br><span class="line">values</span><br><span class="line">(&apos;张三&apos;,&apos;2019-12-25 15:22:22&apos;);</span><br></pre></td></tr></table></figure>
+<h6 id="timestamp"><a href="#timestamp" class="headerlink" title="timestamp"></a>timestamp</h6><blockquote>
+<p>自动获取当前的时间并插入到该列中。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">create table test5(</span><br><span class="line">    ts timestamp default CURRENT_TIMESTAMP,</span><br><span class="line">    id int </span><br><span class="line">)engine myisam charset utf8;</span><br><span class="line">#desc </span><br><span class="line">desc test5;</span><br><span class="line">+-------+-----------+------+-----+-------------------+-------+</span><br><span class="line">| Field | Type      | Null | Key | Default           | Extra |</span><br><span class="line">+-------+-----------+------+-----+-------------------+-------+</span><br><span class="line">| ts    | timestamp | NO   |     | CURRENT_TIMESTAMP |       |</span><br><span class="line">| id    | int(11)   | YES  |     | NULL              |       |</span><br><span class="line">+-------+-----------+------+-----+-------------------+-------+</span><br><span class="line"> </span><br><span class="line">insert into test5</span><br><span class="line">(id)</span><br><span class="line">values</span><br><span class="line">(1),(2),(3);</span><br><span class="line"> </span><br><span class="line">#再次插入 </span><br><span class="line">insert into test5</span><br><span class="line">(id)</span><br><span class="line">values</span><br><span class="line">(1),(2),(3); </span><br><span class="line"></span><br><span class="line">select * from test5;</span><br><span class="line">+---------------------+------+</span><br><span class="line">| ts                  | id   |</span><br><span class="line">+---------------------+------+</span><br><span class="line">| 2019-12-04 17:48:31 |    1 |</span><br><span class="line">| 2019-12-04 17:48:31 |    2 |</span><br><span class="line">| 2019-12-04 17:48:31 |    3 |</span><br><span class="line">| 2019-12-04 17:49:08 |    4 |</span><br><span class="line">| 2019-12-04 17:49:08 |    5 |</span><br><span class="line">| 2019-12-04 17:49:08 |    6 |</span><br><span class="line">+---------------------+------+</span><br></pre></td></tr></table></figure>
+<h6 id="year"><a href="#year" class="headerlink" title="year"></a>year</h6><blockquote>
+<p>年份  只占一个字节（所以范围是1901~2155）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">create table test6(</span><br><span class="line">    thing varchar(20) not null default &apos;&apos;,</span><br><span class="line">    ye year not null default &apos;0000&apos;</span><br><span class="line">)engine myisam charset utf8;</span><br><span class="line"></span><br><span class="line"># desc test6;</span><br><span class="line">+-------+-------------+------+-----+---------+-------+</span><br><span class="line">| Field | Type        | Null | Key | Default | Extra |</span><br><span class="line">+-------+-------------+------+-----+---------+-------+</span><br><span class="line">| thing | varchar(20) | NO   |     |         |       |</span><br><span class="line">| ye    | year(4)     | NO   |     | 0000    |       |</span><br><span class="line">+-------+-------------+------+-----+---------+-------+</span><br><span class="line"> </span><br><span class="line">insert into test6 </span><br><span class="line">values </span><br><span class="line">(&apos;肥水之战&apos;,1923);</span><br></pre></td></tr></table></figure>
+<h5 id="建表语句"><a href="#建表语句" class="headerlink" title="建表语句"></a>建表语句</h5><blockquote>
+<p>练习</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">列名称</th>
+<th style="text-align:center">列类型</th>
+<th style="text-align:center">默认值</th>
+<th style="text-align:center">是否是主键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">int unsigned(正数)</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">username</td>
+<td style="text-align:center">varchar(20)</td>
+<td style="text-align:center">‘’</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">gender</td>
+<td style="text-align:center">char(1)  1代表一个字符,占用一个字节。tinyint 一个字节也是可以的(0:女,1:男)。</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">weight</td>
+<td style="text-align:center">tinyint unsigned(正数)</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">birth</td>
+<td style="text-align:center">date（占用3个字节）</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">salary（工资）</td>
+<td style="text-align:center">decimal(8,2) 浮点型 最大值是999999.99</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">lastlogin上次登录时间</td>
+<td style="text-align:center">datetime（定长8个字节）</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">info（个人简介）</td>
+<td style="text-align:center">varchar(1500)</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>分析，上面的表。除了<code>username</code> 和<code>info</code>两个列其他都是定长的。当是定长的话，在查找的时候会提高查找的速度。这个时候我们可以将两个<code>varchar</code>类型的改为<code>char</code>类型，虽然可能会存储上浪费空间，但是提高了速度!具体看下</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">varchar(20)---&gt;char(20) 	浪费空间可以接受</span><br><span class="line">varchar(1500)---&gt;char(1500) 浪费的空间就有点儿多了</span><br><span class="line">所以这个时候需要把 info 拿出来，单独成为一张表。用户经常操作的数据放到一张表，其他的放在表中去。</span><br><span class="line">#</span><br><span class="line">lastlogin 上次登录时间 使用datetime 不是很理想，在实际开发中用int型时间戳</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>开始真正的建表了要</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">create table member(</span><br><span class="line">    id int unsigned auto_increment primary key,#主键并且自增长</span><br><span class="line">    username char(20) not null default &apos;&apos;,</span><br><span class="line">    gender char(1) 	not null default &apos;&apos;,</span><br><span class="line">    weight tinyint unsigned not null default 0,</span><br><span class="line">    birth date not null default &apos;2000-01-01&apos;,</span><br><span class="line">    salary decimal(8,2) not null default 0.00,</span><br><span class="line">    lastlonin int unsigned not null default 0</span><br><span class="line">)engine myisam 	 charset utf8; #设置引擎</span><br></pre></td></tr></table></figure>
+<h6 id="查看建表语句"><a href="#查看建表语句" class="headerlink" title="查看建表语句"></a>查看建表语句</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">show create table m1(表名);</span><br><span class="line">show create table m1;</span><br><span class="line">+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span><br><span class="line">| Table | Create Table                                                                                                                                                                                                                                       |</span><br><span class="line">+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span><br><span class="line">| m1    | CREATE TABLE `m1` (</span><br><span class="line">  `uid` int(10) unsigned NOT NULL,</span><br><span class="line">  `username` char(20) NOT NULL DEFAULT &apos;&apos;,</span><br><span class="line">  `gender` char(4) NOT NULL DEFAULT &apos;&apos;,</span><br><span class="line">  `birth` date NOT NULL DEFAULT &apos;2000-01-01&apos;,</span><br><span class="line">  PRIMARY KEY (`uid`)</span><br><span class="line">) ENGINE=MyISAM DEFAULT CHARSET=utf8 |</span><br><span class="line">+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</span><br><span class="line">1 row in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<h5 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h5><p>先创建一个表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create table m1(</span><br><span class="line">id int unsigned auto_increment primary key   </span><br><span class="line">)engine myisam charset utf8;</span><br></pre></td></tr></table></figure>
+<h6 id="新增列"><a href="#新增列" class="headerlink" title="新增列"></a>新增列</h6><blockquote>
+<p>alter  table  表名  (增加、修改、删除)  列名称  列类型  列参数 </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 给m1表添加username列</span><br><span class="line">alter table m1 add username char(20) not null default &apos;&apos;;</span><br><span class="line"># 给m1添加一个生日列</span><br><span class="line">alter table m1 add birth date not null default &apos;2000-01-01&apos;;</span><br></pre></td></tr></table></figure>
+<p>给<code>m1</code>添加列<code>gender</code>并将其放到<code>username</code>后面。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table m1 add gender char(1) not null default &apos;&apos; after username;</span><br></pre></td></tr></table></figure>
+<p> 给<code>m1</code>添加列，在最前面。使用<code>first</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#在m1上面的最上面添加 pid 列</span><br><span class="line">alter table m1 add pid int not null default 0 first ;</span><br><span class="line">#查看表</span><br><span class="line">desc m1;</span><br><span class="line">+----------+------------------+------+-----+------------+----------------+</span><br><span class="line">| Field    | Type             | Null | Key | Default    | Extra          |</span><br><span class="line">+----------+------------------+------+-----+------------+----------------+</span><br><span class="line">| pid      | int(11)          | NO   |     | 0          |                |#跑到了最上面</span><br><span class="line">| id       | int(10) unsigned | NO   | PRI | NULL       | auto_increment |</span><br><span class="line">| username | char(20)         | NO   |     |            |                |</span><br><span class="line">| gender   | char(1)          | NO   |     |            |                |</span><br><span class="line">| birth    | date             | NO   |     | 2000-01-01 |                |</span><br><span class="line">+----------+------------------+------+-----+------------+----------------+</span><br></pre></td></tr></table></figure>
+<h6 id="删除列"><a href="#删除列" class="headerlink" title="删除列"></a>删除列</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 删除表 m1的 pid 列 </span><br><span class="line">alter table m1 drop pid;</span><br></pre></td></tr></table></figure>
+<h6 id="修改列类型"><a href="#修改列类型" class="headerlink" title="修改列类型"></a>修改列类型</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 修改表 </span><br><span class="line">alter table m1 modify  gender char(4) not null default &apos;&apos;;</span><br></pre></td></tr></table></figure>
+<h6 id="修改列的名字及其类型"><a href="#修改列的名字及其类型" class="headerlink" title="修改列的名字及其类型"></a>修改列的名字及其类型</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 修改 表 m1 id字段 修改为uid 类型为 int  unsigned</span><br><span class="line">alter table m1 change id uid int unsigned</span><br></pre></td></tr></table></figure>
+<h3 id="查"><a href="#查" class="headerlink" title="查"></a>查</h3><blockquote>
+<p>在学习查之前先建立一个小型的商城表。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">商品表</span><br><span class="line">goods_id, //商品id </span><br><span class="line">cat_id,	  // 分类</span><br><span class="line">goods_sn, // 商品分类</span><br><span class="line">goods_name, //商品的名字</span><br><span class="line">click_count, //商品的点击量 </span><br><span class="line">goods_number,//库存量</span><br><span class="line">marker_price,//市场价</span><br><span class="line">shop_price,//本店价</span><br><span class="line">add_time,//添加时间</span><br><span class="line">is_best, //是否最好的</span><br><span class="line">is_new, //是否最新上架 </span><br><span class="line">is_not  //是否最热商品</span><br><span class="line"></span><br><span class="line"># 开始创建库</span><br><span class="line">create database myGoods charset  utf8;</span><br><span class="line"></span><br><span class="line"># 开始创建表</span><br><span class="line">create table goods (</span><br><span class="line">  goods_id mediumint(8) unsigned primary key auto_increment, #商品id </span><br><span class="line">  goods_name varchar(120) not null default &apos;&apos;,				 #商品名字	</span><br><span class="line">  cat_id smallint(5) unsigned not null default &apos;0&apos;,			 #商品分类</span><br><span class="line">  brand_id smallint(5) unsigned not null default &apos;0&apos;,  		 #商品的品牌</span><br><span class="line">  goods_sn char(15) not null default &apos;&apos;, 					 </span><br><span class="line">  goods_number smallint(5) unsigned not null default &apos;0&apos;,    #商品的数量</span><br><span class="line">  shop_price decimal(10,2) unsigned not null default &apos;0.00&apos;, #商品的现在价格</span><br><span class="line">  market_price decimal(10,2) unsigned not null default &apos;0.00&apos;,#商品的市场价</span><br><span class="line">  click_count int(10) unsigned not null default &apos;0&apos;           #点击量</span><br><span class="line">) engine=myisam default charset=utf8;</span><br><span class="line"></span><br><span class="line"># 插入数据</span><br><span class="line">insert into goods values (1,&apos;kd876&apos;,4,8,&apos;ecs000000&apos;,1,1388.00,1665.60,9),</span><br><span class="line">(4,&apos;诺基亚n85原装充电器&apos;,8,1,&apos;ecs000004&apos;,17,58.00,69.60,0),</span><br><span class="line">(3,&apos;诺基亚原装5800耳机&apos;,8,1,&apos;ecs000002&apos;,24,68.00,81.60,3),</span><br><span class="line">(5,&apos;索爱原装m2卡读卡器&apos;,11,7,&apos;ecs000005&apos;,8,20.00,24.00,3),</span><br><span class="line">(6,&apos;胜创kingmax内存卡&apos;,11,0,&apos;ecs000006&apos;,15,42.00,50.40,0),</span><br><span class="line">(7,&apos;诺基亚n85原装立体声耳机hs-82&apos;,8,1,&apos;ecs000007&apos;,20,100.00,120.00,0),</span><br><span class="line">(8,&apos;飞利浦9@9v&apos;,3,4,&apos;ecs000008&apos;,1,399.00,478.79,10),</span><br><span class="line">(9,&apos;诺基亚e66&apos;,3,1,&apos;ecs000009&apos;,4,2298.00,2757.60,20),</span><br><span class="line">(10,&apos;索爱c702c&apos;,3,7,&apos;ecs000010&apos;,7,1328.00,1593.60,11),</span><br><span class="line">(11,&apos;索爱c702c&apos;,3,7,&apos;ecs000011&apos;,1,1300.00,0.00,0),</span><br><span class="line">(12,&apos;摩托罗拉a810&apos;,3,2,&apos;ecs000012&apos;,8,983.00,1179.60,13),</span><br><span class="line">(13,&apos;诺基亚5320 xpressmusic&apos;,3,1,&apos;ecs000013&apos;,8,1311.00,1573.20,13),</span><br><span class="line">(14,&apos;诺基亚5800xm&apos;,4,1,&apos;ecs000014&apos;,1,2625.00,3150.00,6),</span><br><span class="line">(15,&apos;摩托罗拉a810&apos;,3,2,&apos;ecs000015&apos;,3,788.00,945.60,8),</span><br><span class="line">(16,&apos;恒基伟业g101&apos;,2,11,&apos;ecs000016&apos;,0,823.33,988.00,3),</span><br><span class="line">(17,&apos;夏新n7&apos;,3,5,&apos;ecs000017&apos;,1,2300.00,2760.00,2),</span><br><span class="line">(18,&apos;夏新t5&apos;,4,5,&apos;ecs000018&apos;,1,2878.00,3453.60,0),</span><br><span class="line">(19,&apos;三星sgh-f258&apos;,3,6,&apos;ecs000019&apos;,12,858.00,1029.60,7),</span><br><span class="line">(20,&apos;三星bc01&apos;,3,6,&apos;ecs000020&apos;,12,280.00,336.00,14),</span><br><span class="line">(21,&apos;金立 a30&apos;,3,10,&apos;ecs000021&apos;,40,2000.00,2400.00,4),</span><br><span class="line">(22,&apos;多普达touch hd&apos;,3,3,&apos;ecs000022&apos;,1,5999.00,7198.80,16),</span><br><span class="line">(23,&apos;诺基亚n96&apos;,5,1,&apos;ecs000023&apos;,8,3700.00,4440.00,17),</span><br><span class="line">(24,&apos;p806&apos;,3,9,&apos;ecs000024&apos;,100,2000.00,2400.00,35),</span><br><span class="line">(25,&apos;小灵通/固话50元充值卡&apos;,13,0,&apos;ecs000025&apos;,2,48.00,57.59,0),</span><br><span class="line">(26,&apos;小灵通/固话20元充值卡&apos;,13,0,&apos;ecs000026&apos;,2,19.00,22.80,0),</span><br><span class="line">(27,&apos;联通100元充值卡&apos;,15,0,&apos;ecs000027&apos;,2,95.00,100.00,0),</span><br><span class="line">(28,&apos;联通50元充值卡&apos;,15,0,&apos;ecs000028&apos;,0,45.00,50.00,0),</span><br><span class="line">(29,&apos;移动100元充值卡&apos;,14,0,&apos;ecs000029&apos;,0,90.00,0.00,0),</span><br><span class="line">(30,&apos;移动20元充值卡&apos;,14,0,&apos;ecs000030&apos;,9,18.00,21.00,1),</span><br><span class="line">(31,&apos;摩托罗拉e8 &apos;,3,2,&apos;ecs000031&apos;,1,1337.00,1604.39,5),</span><br><span class="line">(32,&apos;诺基亚n85&apos;,3,1,&apos;ecs000032&apos;,4,3010.00,3612.00,9);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>进行查询操作</p>
+</blockquote>
+<h4 id="一些常用的筛选符号"><a href="#一些常用的筛选符号" class="headerlink" title="一些常用的筛选符号"></a>一些常用的筛选符号</h4><blockquote>
+<p>> = &lt; …符号的运用</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 查询商品主键为32的商品</span><br><span class="line">select * from goods where goods_id =32;</span><br><span class="line"># 查出不属于第三个栏目的商品信息</span><br><span class="line">select goods_name ,cat_id from goods where cat_id != 3;</span><br><span class="line"># 本店价格大于300的商品信息</span><br><span class="line">select * from goods where shop_price&gt;300;</span><br></pre></td></tr></table></figure>
+<h4 id="in"><a href="#in" class="headerlink" title="in"></a>in</h4><blockquote>
+<p>表示在哪些值之中</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 取消商品类别是4和11的商品信息</span><br><span class="line">select * from goods where cat_id in (4,11);</span><br><span class="line"># 取出商品类别不是3和不是11的所有商品信息</span><br><span class="line"> select * from goods where cat_id not in (3,11);</span><br><span class="line">#上面的使用and来实现</span><br><span class="line">select * from goods where cat_id!=3 and cat_id!=11;</span><br></pre></td></tr></table></figure>
+<h4 id="between-and之间"><a href="#between-and之间" class="headerlink" title="between and之间"></a>between and之间</h4><blockquote>
+<p>从一个值到一个值之间 （包括两端的值）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 取出商品价格&gt;=100 &lt;=500的商品信息</span><br><span class="line">select *from goods where shop_id between 100 and 500;</span><br></pre></td></tr></table></figure>
+<h4 id="综合复习"><a href="#综合复习" class="headerlink" title="综合复习"></a>综合复习</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 取出价格大于100且小于300，或者大于4000且小于5000的商品信息</span><br><span class="line">select * from goods where (shop_price &gt;=100 &amp;&amp; shop_price&lt;=300) or (shop_price&gt;=4000&amp;&amp;shop_price&lt;=5000);</span><br><span class="line"># 取出第三个商品类别下 价格小于1000或者大于3000。同时点击量大于5的商品</span><br><span class="line">select * from goods where cat_id =3 and (shop_price &lt; 1000 or shop_price &gt;3000) and click_count &gt; 5;</span><br></pre></td></tr></table></figure>
+<h4 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h4><blockquote>
+<p>% 匹配任意字符</p>
+<p>_ 匹配任意一个字符</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#查出以为 诺基亚开头的商品</span><br><span class="line">select * from goods where goods_name like &quot;诺基亚%&quot;;</span><br><span class="line">#查询以诺基亚N开头，后面只有两个字符的商品信息</span><br><span class="line">select *from goods where goods_name like &quot;诺基亚N__&quot;;</span><br></pre></td></tr></table></figure>
+<h4 id="将列变成变量来计算"><a href="#将列变成变量来计算" class="headerlink" title="将列变成变量来计算"></a>将列变成变量来计算</h4><blockquote>
+<p>查询现价比市场的价格便宜多少钱  </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"># 查看现在手机的价格比当前市场的价格便宜多少</span><br><span class="line"> select goods_name,market_price-shop_price as 差价 from goods  where 1;</span><br><span class="line">+----------------------------------------+----------+</span><br><span class="line">| goods_name                             | 差价     |</span><br><span class="line">+----------------------------------------+----------+</span><br><span class="line">| kd876                                  |   277.60 |</span><br><span class="line">| 诺基亚n85原装充电器                    |    11.60 |</span><br><span class="line">| 诺基亚原装5800耳机                     |    13.60 |</span><br><span class="line">| 索爱原装m2卡读卡器                     |     4.00 |</span><br><span class="line">| 胜创kingmax内存卡                      |     8.40 |</span><br><span class="line">| 诺基亚n85原装立体声耳机hs-82           |    20.00 |</span><br><span class="line">| 飞利浦9@9v                             |    79.79 |</span><br><span class="line">| 诺基亚e66                              |   459.60 |</span><br><span class="line">| 索爱c702c                              |   265.60 |</span><br><span class="line">| 索爱c702c                              | -1300.00 |</span><br><span class="line">| 摩托罗拉a810                           |   196.60 |</span><br><span class="line">| 诺基亚5320 xpressmusic                 |   262.20 |</span><br><span class="line">| 诺基亚5800xm                           |   525.00 |</span><br><span class="line">| 摩托罗拉a810                           |   157.60 |</span><br><span class="line">| 恒基伟业g101                           |   164.67 |</span><br><span class="line">| 夏新n7                                 |   460.00 |</span><br><span class="line">| 夏新t5                                 |   575.60 |</span><br><span class="line">| 三星sgh-f258                           |   171.60 |</span><br><span class="line">| 三星bc01                               |    56.00 |</span><br><span class="line">| 金立 a30                               |   400.00 |</span><br><span class="line">| 多普达touch hd                         |  1199.80 |</span><br><span class="line">| 诺基亚n96                              |   740.00 |</span><br><span class="line">| p806                                   |   400.00 |</span><br><span class="line">| 小灵通/固话50元充值卡                  |     9.59 |</span><br><span class="line">| 小灵通/固话20元充值卡                  |     3.80 |</span><br><span class="line">| 联通100元充值卡                        |     5.00 |</span><br><span class="line">| 联通50元充值卡                         |     5.00 |</span><br><span class="line">| 移动100元充值卡                        |   -90.00 |</span><br><span class="line">| 移动20元充值卡                         |     3.00 |</span><br><span class="line">| 摩托罗拉e8                             |   267.39 |</span><br><span class="line">| 诺基亚n85                              |   602.00 |</span><br><span class="line">+----------------------------------------+----------+</span><br><span class="line">31 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<h4 id="栗子练习"><a href="#栗子练习" class="headerlink" title="栗子练习"></a>栗子练习</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 先创建一个表</span><br><span class="line">create table num(</span><br><span class="line"> num int </span><br><span class="line">);</span><br><span class="line">#插入数据</span><br><span class="line">insert into num values </span><br><span class="line">(3),</span><br><span class="line">(12),</span><br><span class="line">(15),</span><br><span class="line">(25),</span><br><span class="line">(23),</span><br><span class="line">(29),</span><br><span class="line">(34),</span><br><span class="line">(37),</span><br><span class="line">(32),</span><br><span class="line">(45),</span><br><span class="line">(48),</span><br><span class="line">(52);</span><br><span class="line"># 现在将num [20,29]之间改为20。</span><br><span class="line"># 将 num [30,39]之间改为30</span><br><span class="line"></span><br><span class="line"># sql语句如下</span><br><span class="line">update num set num =float(num/10)*10 where num&gt;=20 and num&lt;=30;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -229,11 +485,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">beego</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">go</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">go</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
         		</li>
       		
 		</ul>
@@ -245,7 +501,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/beego//" class="article-tag-list-link color1">beego</a>
+        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
         		</li>
       		
 		</ul>
@@ -263,18 +519,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/09/17/beego datetime 时间少八个小时问题/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          beego datetime 时间少八个小时问题
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/09/12/远程登录mysql Error 1130 Host xxx is not allowed to connect to this MySQL server/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">远程登录mysql Error 1130 Host xxx is not allowed to connect to this MySQL server</div>
+    <a href="/2019/11/20/go学习资源/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">go基础知识巩固</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -293,19 +540,6 @@
             </div>
         </div>
         
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#主键、自增"><span class="toc-number">1.</span> <span class="toc-text">主键、自增</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#是否为空"><span class="toc-number">2.</span> <span class="toc-text">是否为空</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#大小"><span class="toc-number">3.</span> <span class="toc-text">大小</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#时间类型"><span class="toc-number">4.</span> <span class="toc-text">时间类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#默认值"><span class="toc-number">5.</span> <span class="toc-text">默认值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#唯一的值"><span class="toc-number">6.</span> <span class="toc-text">唯一的值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#浮点数精度"><span class="toc-number">7.</span> <span class="toc-text">浮点数精度</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
         
     </div>
 </aside>
@@ -397,6 +631,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">dart</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">android</a>
               </li>
              
@@ -409,23 +651,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dart</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">自定义view</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -437,11 +663,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">日常问题</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color3">自定义view</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Viper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -450,18 +700,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">源码分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">剪辑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">头条号</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -477,11 +715,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">剪辑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">头条号</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">开源项目学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">curl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -494,6 +748,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">读书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">gin</a>
               </li>
             
             <div class="clearfix"></div>

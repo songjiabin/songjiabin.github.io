@@ -1,5 +1,5 @@
 ---
-title: go基础知识巩固
+title: go学习资源
 date: 
 tags: 
 - go 
@@ -10,9 +10,7 @@ typora-copy-images-to: ..\images
 typora-root-url: ..
 ---
 
-
-
-<blockquote class="blockquote-center">古今多少事，都付笑谈中。</blockquote>
+![1578535633800](/images/1578535633800.png)
 
 <!-- more -->
 
@@ -21,4 +19,8 @@ https://github.com/jiujuan/go-collection
 https://github.com/overnote/over-golang
 
 http://www.86clouds.com/tag/go?from=studygolang go资源共享下载
+
+https://changkun.de/golang/ 欧神
+
+
 

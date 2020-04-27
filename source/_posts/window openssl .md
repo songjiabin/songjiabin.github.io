@@ -1,12 +1,10 @@
-
-
 ---
 title: window openssl 
-date: 
 tags: 
 - openssl
+- 日常
 copyright: true
-categories: window
+categories: 日常
 toc: true
 typora-copy-images-to: ..\images
 typora-root-url: ..
@@ -14,12 +12,12 @@ typora-root-url: ..
 
 
 
-![1572245375620](../images/1572245375620.png)
 
 
+![1578534779765](/images/1578534779765.png)
 
 <!-- more -->
 
-
+##### 链接
 
 <https://blog.csdn.net/hu_344/article/details/73368774>

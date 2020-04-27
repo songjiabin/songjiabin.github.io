@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>安装mysql | 基本密码</title>
+  <title>记Flutter完整开发总结 | 基本密码</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="东阳素足女，会稽素舸郎。">
-<meta name="keywords" content="linux">
+  <meta name="keywords" content="Flutter">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安装mysql">
-<meta property="og:url" content="http://yoursite.com/2019/08/22/安装mysql/index.html">
+<meta property="og:title" content="记Flutter完整开发总结">
+<meta property="og:url" content="http://yoursite.com/2020/01/02/记Flutter完整的开发总结/index.html">
 <meta property="og:site_name" content="基本密码">
-<meta property="og:description" content="东阳素足女，会稽素舸郎。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2953304-83f7cd4aa3d6a506.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-08-22T07:18:19.232Z">
+<meta property="og:image" content="http://yoursite.com/images/1577951789158.png">
+<meta property="og:updated_time" content="2020-01-09T01:46:20.689Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安装mysql">
-<meta name="twitter:description" content="东阳素足女，会稽素舸郎。">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2953304-83f7cd4aa3d6a506.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="记Flutter完整开发总结">
+<meta name="twitter:image" content="http://yoursite.com/images/1577951789158.png">
   
     <link rel="alternative" href="/atom.xml" title="基本密码" type="application/atom+xml">
   
@@ -146,14 +143,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-安装mysql" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-记Flutter完整的开发总结" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      安装mysql
+      记Flutter完整开发总结
     </h1>
   
 
@@ -167,8 +164,8 @@
   </a>
 
         
-        <a href="/2019/08/22/安装mysql/" class="archive-article-date">
-  	<time datetime="2019-08-22T07:18:54.786Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-22</time>
+        <a href="/2020/01/02/记Flutter完整的开发总结/" class="archive-article-date">
+  	<time datetime="2020-01-02T07:53:10.650Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-02</time>
 </a>
         
       </header>
@@ -176,27 +173,19 @@
 	
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote class="blockquote-center">东阳素足女，会稽素舸郎。</blockquote>
-
-
+        <p><img src="/images/1577951789158.png" alt="1577951789158"></p>
 <a id="more"></a>
-<h5 id="查询是否有mysql"><a href="#查询是否有mysql" class="headerlink" title="查询是否有mysql"></a>查询是否有mysql</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep mysql</span><br></pre></td></tr></table></figure>
-<h5 id="如果有那么进行删除"><a href="#如果有那么进行删除" class="headerlink" title="如果有那么进行删除"></a>如果有那么进行删除</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -e mysql-libs</span><br></pre></td></tr></table></figure>
-<h5 id="强制删除，如果有依赖关系的话"><a href="#强制删除，如果有依赖关系的话" class="headerlink" title="强制删除，如果有依赖关系的话"></a>强制删除，如果有依赖关系的话</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -e --nodeps  mysql-libs</span><br></pre></td></tr></table></figure>
-<h5 id="安装gcc包"><a href="#安装gcc包" class="headerlink" title="安装gcc包"></a>安装gcc包</h5><ul>
-<li>因为安装的事源码包，所以需要gcc的环境，所以安装gcc包<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install make gcc-c++ cmake bison-devel ncurses-devel</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">cd /opt</span><br><span class="line">tar -zxvf mysql-<span class="number">5.6</span>.14.tar.gz  解压mysql </span><br><span class="line">cd mysql-<span class="number">5.6</span>.14</span><br><span class="line">因为是源码包，所以需要编译安装</span><br><span class="line">cmake -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DMYSQL_DATADIR=/usr/local/mysql/data *************/etc -DWITH_MYISAM_STORAGE_ENGINE=<span class="number">1</span> -DWITH_INNOBASE_STORAGE_ENGINE=<span class="number">1</span> -DWITH_MEMORY_STORAGE_ENGINE=<span class="number">1</span> -DWITH_READLINE=<span class="number">1</span> -DMYSQL_UNIX_ADDR=/var/lib/mysql/mysql.sock -DMYSQL_TCP_PORT=<span class="number">3306</span> -DENABLED_LOCAL_INFILE=<span class="number">1</span> -DWITH_PARTITION_STORAGE_ENGINE=<span class="number">1</span> -DEXTRA_CHARSETS=all -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci</span><br><span class="line">编译并安装</span><br><span class="line">make &amp;&amp; make install </span><br><span class="line">为mysql添加一个用户,并创建一个用户组</span><br><span class="line">groupadd mysql</span><br><span class="line">useradd -g mysql mysql 创建一个用户mysql，用户组为mysql </span><br><span class="line">在 /usr/local 下面生成了 mysql</span><br><span class="line">修改该mysql的权限  所有者、所在组为mysql:</span><br><span class="line"></span><br><span class="line">chown -R mysql:mysql mysql/</span><br><span class="line"></span><br><span class="line">初始化mysql :</span><br><span class="line">scripts/mysql_install_db --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data --user=mysql</span><br></pre></td></tr></table></figure>
-<h5 id="启动mysql"><a href="#启动mysql" class="headerlink" title="启动mysql"></a>启动mysql</h5><blockquote>
-<p>在启动mysql的时候，会按照一定的次序搜索my.cnf。先在/etc目录找，找不到则会搜索”$basedir/my.cnf”。而“$basedir/my.cnf”就是”/usr/local/mysql/my.cnf”。这个是mysql的配置文件的位置。</p>
+<blockquote>
+<p>之前一直在学习<code>Flutter</code>,做一些小实例。没有真正的实战过。巧的是，这次有了一次锻炼的机会，公司要求写一个门店用来管理员工的<code>app</code>,我们正好使用了<code>Flutter</code>来进行写这个项目。下面我把遇到的问题，用到的相关知识点记录下。</p>
 </blockquote>
-<p><strong>注意：因为在centos6.8上，操作系统安装后，在/etc目录下会存在一个my.cnf。所以默认会去读取这个文件，干扰mysql正确配置。所以我们只需要将/etc/my.cnf改下名字就好了。<br>mv /etc/my.cnf /etc/my.cnf/bak</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/mysql/   ---&gt;定位到该目录下</span><br><span class="line">cp support-files/mysql.server  /etc/init.d/mysql  copy 文件到/etc/init.d/mysql</span><br><span class="line">chkconfig mysql on     ---&gt;设置开机自启（不管在哪里运行级别）</span><br></pre></td></tr></table></figure>
-<h5 id="手动开启"><a href="#手动开启" class="headerlink" title="手动开启"></a>手动开启</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">service mysql start </span><br><span class="line"></span><br><span class="line">cd /usr/local/mysql/bin</span><br><span class="line">./mysql -u root </span><br><span class="line">现在还没有密码 都是空 一路回车就进入了mysql 。</span><br><span class="line">进入到mysql中设置新的密码：</span><br><span class="line">set password = password(<span class="string">'root'</span>);</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">##### 设置环境变量 从而在任何地方都可以进行mysql</span><br></pre></td></tr></table></figure>
-<p>vim /etc/profile<br><code>`</code></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/2953304-83f7cd4aa3d6a506.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TIM截图20190822151119.png"></p>
-<p><strong>可以注销重新启动，也可以刷新下命令<code>source /etc/profile</code> 就可以进行到mysql了</strong></p>
+<h5 id="学习到的库"><a href="#学习到的库" class="headerlink" title="学习到的库"></a>学习到的库</h5><h6 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h6><p>传统的想法使用<code>StatefulWidget</code>，在<code>init</code>中初始化数据，保存数据的状态。当数据量大，操作的数据多的时候，维护起来相当的困难。这个时候使用了<code>provider</code>，用来维护界面上的所有数据状态，并且完全和<code>view</code>分离，和<code>android</code>的<code>mvp</code>好像，不过<code>model</code>并没有持有<code>view</code>对象的引用。使用起来也非常方便，感觉就是一个局部的<code>eventBus</code>。</p>
+<h6 id="全局消息总栈event-bus"><a href="#全局消息总栈event-bus" class="headerlink" title="全局消息总栈event_bus"></a>全局消息总栈<code>event_bus</code></h6><p>和<code>android</code>的<code>eventBus</code>一样，订阅，接受消息。</p>
+<h6 id="mqtt-client"><a href="#mqtt-client" class="headerlink" title="mqtt_client"></a>mqtt_client</h6><p>因为登录的时候使用互踢、扫码登录功能，需要使用推送。所以就用到了这个库，</p>
+<p><code>permission_handler</code>权限管理库</p>
+<p><code>dio</code>不多说，封装起来使用（<code>json</code>–&gt;<code>bean</code>）。</p>
+<h6 id="image-picker（照片选择）"><a href="#image-picker（照片选择）" class="headerlink" title="image_picker（照片选择）"></a>image_picker（照片选择）</h6><h6 id="photo-view-图片预览"><a href="#photo-view-图片预览" class="headerlink" title="photo_view (图片预览)"></a>photo_view (图片预览)</h6><h6 id="connectivity（查询网络状态）"><a href="#connectivity（查询网络状态）" class="headerlink" title="connectivity（查询网络状态）"></a>connectivity（查询网络状态）</h6><h6 id="flutter-easyrefresh-（上拉加载下拉刷新）"><a href="#flutter-easyrefresh-（上拉加载下拉刷新）" class="headerlink" title="flutter_easyrefresh （上拉加载下拉刷新）"></a>flutter_easyrefresh （上拉加载下拉刷新）</h6><h6 id="等等…"><a href="#等等…" class="headerlink" title="等等…"></a>等等…</h6><h5 id="使用到的插件"><a href="#使用到的插件" class="headerlink" title="使用到的插件"></a>使用到的插件</h5><h6 id="FlutterJsonBeanFactory"><a href="#FlutterJsonBeanFactory" class="headerlink" title="FlutterJsonBeanFactory"></a>FlutterJsonBeanFactory</h6><p>将<code>json</code>格式的数据直接转成<code>bean</code>的插件。</p>
+<p><code>flutter-img-sync</code></p>
+<p>图片导入后不需要在<code>pubspec.yaml</code>中进行注册，直接可以生产<code>r.dart</code>。使用的时候<code>R..</code>十分方便</p>
 
       
 
@@ -210,7 +199,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Flutter</a>
         		</li>
       		
 		</ul>
@@ -222,7 +211,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/linux//" class="article-tag-list-link color1">linux</a>
+        			<a href="/categories/Flutter//" class="article-tag-list-link color3">Flutter</a>
         		</li>
       		
 		</ul>
@@ -240,18 +229,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/22/rpm包的管理/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/01/09/重学mysql/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          rpm包的管理
+          重学mysql
         
       </div>
     </a>
   
   
-    <a href="/2019/08/16/组管理、权限管理/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">组管理、权限管理</div>
+    <a href="/2019/11/20/go学习资源/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">go学习资源</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -270,19 +259,6 @@
             </div>
         </div>
         
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#查询是否有mysql"><span class="toc-number">1.</span> <span class="toc-text">查询是否有mysql</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#如果有那么进行删除"><span class="toc-number">2.</span> <span class="toc-text">如果有那么进行删除</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#强制删除，如果有依赖关系的话"><span class="toc-number">3.</span> <span class="toc-text">强制删除，如果有依赖关系的话</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装gcc包"><span class="toc-number">4.</span> <span class="toc-text">安装gcc包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装mysql"><span class="toc-number">5.</span> <span class="toc-text">安装mysql</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#启动mysql"><span class="toc-number">6.</span> <span class="toc-text">启动mysql</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#手动开启"><span class="toc-number">7.</span> <span class="toc-text">手动开启</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
         
     </div>
 </aside>
@@ -307,7 +283,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 基本密码
+    		&copy; 2020 基本密码
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -374,11 +350,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color3">android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -390,23 +366,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">自定义view</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -422,15 +390,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自定义view</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">curl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Viper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">okhttp</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">源码分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -442,11 +438,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+                <a href="javascript:void(0)" class="js-tag color3">openssl</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">日常</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -466,11 +466,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Flutter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">材料设计</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">读书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">gin</a>
               </li>
             
             <div class="clearfix"></div>
