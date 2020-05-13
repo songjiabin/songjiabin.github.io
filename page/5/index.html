@@ -144,21 +144,21 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-go beego搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-go beego orm 框架" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/19/go beego搭建/">go beego搭建</a>
+      <a class="article-title" href="/2020/05/12/go beego orm 框架/">go beego orm 框架</a>
     </h1>
   
 
 		
         
-        <a href="/2019/07/19/go beego搭建/" class="archive-article-date">
-  	<time datetime="2019-07-19T01:59:29.858Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-19</time>
+        <a href="/2020/05/12/go beego orm 框架/" class="archive-article-date">
+  	<time datetime="2020-05-12T08:41:43.750Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
 </a>
         
       </header>
@@ -205,7 +205,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/19/go beego搭建/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/05/12/go beego orm 框架/">展开全文 >></a>
         </p>
       
 
@@ -235,21 +235,21 @@
 
 
   
-    <article id="post-flutter - 查看天气" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-git 使用总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/12/flutter - 查看天气/">flutter - 查看天气</a>
+      <a class="article-title" href="/2020/05/12/git 使用总结/">git 使用总结</a>
     </h1>
   
 
 		
         
-        <a href="/2019/06/12/flutter - 查看天气/" class="archive-article-date">
-  	<time datetime="2019-06-12T10:04:09.761Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-12</time>
+        <a href="/2020/05/12/git 使用总结/" class="archive-article-date">
+  	<time datetime="2020-05-12T08:41:43.720Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
 </a>
         
       </header>
@@ -257,8 +257,72 @@
 	
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote class="blockquote-center">桃李春风一杯酒，江湖夜雨十年灯。</blockquote>
-        
+        <blockquote class="blockquote-center">在生命里，我们几乎每时每刻都在犯错</blockquote>
+
+
+<h5 id="Git-Commit"><a href="#Git-Commit" class="headerlink" title="Git Commit"></a>Git Commit</h5><blockquote>
+<p>Git 仓库中的提交记录保存的是你的目录下所有文件的快照，就像是把整个目录复制，然后再粘贴一样，但比复制粘贴优雅许多！</p>
+</blockquote>
+<blockquote>
+<p>Git 希望提交记录尽可能地轻量，因此在你每次进行提交时，它并不会盲目地复制整个目录。条件允许的情况下，它会将当前版本与仓库中的上一个版本进行对比，并把所有的差异打包到一起作为一个提交记录。</p>
+</blockquote>
+<blockquote>
+<p>Git 还保存了提交的历史记录。这也是为什么大多数提交记录的上面都有父节点的原因 —— 我们会在图示中用箭头来表示这种关系。对于项目组的成员来说，维护提交历史对大家都有好处。</p>
+</blockquote>
+<blockquote>
+<p>现在你可以把提交记录看作是项目的快照。提交记录非常轻量，可以快速地在这些提交记录之间切换！</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"提交的内容"</span></span><br></pre></td></tr></table></figure>
+<h5 id="Git-Branch"><a href="#Git-Branch" class="headerlink" title="Git Branch"></a>Git Branch</h5><blockquote>
+<p>Git 的分支也非常轻量。它们只是简单地指向某个提交纪录</p>
+</blockquote>
+<blockquote>
+<p>这是因为即使创建再多分的支也不会造成储存或内存上的开销，并且按逻辑分解工作到不同的分支要比维护那些特别臃肿的分支简单多了。</p>
+</blockquote>
+<blockquote>
+<p>在将分支和提交记录结合起来后，我们会看到两者如何协作。<strong>现在只要记住使用分支其实就相当于在说：“我想基于这个提交以及它所有的父提交进行新的工作。</strong>”</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git  branch <span class="string">"分支名"</span>  创建新的分支</span><br><span class="line"></span><br><span class="line">git checkout <span class="string">"分支名"</span> 切换到对应的分支上</span><br><span class="line"></span><br><span class="line">git branch 查看当前的分支</span><br></pre></td></tr></table></figure>
+<h5 id="分支与合并"><a href="#分支与合并" class="headerlink" title="分支与合并"></a>分支与合并</h5><h6 id="Git-merge"><a href="#Git-merge" class="headerlink" title="Git merge"></a>Git merge</h6><blockquote>
+<p>第一种方法 —— git merge。在 Git 中合并两个分支时会产生一个特殊的提交记录，它有两个父节点。翻译成自然语言相当于：“我要把这两个父节点本身及它们所有的祖先都包含进来。”</p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/2953304-e43c7d3f86431de6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TIM截图20181126163357.png"></p>
+<p>c0、c1 是刚开始的commit,c2是在bugFix分支上提交的，c3是在master分支上提交的。<br>现在要将c2分支合并到master上去。<br>如下所示：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2953304-42f187be3626a4af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TIM截图20181126164352.png"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//先切换到 master </span></span><br><span class="line">git checkout master </span><br><span class="line">git merge <span class="string">"需要合并的分支"</span></span><br></pre></td></tr></table></figure>
+<p>现在等于是主线上（master）上是最全的代码了，现在要把bugFix分支上指向最全的代码（也就是将maseter分支代码合并到bugFix上去）。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//先切换到 bugFix</span></span><br><span class="line">git checkout bugFix </span><br><span class="line">git merge master</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2953304-c37c286a93927aa3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TIM截图20181126170921.png"></p>
+<p>ok！现在等于是master和bugFix分支都到了一起。合并完成。</p>
+<p><strong>总结</strong></p>
+<p><strong>创建新分支 bugFix</strong></p>
+<p><strong>用 git checkout bugFix 命令切换到该分支</strong></p>
+<p><strong>提交一次</strong></p>
+<p><strong>用 git checkout master 切换回 master</strong></p>
+<p><strong>再提交一次</strong></p>
+<p><strong>用 git merge 把 bugFix 合并到 master</strong></p>
+<h6 id="Git-Rebase"><a href="#Git-Rebase" class="headerlink" title="Git Rebase"></a>Git Rebase</h6><blockquote>
+<p>第二种合并分支的方法是 git rebase。Rebase 实际上就是取出一系列的提交记录，“复制”它们，然后在另外一个地方逐个的放下去。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>还是准备了两个分支；注意当前所在的分支是 bugFix（星号标识的是当前分支）</p>
+</blockquote>
+<blockquote>
+<p>我们想要把 bugFix 分支里的工作直接移到 master 分支上。移动以后会使得两个分支的功能看起来像是按顺序开发，但实际上它们是并行开发的。</p>
+</blockquote>
+<p>咱们这次用 git rebase 实现此目标<br>如图：<br><img src="https://upload-images.jianshu.io/upload_images/2953304-ff30dbe6cd7e9a37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TIM截图20181126173258.png"><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout bugFix</span><br><span class="line">git rebase master</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2953304-a67de25de629597d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TIM截图20181126174750.png"></p>
+<p>将master分支内容合并到bufFix上。入上图所示。</p>
+<p>现在 bugFix 分支上的工作在 master 的最顶端，同时我们也得到了一个更线性的提交序列。</p>
+<p>注意，提交记录 C3 依然存在（树上那个半透明的节点），而 C3’ 是我们 Rebase 到 master 分支上的 C3 的副本。</p>
+<p>接下来在master上合并bugFix。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master </span><br><span class="line">git rebase bugFix</span><br></pre></td></tr></table></figure></p>
+<p>最后合并如下：<br><img src="https://upload-images.jianshu.io/upload_images/2953304-f91a56bbee300328.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TIM截图20181126175131.png"></p>
+<p><strong>总结</strong></p>
+<p><strong>新建并切换到 bugFix 分支</strong></p>
+<p><strong>提交一次</strong></p>
+<p><strong>切换回 master 分支再提交一次</strong></p>
+<p><strong>再次切换到 bugFix 分支，rebase 到 master 上</strong></p>
+
       
 
       
@@ -271,11 +335,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dart</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
         		</li>
       		
 		</ul>
@@ -287,7 +347,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/flutter//" class="article-tag-list-link color3">flutter</a>
+        			<a href="/categories/android//" class="article-tag-list-link color3">android</a>
         		</li>
       		
 		</ul>
@@ -296,280 +356,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/12/flutter - 查看天气/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-flutter android  混合开发之配置项目（先前已有android项目，在此基础上再次集成flutter）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/31/flutter android  混合开发之配置项目（先前已有android项目，在此基础上再次集成flutter）/">flutter android  混合开发之配置项目（先前已有android项目，在此基础上再次集成flutter）</a>
-    </h1>
-  
-
-		
-        
-        <a href="/2019/05/31/flutter android  混合开发之配置项目（先前已有android项目，在此基础上再次集成flutter）/" class="archive-article-date">
-  	<time datetime="2019-05-31T10:03:37.274Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-31</time>
-</a>
-        
-      </header>
-    
-	
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote class="blockquote-center">白云一片去悠悠，青枫浦上不胜愁</blockquote>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dart</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/flutter//" class="article-tag-list-link color3">flutter</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/31/flutter android  混合开发之配置项目（先前已有android项目，在此基础上再次集成flutter）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-flutter android  混合开发之flutter调用Android方法（先前已有android项目，在此基础上再次集成flutter）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/31/flutter android  混合开发之flutter调用Android方法（先前已有android项目，在此基础上再次集成flutter）/">flutter android  混合开发之flutter调用Android方法（先前已有android项目，在此基础上再次集成flutter）</a>
-    </h1>
-  
-
-		
-        
-        <a href="/2019/05/31/flutter android  混合开发之flutter调用Android方法（先前已有android项目，在此基础上再次集成flutter）/" class="archive-article-date">
-  	<time datetime="2019-05-31T10:03:37.270Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-31</time>
-</a>
-        
-      </header>
-    
-	
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote class="blockquote-center">云想衣裳花想容，春风拂槛露华浓</blockquote>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dart</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/flutter//" class="article-tag-list-link color3">flutter</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/31/flutter android  混合开发之flutter调用Android方法（先前已有android项目，在此基础上再次集成flutter）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-flutter android  混合开发之android调用flutter方法（先前已有android项目，在此基础上再次集成flutter）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/31/flutter android  混合开发之android调用flutter方法（先前已有android项目，在此基础上再次集成flutter）/">flutter android  混合开发之android调用flutter方法（先前已有android项目，在此基础上再次集成flutter）</a>
-    </h1>
-  
-
-		
-        
-        <a href="/2019/05/31/flutter android  混合开发之android调用flutter方法（先前已有android项目，在此基础上再次集成flutter）/" class="archive-article-date">
-  	<time datetime="2019-05-31T10:03:37.264Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-31</time>
-</a>
-        
-      </header>
-    
-	
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote class="blockquote-center">远远围墙，隐隐茅堂。飏青旗、流水桥旁。</blockquote>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dart</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/flutter//" class="article-tag-list-link color3">flutter</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/31/flutter android  混合开发之android调用flutter方法（先前已有android项目，在此基础上再次集成flutter）/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/05/12/git 使用总结/">展开全文 >></a>
         </p>
       
 
@@ -606,14 +393,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/23/flutter问题 RenderCustomMultiChildLayoutBox object was given an infinite size duri/">flutter问题 RenderCustomMultiChildLayoutBox object was given an infinite size during layout.</a>
+      <a class="article-title" href="/2020/05/12/flutter问题 RenderCustomMultiChildLayoutBox object was given an infinite size duri/">flutter问题 RenderCustomMultiChildLayoutBox object was given an infinite size during layout.</a>
     </h1>
   
 
 		
         
-        <a href="/2019/05/23/flutter问题 RenderCustomMultiChildLayoutBox object was given an infinite size duri/" class="archive-article-date">
-  	<time datetime="2019-05-23T02:28:38.492Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-23</time>
+        <a href="/2020/05/12/flutter问题 RenderCustomMultiChildLayoutBox object was given an infinite size duri/" class="archive-article-date">
+  	<time datetime="2020-05-12T08:41:43.690Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
 </a>
         
       </header>
@@ -660,7 +447,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/23/flutter问题 RenderCustomMultiChildLayoutBox object was given an infinite size duri/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/05/12/flutter问题 RenderCustomMultiChildLayoutBox object was given an infinite size duri/">展开全文 >></a>
         </p>
       
 
@@ -690,21 +477,21 @@
 
 
   
-    <article id="post-flutter 解析复杂的json" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Flutter问题 can&#39;t be assigned to the parameter type &#39;PreferredSizeWidget&#39;" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/22/flutter 解析复杂的json/">flutter 解析复杂的json</a>
+      <a class="article-title" href="/2020/05/12/Flutter问题 can't be assigned to the parameter type 'PreferredSizeWidget'/">Flutter问题 can&#39;t be assigned to the parameter type &#39;PreferredSizeWidget&#39;</a>
     </h1>
   
 
 		
         
-        <a href="/2019/05/22/flutter 解析复杂的json/" class="archive-article-date">
-  	<time datetime="2019-05-22T08:28:39.164Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
+        <a href="/2020/05/12/Flutter问题 can't be assigned to the parameter type 'PreferredSizeWidget'/" class="archive-article-date">
+  	<time datetime="2020-05-12T08:41:43.650Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
 </a>
         
       </header>
@@ -712,7 +499,7 @@
 	
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote class="blockquote-center">时光逆转成红色的晨雾，昼夜逐渐平分。。</blockquote>
+        <blockquote class="blockquote-center">自己只会选择放弃的家伙们…却在嘲笑别人的战斗。</blockquote>
         
       
 
@@ -751,189 +538,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/22/flutter 解析复杂的json/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-flutter io 文件的操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/17/flutter io 文件的操作/">flutter io 文件的操作</a>
-    </h1>
-  
-
-		
-        
-        <a href="/2019/05/17/flutter io 文件的操作/" class="archive-article-date">
-  	<time datetime="2019-05-17T09:54:01.085Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-17</time>
-</a>
-        
-      </header>
-    
-	
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote class="blockquote-center">时光逆转成红色的晨雾，昼夜逐渐平分。。</blockquote>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dart</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/flutter//" class="article-tag-list-link color3">flutter</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/17/flutter io 文件的操作/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-下载pr" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/06/下载pr/">下载pr</a>
-    </h1>
-  
-
-		
-        
-        <a href="/2019/05/06/下载pr/" class="archive-article-date">
-  	<time datetime="2019-05-06T10:11:43.735Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-06</time>
-</a>
-        
-      </header>
-    
-	
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote class="blockquote-center">你若要喜爱你自己的价值，你就得给世界创造价值。</blockquote>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剪辑</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">头条号</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/剪辑//" class="article-tag-list-link color3">剪辑</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/06/下载pr/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/05/12/Flutter问题 can't be assigned to the parameter type 'PreferredSizeWidget'/">展开全文 >></a>
         </p>
       
 
@@ -970,14 +575,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/05/Flutter问题  Anon-null String must be provided to a Text Widget/">Flutter问题  Anon-null String must be provided to a Text Widget</a>
+      <a class="article-title" href="/2020/05/12/Flutter问题  Anon-null String must be provided to a Text Widget/">Flutter问题  Anon-null String must be provided to a Text Widget</a>
     </h1>
   
 
 		
         
-        <a href="/2019/05/05/Flutter问题  Anon-null String must be provided to a Text Widget/" class="archive-article-date">
-  	<time datetime="2019-05-05T09:12:42.575Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-05</time>
+        <a href="/2020/05/12/Flutter问题  Anon-null String must be provided to a Text Widget/" class="archive-article-date">
+  	<time datetime="2020-05-12T08:41:43.620Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
 </a>
         
       </header>
@@ -1024,7 +629,462 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/05/Flutter问题  Anon-null String must be provided to a Text Widget/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/05/12/Flutter问题  Anon-null String must be provided to a Text Widget/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-flutter 解析复杂的json" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/12/flutter 解析复杂的json/">flutter 解析复杂的json</a>
+    </h1>
+  
+
+		
+        
+        <a href="/2020/05/12/flutter 解析复杂的json/" class="archive-article-date">
+  	<time datetime="2020-05-12T08:41:43.570Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
+</a>
+        
+      </header>
+    
+	
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote class="blockquote-center">时光逆转成红色的晨雾，昼夜逐渐平分。。</blockquote>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dart</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/flutter//" class="article-tag-list-link color3">flutter</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/12/flutter 解析复杂的json/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Flutter 打包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/12/Flutter 打包/">Flutter 打包</a>
+    </h1>
+  
+
+		
+        
+        <a href="/2020/05/12/Flutter 打包/" class="archive-article-date">
+  	<time datetime="2020-05-12T08:41:43.520Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
+</a>
+        
+      </header>
+    
+	
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote class="blockquote-center">习闲成懒，习懒成病。</blockquote>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dart</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/flutter//" class="article-tag-list-link color3">flutter</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/12/Flutter 打包/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Flutter 学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/12/Flutter 学习/">Flutter 学习</a>
+    </h1>
+  
+
+		
+        
+        <a href="/2020/05/12/Flutter 学习/" class="archive-article-date">
+  	<time datetime="2020-05-12T08:41:43.490Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
+</a>
+        
+      </header>
+    
+	
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote class="blockquote-center">最伤人的，不适你爱的人已经不在了，而是他的世界已没有你的驻足之地。</blockquote>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dart</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/flutter//" class="article-tag-list-link color3">flutter</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/12/Flutter 学习/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-flutter io 文件的操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/12/flutter io 文件的操作/">flutter io 文件的操作</a>
+    </h1>
+  
+
+		
+        
+        <a href="/2020/05/12/flutter io 文件的操作/" class="archive-article-date">
+  	<time datetime="2020-05-12T08:41:43.460Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
+</a>
+        
+      </header>
+    
+	
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote class="blockquote-center">时光逆转成红色的晨雾，昼夜逐渐平分。。</blockquote>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dart</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/flutter//" class="article-tag-list-link color3">flutter</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/12/flutter io 文件的操作/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-flutter android  混合开发之配置项目（先前已有android项目，在此基础上再次集成flutter）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/12/flutter android  混合开发之配置项目（先前已有android项目，在此基础上再次集成flutter）/">flutter android  混合开发之配置项目（先前已有android项目，在此基础上再次集成flutter）</a>
+    </h1>
+  
+
+		
+        
+        <a href="/2020/05/12/flutter android  混合开发之配置项目（先前已有android项目，在此基础上再次集成flutter）/" class="archive-article-date">
+  	<time datetime="2020-05-12T08:41:43.420Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
+</a>
+        
+      </header>
+    
+	
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote class="blockquote-center">白云一片去悠悠，青枫浦上不胜愁</blockquote>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dart</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/flutter//" class="article-tag-list-link color3">flutter</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/12/flutter android  混合开发之配置项目（先前已有android项目，在此基础上再次集成flutter）/">展开全文 >></a>
         </p>
       
 
@@ -1143,14 +1203,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dart</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
@@ -1159,7 +1211,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">dart</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">自定义view</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1183,15 +1247,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">自定义view</a>
+                <a href="javascript:void(0)" class="js-tag color5">curl</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">curl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1203,10 +1263,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">okhttp</a>
               </li>
              
@@ -1215,11 +1271,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">剪辑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">头条号</a>
+                <a href="javascript:void(0)" class="js-tag color4">Scroller</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1228,6 +1280,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">日常</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">剪辑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">头条号</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1247,11 +1307,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+                <a href="javascript:void(0)" class="js-tag color3">Flutter</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Flutter</a>
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
               </li>
              
               <li class="article-tag-list-item">
