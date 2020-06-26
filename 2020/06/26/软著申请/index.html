@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="基本密码">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2020/06/26/软著申请/Users/86157/AppData/Roaming/Typora/typora-user-images/1593145195094.png">
-<meta property="og:updated_time" content="2020-06-26T04:20:13.389Z">
+<meta property="og:updated_time" content="2020-06-26T04:23:05.715Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="软著申请">
 <meta name="twitter:image" content="http://yoursite.com/2020/06/26/软著申请/Users/86157/AppData/Roaming/Typora/typora-user-images/1593145195094.png">
@@ -171,6 +171,30 @@
       </header>
     
 	
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+	<div id="toc-article" class="toc-article">
+	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+		<strong class="toc-title">文章目录</strong>
+           
+         </div>
+   <script type="text/javascript">
+	function showToc(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:block");
+		show_toc_btn.setAttribute("style","display:none");
+		};
+	function showBtn(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:none");
+		show_toc_btn.setAttribute("style","display:block");
+		};
+   </script>
+      
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="/2020/06/26/软著申请/Users\86157\AppData\Roaming\Typora\typora-user-images\1593145195094.png" alt="1593145195094"></p>
@@ -362,6 +386,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">日常问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
@@ -378,15 +406,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">日常问题</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">curl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -426,11 +450,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">公租房</a>
+                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
+                <a href="javascript:void(0)" class="js-tag color4">公租房</a>
               </li>
              
               <li class="article-tag-list-item">
